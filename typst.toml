@@ -1,6 +1,6 @@
 [package]
 name = "theorems"
-version = "0.0.0"
+version = "0.0.4"
 entrypoint = "src/lib.typ"
 authors = ["Marc Thieme"]
 license = "MIT"
