@@ -47,4 +47,5 @@ release new-version:
     git add README.typ typst.toml
     git commit -m "Bump version to {{new-version}}."
     test -z "$(git status --porcelain)" # Just to make sure we didn't screw up
+    git tag -a {{new-version}}
     @echo Don\'t forget to open a pull request for the new version!
