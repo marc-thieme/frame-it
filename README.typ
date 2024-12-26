@@ -202,3 +202,21 @@ Here are a few edge cases.
   Counters continue incrementing sequentially in non-nested elements.
 ]
 
+#pagebreak()
+
+== Breakable frames
+
+#set page(height: 5.2cm)
+#[
+  #show: breakable-frames("core-frames")
+
+
+  #example[Broken across pages][#link("https://github.com/marc-thieme/frame-it/issues/1")[Issue \#1]][
+    #lorem(150)
+  ]
+  #block(breakable: false, example("Explicitly unbrakable", lorem(150)))
+]
+#example[Unbreakable again due to a new scope][
+  #lorem(150)
+]
+#set page(height: auto)
