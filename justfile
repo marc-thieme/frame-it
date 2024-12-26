@@ -18,7 +18,7 @@ setup-pre-commit-hooks:
 _add-assets-to-git-exclude:
     echo assets >> .git/info/exclude
 
-push-new-readme: (readme-compile "assets/README.svg") && commit-and-push-assets
+push-new-readme: (readme-compile "assets/README-{p}.svg") && commit-and-push-assets
 
 [confirm("Do you want to commit and push all changes on the assets branch?")]
 [script]
@@ -34,17 +34,17 @@ readme-watch output="":
 readme-compile output="" *options="":
     typst compile {{options}} {{readme-typ-file}} {{output}}
 
-pre-commit: (readme-compile "/dev/null" "-f svg")
+pre-commit: (readme-compile "/tmp/frame-it_typst-theorems-compile-check{p}.svg" "-f svg")
     typos
-    typstyle --check format-all
+    typstyle --check {{readme-typ-file}} $(git diff-index --cached --name-only HEAD) > /dev/null
 
 _version-regex := '[0-9]+\.[0-9]+\.[0-9]+'
 release new-version:
     @echo Testing if index and staging area are empty
     test -z "$(git status --porcelain)"
-    sed -Ei 's|#import "@preview/frame-it:{{_version-regex}}"|#import "@preview/frame-it:{{new-version}}"|g' README.typ
+    sed -Ei 's|#import "@preview/frame-it:{{_version-regex}}"|#import "@preview/frame-it:{{new-version}}"|g' {{readme-typ-file}}
     sed -Ei 's|version = "{{_version-regex}}"|version = "{{new-version}}"|g' typst.toml
-    git add README.typ typst.toml
+    git add {{readme-typ-file}} typst.toml
     git commit -m "Bump version to {{new-version}}."
     test -z "$(git status --porcelain)" # Just to make sure we didn't screw up
     git tag -a {{new-version}}
