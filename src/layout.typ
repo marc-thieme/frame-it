@@ -36,6 +36,14 @@
       }
     )
 
+    // Make figure breakable.
+    // In order to use this, you also need to explicitly use the show rule defined in the layout package.
+    // We recommend scoping this show rule if you do not want it to apply for every frame.
+    // The alternative possibility is in turn to wrap a single frame into an unbreakable block.
+    // See: https://typst.app/docs/reference/model/figure/#figure-behaviour
+    // See: https://github.com/marc-thieme/frame-it/issues/1
+    show figure.where(kind: kind, supplement: none): set block(breakable: true)
+
     figure(caption: caption-id, supplement: none, gap: 0pt, kind: kind, none)
   },
 )
@@ -58,6 +66,13 @@
       (title, ..tags) = title-and-tags.pos()
     }
     spawn-frame(style, kind, title, tags, body, supplement, arg)
+  }
+)
+
+#let breakable-frames(kind) = (
+  it => {
+    show figure.where(kind: kind): set block(breakable: true)
+    it
   }
 )
 
