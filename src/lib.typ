@@ -1,6 +1,6 @@
 #import "styles.typ" as styles
 #import "styling.typ" as styling
-#import "layout.typ": divide
+#import "layout.typ": divide, breakable-frames
 
 #let make-frames(kind, style: styles.boxy, ..frames) = {
   import "parse.typ"
