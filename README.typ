@@ -103,16 +103,24 @@ which yields
 
 The following features are demonstrated in both predefined styles.
 
-== Style Blending into Text Flow
+== Seamlessly hightight parts of your document
 #layout-features(styles.hint)
-== Boxy Style
+== Highlight parts distinctively
 #layout-features(styles.boxy)
-
+== Additional Capabilities
 #feature[References][
   Elements can be referenced as usual with `<... tag ...>`.
 ] <reference-tag>
 
 For example: @reference-tag.
+
+#syntax[Break frames across pages][
+  If you want to make your frames breakable across pages, you have to apply the show rule
+  ```typst
+  show: breakable-frames("your-theorem-kind")
+  ```
+  For more information, compare with the source code of @breakable-example.
+]
 
 = Syntax
 You define one or more styles by using the `make-frames` function:
@@ -210,10 +218,9 @@ Here are a few edge cases.
 #[
   #show: breakable-frames("core-frames")
 
-
   #example[Broken across pages][#link("https://github.com/marc-thieme/frame-it/issues/1")[Issue \#1]][
     #lorem(150)
-  ]
+  ] <breakable-example>
   #block(breakable: false, example("Explicitly unbrakable", lorem(150)))
 ]
 #example[Unbreakable again due to a new scope][
