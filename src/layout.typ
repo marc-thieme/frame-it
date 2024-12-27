@@ -69,9 +69,9 @@
   }
 )
 
-#let breakable-frames(kind) = (
+#let breakable-frames(kind, breakable: true) = (
   it => {
-    show figure.where(kind: kind): set block(breakable: true)
+    show figure.where(kind: kind): set block(breakable: breakable)
     it
   }
 )
