@@ -113,10 +113,13 @@ The following features are demonstrated in both predefined styles.
 == Highlight parts distinctively
 #layout-features(styles.boxy)
 == Additional Capabilities
-#feature[References][
-  Elements can be referenced as usual with `<... tag ...>`.
+#syntax[Labels and References][
+  Elements can be referenced as expected by appending `<label>` and referencing it:
+  ```typst
+  #syntax[Labels and References] <labels-and-refs>
+  Referencing with @labels-and-refs.
+  ```
 ] <reference-tag>
-
 For example: @reference-tag.
 
 #syntax[Break frames across pages][
