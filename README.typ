@@ -10,6 +10,8 @@
   syntax: ("Syntax",),
 )
 
+#set heading(numbering: "1.1")
+
 = Introduction
 #link("https://github.com/marc-thieme/frame-it", text(blue)[Frame-It]) offers a straightforward way to define and use custom environments in your documents. Its syntax is designed to integrate seamlessly with your source code.
 
@@ -212,16 +214,20 @@ Here are a few edge cases.
 
 #pagebreak()
 
-== Breakable frames
-
+== Breakable frames <breakable-example>
 #set page(height: 5.2cm)
-#show: breakable-frames("core-frames")
-#example[Broken across pages][#link("https://github.com/marc-thieme/frame-it/issues/1")[Issue \#1]][
-  #lorem(150)
-] <breakable-example>
-#block(breakable: false, example("Explicitly unbrakable", lorem(150)))
-#show: breakable-frames("core-frames", breakable: false)
-#example[Unbreakable again due to a new show rule][
-  #lorem(150)
+#let place-breakables(style) = [
+  #let example = example.with(style: style)
+  #show: breakable-frames("core-frames")
+  #example[Broken across pages][#link("https://github.com/marc-thieme/frame-it/issues/1")[Issue \#1]][
+    #lorem(150)
+  ]
+  #block(breakable: false, example("Explicitly unbrakable", lorem(150)))
+  #show: breakable-frames("core-frames", breakable: false)
+  #example[Unbreakable again due to a new show rule][
+    #lorem(150)
+  ]
 ]
+#place-breakables(styles.boxy)
+#place-breakables(styles.hint)
 #set page(height: auto)
