@@ -177,7 +177,7 @@ Or using an explicit styling function:
 #syntax[Custom Styling Function][
   When defining your own styling function, it has to have the following signature:
   ```typst
-  let factory(title: content, tags: (content), body: content, supplement: string or content, number, args) = …
+  #let factory(title: content, tags: (content), body: content, supplement: string or content, number, args) = …
   ```
   The content it returns will be placed into the document without modifications.
 ]
@@ -185,7 +185,7 @@ Or using an explicit styling function:
 #syntax[Styling Dividers][
   If your custom styling function shall support dividers, it must include a show rule in its body:
   ```typst
-  show: styling.dividers-as(object-which-will-be-used-as-divider)
+  #show: styling.dividers-as(object-which-will-be-used-as-divider)
   ```
 ]
 
