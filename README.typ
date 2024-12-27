@@ -1,6 +1,7 @@
 #import "src/lib.typ": *
 
-#set page(height: auto)
+#set page(height: auto, margin: 4mm)
+#set text(14pt)
 
 #let (example, feature, variant, syntax) = make-frames(
   "core-frames",
@@ -125,9 +126,12 @@ For example: @reference-tag.
 #syntax[Break frames across pages][
   If you want to make your frames breakable across pages, you have to apply the show rule
   ```typst
-  show: breakable-frames("your-theorem-kind")
+  #show: breakable-frames("your-theorem-kind")
   ```
-  For more information, compare with the source code of @breakable-example.
+  To turn off breakability, you can use the corresponding show rule
+  ```typst
+  #show: breakable-frames("your-theorem-kind", breakable: false)
+  ```
 ]
 
 = Syntax
@@ -198,7 +202,7 @@ For more information on how to define your own styling function, please look int
 
 Here are a few edge cases.
 
-#example[Test][Long content example without space for additional elements][
+#example[Test][Long tag example without space for the supplement][notice the number moves up][
   #lorem(20)
 ]
 
@@ -218,22 +222,29 @@ Here are a few edge cases.
   Counters continue incrementing sequentially in non-nested elements.
 ]
 
-#pagebreak()
-
-== Breakable frames <breakable-example>
-#set page(height: 5.2cm)
+== Breakable frames
+Following, we demonstrate how the different styles cope with pagebreaks
 #let place-breakables(style) = [
   #let example = example.with(style: style)
   #show: breakable-frames("core-frames")
   #example[Broken across pages][#link("https://github.com/marc-thieme/frame-it/issues/1")[Issue \#1]][
-    #lorem(250)
+    #lorem(20)
+    #colbreak()
+    #lorem(20)
+    #colbreak()
+    #lorem(20)
   ]
-  #block(breakable: false, example("Explicitly unbrakable", lorem(150)))
   #show: breakable-frames("core-frames", breakable: false)
-  #example[Unbreakable again due to a new show rule][
-    #lorem(150)
+  #example[After turning it off again][
+    #lorem(10)
+    #colbreak()
+    ```typst
+    #colbreak() // Check source code to verify that the colbreak was actually there
+    ```
+    Now, we should see that we see no pagebreak despite the line break
   ]
 ]
+*Boxy style:*
 #place-breakables(styles.boxy)
+*Hint style:*
 #place-breakables(styles.hint)
-#set page(height: auto)
