@@ -220,7 +220,7 @@ Here are a few edge cases.
   #let example = example.with(style: style)
   #show: breakable-frames("core-frames")
   #example[Broken across pages][#link("https://github.com/marc-thieme/frame-it/issues/1")[Issue \#1]][
-    #lorem(150)
+    #lorem(250)
   ]
   #block(breakable: false, example("Explicitly unbrakable", lorem(150)))
   #show: breakable-frames("core-frames", breakable: false)
