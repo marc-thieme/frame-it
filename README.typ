@@ -27,6 +27,9 @@ In contrast:
   The alternative style `styles.hint` highlights text with a subtle colored line along the side, preserving the document's flow.
 ]
 
+The default styles are merely functions with the correct signature.
+If they don't appeal to you, you have complete freedom to define custom styling functions yourself.
+
 #example[A different frame kind][
   You can define different classes or types of frames, which alter the substitute and the frame's color. As shown here, this is an example frame.
   You can create as many different kinds as you want.
