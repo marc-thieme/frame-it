@@ -139,9 +139,14 @@
       )
     }
 
-    place(line(stroke: stroke, angle: 90deg, length: measure(text).height))
-
+    let length = measure(text).height
+    place(line(stroke: stroke, angle: 90deg, length: length))
     text
+    place(line(stroke: stroke, angle: 90deg, length: -length))
+    // We place the second line on top of the other just for the case where
+    // the hint is broken across two pages and we need lines on both pages.
+    // If the hint spans 3 pages, you might try to color and overlay the left border
+    // of the text–block over the two lines yet again but I did not try this.
   })
 }
 
