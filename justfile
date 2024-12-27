@@ -36,7 +36,9 @@ readme-compile output="" *options="":
 
 pre-commit: (readme-compile "/tmp/frame-it_typst-theorems-compile-check{p}.svg" "-f svg")
     typos
-    typstyle --check {{readme-typ-file}} $(git diff-index --cached --name-only HEAD) > /dev/null
+    typstyle --check {{readme-typ-file}} \
+        $(git diff-index --cached --name-only HEAD | grep '\.typ') \
+        > /dev/null
 
 _version-regex := '[0-9]+\.[0-9]+\.[0-9]+'
 release new-version:
