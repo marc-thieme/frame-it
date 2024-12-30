@@ -42,18 +42,18 @@ If they don't appeal to you, you have complete freedom to define custom styling 
 Import and define your desired frames:
 
 ```typst
-#import "@preview/frame-it:1.0.0"
+#import "@preview/frame-it:1.0.0": *
 
 #let (example, feature, variant, syntax) = make-frames(
   // This identifies the counter used for all theorems in this definition
   "counter-id",
-  theorem: ("Theorem",),
+  feature: ("Theorem",),
   // For each frame kind, you have to provide its supplement title to be displayed
-  definition: ("Definition",),
+  variant: ("Definition",),
   // You can provide a color or leave it out and it will be generated
   example: ("Example", gray),
   // You can add as many as you want
-  corollary: ("Corollary",),
+  syntax: ("Corollary",),
 )
 ```
 
