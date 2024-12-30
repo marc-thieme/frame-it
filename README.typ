@@ -47,13 +47,13 @@ Import and define your desired frames:
 #let (example, feature, variant, syntax) = make-frames(
   // This identifies the counter used for all theorems in this definition
   "counter-id",
-  feature: ("Theorem",),
+  feature: ("Feature",),
   // For each frame kind, you have to provide its supplement title to be displayed
-  variant: ("Definition",),
+  variant: ("Variant",),
   // You can provide a color or leave it out and it will be generated
   example: ("Example", gray),
   // You can add as many as you want
-  syntax: ("Corollary",),
+  syntax: ("Syntax",),
 )
 ```
 
