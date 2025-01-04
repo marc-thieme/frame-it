@@ -1,5 +1,5 @@
 <svg class="typst-doc" viewBox="0 0 595.2755905511812 285.3005403543307" width="595.2755905511812pt" height="285.3005403543307pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
-    <path class="typst-shape" fill="#ffffff" fill-rule="nonzero" d="M 0 0 L 0 285.30054 L 595.2756 285.30054 L 595.2756 0 Z "/>
+    <path class="typst-shape" fill="#ffffff80" fill-rule="nonzero" d="M 0 0 L 0 285.30054 L 595.2756 285.30054 L 595.2756 0 Z "/>
     <g>
         <g transform="translate(11.338582677165354 11.338582677165354)">
             <g class="typst-group">
@@ -163,7 +163,7 @@
                                                 <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 151.086 -0.91 C 153.84743 -0.91 156.086 1.3285762 156.086 4.09 L 156.086 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 154.266 22.302 L 154.266 4.09 C 154.266 2.3337345 152.84227 0.91 151.086 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#c253F4A5C7EFDCE20766C911764C09EE1)">
+                                                <g class="typst-group" clip-path="url(#cBDF7CE637C90C61D75AB3D0B77E73C35)">
                                                     <g>
                                                         <g transform="translate(0 0)">
                                                             <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 155.176 23.212 L 155.176 0 Z "/>
@@ -904,7 +904,7 @@
         </symbol>
     </defs>
     <defs id="clip-path">
-        <clipPath id="c253F4A5C7EFDCE20766C911764C09EE1">
+        <clipPath id="cBDF7CE637C90C61D75AB3D0B77E73C35">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 151.086 0.91 C 152.84227 0.91 154.266 2.3337345 154.266 4.09 L 154.266 22.302 L 0.91 22.302 Z "/>
         </clipPath>
     </defs>
