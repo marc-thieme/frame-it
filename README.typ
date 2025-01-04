@@ -1,6 +1,6 @@
 #import "src/lib.typ": *
 
-#set page(height: auto, margin: 4mm, fill: luma(255, 70%))
+#set page(height: auto, margin: 4mm)
 #set text(14pt)
 
 #let (example, feature, variant, syntax) = make-frames(
@@ -12,13 +12,6 @@
 )
 
 #set heading(numbering: "1.1")
-
-#text(
-  weight: "extrabold",
-  style: "oblique",
-  fill: white,
-  size: 18pt,
-)[! Your in dark mode. For real style experience, view in light mode !]
 
 = Introduction
 #link("https://github.com/marc-thieme/frame-it", text(blue)[Frame-It]) offers a straightforward way to define and use custom environments in your documents. Its syntax is designed to integrate seamlessly with your source code.
