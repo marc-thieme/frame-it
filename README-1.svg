@@ -369,19 +369,19 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(-0 -0)">
-                                                <path class="typst-shape" fill="oklab(87.678% 0.03947 -0.06152)" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 363.872 -0.91 C 366.63342 -0.91 368.872 1.3285762 368.872 4.09 L 368.872 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 367.052 22.302 L 367.052 4.09 C 367.052 2.3337345 365.62827 0.91 363.872 0.91 Z "/>
+                                                <path class="typst-shape" fill="#e4bce9" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 363.872 -0.91 C 366.63342 -0.91 368.872 1.3285762 368.872 4.09 L 368.872 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 367.052 22.302 L 367.052 4.09 C 367.052 2.3337345 365.62827 0.91 363.872 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#cB52E9841419B5E74D18FAE76856EFE4F)">
+                                                <g class="typst-group" clip-path="url(#c89EA5E407C3248D8CDF569F587A46694)">
                                                     <g>
                                                         <g transform="translate(0 0)">
-                                                            <path class="typst-shape" fill="oklab(87.678% 0.03947 -0.06152)" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 117.782 23.212 L 117.782 0 Z "/>
+                                                            <path class="typst-shape" fill="#e4bce9" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 117.782 23.212 L 117.782 0 Z "/>
                                                         </g>
                                                         <g transform="translate(117.782 -0.91)">
-                                                            <path class="typst-shape" fill="none" stroke="oklab(87.678% 0.03947 -0.06152)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
+                                                            <path class="typst-shape" fill="none" stroke="#e4bce9" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
                                                         </g>
                                                         <g transform="translate(261.94 -0.91)">
-                                                            <path class="typst-shape" fill="none" stroke="oklab(87.678% 0.03947 -0.06152)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
+                                                            <path class="typst-shape" fill="none" stroke="#e4bce9" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
                                                         </g>
                                                         <g transform="translate(7 16.212)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -471,7 +471,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(87.678% 0.03947 -0.06152)" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 45.834 C 573.5084 48.595425 571.26984 50.834 568.5084 50.834 L 4.09 50.834 C 1.3285762 50.834 -0.91 48.595425 -0.91 45.834 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 45.834 C 0.91 47.590267 2.3337345 49.014 4.09 49.014 L 568.5084 49.014 C 570.2647 49.014 571.6884 47.590267 571.6884 45.834 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
+                                                            <path class="typst-shape" fill="#e4bce9" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 45.834 C 573.5084 48.595425 571.26984 50.834 568.5084 50.834 L 4.09 50.834 C 1.3285762 50.834 -0.91 48.595425 -0.91 45.834 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 45.834 C 0.91 47.590267 2.3337345 49.014 4.09 49.014 L 568.5084 49.014 C 570.2647 49.014 571.6884 47.590267 571.6884 45.834 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -612,27 +612,27 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(0 0)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(87.678% 0.03947 -0.06152)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e4bce9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
                                             </g>
                                             <g transform="translate(0 0)">
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(87.678% 0.03947 -0.06152)" fill-rule="nonzero" d="M 1.75 65.436 L -1.75 65.436 L -1.75 65.436 L -1.75 -0 L 1.75 0 Z "/>
+                                                            <path class="typst-shape" fill="#e4bce9" fill-rule="nonzero" d="M 1.75 65.436 L -1.75 65.436 L -1.75 65.436 L -1.75 -0 L 1.75 0 Z "/>
                                                         </g>
                                                         <g transform="translate(9.799999999999999 19.012)">
                                                             <g class="typst-text" transform="scale(1, -1)"/>
                                                         </g>
                                                         <g transform="translate(13.299999999999999 19.012)">
                                                             <g class="typst-text" transform="scale(1, -1)">
-                                                                <use xlink:href="#gE6DAE4C78001B29FF58859986FCC3C84" x="0" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="6.789999999999999" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="13.047999999999998" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="19.445999999999998" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g7C8C4A65E2D357749049DD9E56CDBC15" x="23.869999999999997" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="31.304" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="36.4" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g99A5B75A5174F1418B7F2ABE9F149A94" x="46.158" fill="#555555" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6DAE4C78001B29FF58859986FCC3C84" x="0" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="6.789999999999999" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="13.047999999999998" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="19.445999999999998" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g7C8C4A65E2D357749049DD9E56CDBC15" x="23.869999999999997" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="31.304" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="36.4" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g99A5B75A5174F1418B7F2ABE9F149A94" x="46.158" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
                                                             </g>
                                                         </g>
                                                         <g transform="translate(65.968 19.012)">
@@ -832,7 +832,7 @@
                                                 </g>
                                             </g>
                                             <g transform="translate(0 65.43599999999999)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(87.678% 0.03947 -0.06152)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e4bce9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
                                             </g>
                                         </g>
                                     </g>
@@ -1002,13 +1002,13 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(-0 -0)">
-                                                <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 137.688 -0.91 C 140.44942 -0.91 142.688 1.3285762 142.688 4.09 L 142.688 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 140.868 22.302 L 140.868 4.09 C 140.868 2.3337345 139.44426 0.91 137.688 0.91 Z "/>
+                                                <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 137.688 -0.91 C 140.44942 -0.91 142.688 1.3285762 142.688 4.09 L 142.688 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 140.868 22.302 L 140.868 4.09 C 140.868 2.3337345 139.44426 0.91 137.688 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#cB8B090C48B6BDEDA8598DBEA490CEF55)">
+                                                <g class="typst-group" clip-path="url(#cD7BF034BDD8F66EA7DAFB6C618DCB694)">
                                                     <g>
                                                         <g transform="translate(0 0)">
-                                                            <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 141.778 23.212 L 141.778 0 Z "/>
+                                                            <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 141.778 23.212 L 141.778 0 Z "/>
                                                         </g>
                                                         <g transform="translate(7 16.212)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -1057,7 +1057,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 90.158 C 573.5084 92.919426 571.26984 95.158 568.5084 95.158 L 4.09 95.158 C 1.3285762 95.158 -0.91 92.919426 -0.91 90.158 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 90.158 C 0.91 91.91427 2.3337345 93.338 4.09 93.338 L 568.5084 93.338 C 570.2647 93.338 571.6884 91.91427 571.6884 90.158 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
+                                                            <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 90.158 C 573.5084 92.919426 571.26984 95.158 568.5084 95.158 L 4.09 95.158 C 1.3285762 95.158 -0.91 92.919426 -0.91 90.158 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 90.158 C 0.91 91.91427 2.3337345 93.338 4.09 93.338 L 568.5084 93.338 C 570.2647 93.338 571.6884 91.91427 571.6884 90.158 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -2269,16 +2269,16 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(-0 -0)">
-                                                <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 125.06 -0.91 C 127.82143 -0.91 130.06 1.3285762 130.06 4.09 L 130.06 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 128.24 22.302 L 128.24 4.09 C 128.24 2.3337345 126.81627 0.91 125.06 0.91 Z "/>
+                                                <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 125.06 -0.91 C 127.82143 -0.91 130.06 1.3285762 130.06 4.09 L 130.06 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 128.24 22.302 L 128.24 4.09 C 128.24 2.3337345 126.81627 0.91 125.06 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#c36787A20DC381A284BA0A7AB06BF32DD)">
+                                                <g class="typst-group" clip-path="url(#c5A5B2537C23063DF9DD29A45A00FF7FB)">
                                                     <g>
                                                         <g transform="translate(0 0)">
-                                                            <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 40.53 23.212 L 40.53 0 Z "/>
+                                                            <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 40.53 23.212 L 40.53 0 Z "/>
                                                         </g>
                                                         <g transform="translate(40.529999999999994 -0.91)">
-                                                            <path class="typst-shape" fill="none" stroke="#aaaaaa" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
+                                                            <path class="typst-shape" fill="none" stroke="oklab(79.655% 0.00001 0.00003)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
                                                         </g>
                                                         <g transform="translate(7 16.212)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -2329,7 +2329,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 27.522 C 573.5084 30.283424 571.26984 32.522 568.5084 32.522 L 4.09 32.522 C 1.3285762 32.522 -0.91 30.283424 -0.91 27.522 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 27.522 C 0.91 29.278265 2.3337345 30.702 4.09 30.702 L 568.5084 30.702 C 570.2647 30.702 571.6884 29.278265 571.6884 27.522 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
+                                                            <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 27.522 C 573.5084 30.283424 571.26984 32.522 568.5084 32.522 L 4.09 32.522 C 1.3285762 32.522 -0.91 30.283424 -0.91 27.522 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 27.522 C 0.91 29.278265 2.3337345 30.702 4.09 30.702 L 568.5084 30.702 C 570.2647 30.702 571.6884 29.278265 571.6884 27.522 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -2537,34 +2537,34 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(0 0)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(94.590% -0.07817 0.03735)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e5c894" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
                                             </g>
                                             <g transform="translate(0 0)">
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(94.590% -0.07817 0.03735)" fill-rule="nonzero" d="M 1.75 47.124 L -1.75 47.124 L -1.75 47.124 L -1.75 -0 L 1.75 0 Z "/>
+                                                            <path class="typst-shape" fill="#e5c894" fill-rule="nonzero" d="M 1.75 47.124 L -1.75 47.124 L -1.75 47.124 L -1.75 -0 L 1.75 0 Z "/>
                                                         </g>
                                                         <g transform="translate(9.799999999999999 19.012)">
                                                             <g class="typst-text" transform="scale(1, -1)"/>
                                                         </g>
                                                         <g transform="translate(13.299999999999999 19.012)">
                                                             <g class="typst-text" transform="scale(1, -1)">
-                                                                <use xlink:href="#gE6DAE4C78001B29FF58859986FCC3C84" x="0" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="6.789999999999999" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="13.047999999999998" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="19.445999999999998" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g7C8C4A65E2D357749049DD9E56CDBC15" x="23.869999999999997" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="31.304" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="36.4" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gEAE0BEF0506AE6F6A4816E79AB8C0617" x="46.158" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="54.446" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="60.844" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g28BE182A01B6261127D50B32E7FF66B4" x="66.052" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="69.846" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g3F25A4150FCFE2501614EAD2123251A0" x="76.244" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="83.832" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g8A89C2FF2D98665A5A13B2BB7528883C" x="91.756" fill="#555555" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6DAE4C78001B29FF58859986FCC3C84" x="0" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="6.789999999999999" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="13.047999999999998" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="19.445999999999998" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g7C8C4A65E2D357749049DD9E56CDBC15" x="23.869999999999997" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="31.304" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="36.4" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gEAE0BEF0506AE6F6A4816E79AB8C0617" x="46.158" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="54.446" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="60.844" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g28BE182A01B6261127D50B32E7FF66B4" x="66.052" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="69.846" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g3F25A4150FCFE2501614EAD2123251A0" x="76.244" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="83.832" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g8A89C2FF2D98665A5A13B2BB7528883C" x="91.756" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
                                                             </g>
                                                         </g>
                                                         <g transform="translate(111.566 19.012)">
@@ -2702,7 +2702,7 @@
                                                 </g>
                                             </g>
                                             <g transform="translate(0 47.123999999999995)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(94.590% -0.07817 0.03735)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e5c894" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
                                             </g>
                                         </g>
                                     </g>
@@ -2723,27 +2723,27 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(0 0)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(87.678% 0.03947 -0.06152)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e4bce9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
                                             </g>
                                             <g transform="translate(0 0)">
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(87.678% 0.03947 -0.06152)" fill-rule="nonzero" d="M 1.75 47.124 L -1.75 47.124 L -1.75 47.124 L -1.75 -0 L 1.75 0 Z "/>
+                                                            <path class="typst-shape" fill="#e4bce9" fill-rule="nonzero" d="M 1.75 47.124 L -1.75 47.124 L -1.75 47.124 L -1.75 -0 L 1.75 0 Z "/>
                                                         </g>
                                                         <g transform="translate(9.799999999999999 19.012)">
                                                             <g class="typst-text" transform="scale(1, -1)"/>
                                                         </g>
                                                         <g transform="translate(13.299999999999999 19.012)">
                                                             <g class="typst-text" transform="scale(1, -1)">
-                                                                <use xlink:href="#gE6DAE4C78001B29FF58859986FCC3C84" x="0" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="6.789999999999999" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="13.047999999999998" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="19.445999999999998" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g7C8C4A65E2D357749049DD9E56CDBC15" x="23.869999999999997" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="31.304" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="36.4" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gA2A346EACD6E4C96460EBAEFEF0C9CAD" x="46.158" fill="#555555" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6DAE4C78001B29FF58859986FCC3C84" x="0" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="6.789999999999999" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="13.047999999999998" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="19.445999999999998" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g7C8C4A65E2D357749049DD9E56CDBC15" x="23.869999999999997" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="31.304" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="36.4" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gA2A346EACD6E4C96460EBAEFEF0C9CAD" x="46.158" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
                                                             </g>
                                                         </g>
                                                         <g transform="translate(65.968 19.012)">
@@ -2870,7 +2870,7 @@
                                                 </g>
                                             </g>
                                             <g transform="translate(0 47.123999999999995)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(87.678% 0.03947 -0.06152)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e4bce9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
                                             </g>
                                         </g>
                                     </g>
@@ -2891,34 +2891,34 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(0 0)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(94.590% -0.07817 0.03735)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e5c894" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
                                             </g>
                                             <g transform="translate(0 0)">
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(94.590% -0.07817 0.03735)" fill-rule="nonzero" d="M 1.75 47.124 L -1.75 47.124 L -1.75 47.124 L -1.75 -0 L 1.75 0 Z "/>
+                                                            <path class="typst-shape" fill="#e5c894" fill-rule="nonzero" d="M 1.75 47.124 L -1.75 47.124 L -1.75 47.124 L -1.75 -0 L 1.75 0 Z "/>
                                                         </g>
                                                         <g transform="translate(9.799999999999999 19.012)">
                                                             <g class="typst-text" transform="scale(1, -1)"/>
                                                         </g>
                                                         <g transform="translate(13.299999999999999 19.012)">
                                                             <g class="typst-text" transform="scale(1, -1)">
-                                                                <use xlink:href="#gE6DAE4C78001B29FF58859986FCC3C84" x="0" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="6.789999999999999" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="13.047999999999998" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="19.445999999999998" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g7C8C4A65E2D357749049DD9E56CDBC15" x="23.869999999999997" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="31.304" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="36.4" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gEAE0BEF0506AE6F6A4816E79AB8C0617" x="46.158" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="54.446" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="60.844" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g28BE182A01B6261127D50B32E7FF66B4" x="66.052" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="69.846" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g3F25A4150FCFE2501614EAD2123251A0" x="76.244" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="83.832" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gFF969115AE4BA7B76330A5830B3B2B94" x="91.756" fill="#555555" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6DAE4C78001B29FF58859986FCC3C84" x="0" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="6.789999999999999" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="13.047999999999998" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="19.445999999999998" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g7C8C4A65E2D357749049DD9E56CDBC15" x="23.869999999999997" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="31.304" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="36.4" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gEAE0BEF0506AE6F6A4816E79AB8C0617" x="46.158" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="54.446" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="60.844" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g28BE182A01B6261127D50B32E7FF66B4" x="66.052" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="69.846" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g3F25A4150FCFE2501614EAD2123251A0" x="76.244" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="83.832" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gFF969115AE4BA7B76330A5830B3B2B94" x="91.756" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
                                                             </g>
                                                         </g>
                                                         <g transform="translate(111.566 19.012)">
@@ -3034,7 +3034,7 @@
                                                 </g>
                                             </g>
                                             <g transform="translate(0 47.123999999999995)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(94.590% -0.07817 0.03735)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e5c894" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
                                             </g>
                                         </g>
                                     </g>
@@ -3055,27 +3055,27 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(0 0)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(87.678% 0.03947 -0.06152)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e4bce9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
                                             </g>
                                             <g transform="translate(0 0)">
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(87.678% 0.03947 -0.06152)" fill-rule="nonzero" d="M 1.75 28.812 L -1.75 28.812 L -1.75 28.812 L -1.75 -0 L 1.75 0 Z "/>
+                                                            <path class="typst-shape" fill="#e4bce9" fill-rule="nonzero" d="M 1.75 28.812 L -1.75 28.812 L -1.75 28.812 L -1.75 -0 L 1.75 0 Z "/>
                                                         </g>
                                                         <g transform="translate(9.799999999999999 19.012)">
                                                             <g class="typst-text" transform="scale(1, -1)"/>
                                                         </g>
                                                         <g transform="translate(13.299999999999999 19.012)">
                                                             <g class="typst-text" transform="scale(1, -1)">
-                                                                <use xlink:href="#gE6DAE4C78001B29FF58859986FCC3C84" x="0" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="6.789999999999999" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="13.047999999999998" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="19.445999999999998" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g7C8C4A65E2D357749049DD9E56CDBC15" x="23.869999999999997" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="31.304" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="36.4" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gAD870E0EFEE205395A639787CA8B3487" x="46.158" fill="#555555" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6DAE4C78001B29FF58859986FCC3C84" x="0" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="6.789999999999999" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="13.047999999999998" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="19.445999999999998" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g7C8C4A65E2D357749049DD9E56CDBC15" x="23.869999999999997" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="31.304" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="36.4" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gAD870E0EFEE205395A639787CA8B3487" x="46.158" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
                                                             </g>
                                                         </g>
                                                         <g transform="translate(65.968 19.012)">
@@ -3148,7 +3148,7 @@
                                                 </g>
                                             </g>
                                             <g transform="translate(0 28.811999999999998)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(87.678% 0.03947 -0.06152)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e4bce9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
                                             </g>
                                         </g>
                                     </g>
@@ -3169,13 +3169,13 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(0 0)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(87.678% 0.03947 -0.06152)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e4bce9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
                                             </g>
                                             <g transform="translate(0 0)">
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(87.678% 0.03947 -0.06152)" fill-rule="nonzero" d="M 1.75 28.812 L -1.75 28.812 L -1.75 28.812 L -1.75 -0 L 1.75 0 Z "/>
+                                                            <path class="typst-shape" fill="#e4bce9" fill-rule="nonzero" d="M 1.75 28.812 L -1.75 28.812 L -1.75 28.812 L -1.75 -0 L 1.75 0 Z "/>
                                                         </g>
                                                         <g transform="translate(9.799999999999999 19.012)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -3237,7 +3237,7 @@
                                                 </g>
                                             </g>
                                             <g transform="translate(0 28.811999999999998)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(87.678% 0.03947 -0.06152)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e4bce9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
                                             </g>
                                         </g>
                                     </g>
@@ -3258,35 +3258,35 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(0 0)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(94.590% -0.07817 0.03735)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e5c894" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
                                             </g>
                                             <g transform="translate(0 0)">
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(94.590% -0.07817 0.03735)" fill-rule="nonzero" d="M 1.75 28.812 L -1.75 28.812 L -1.75 28.812 L -1.75 -0 L 1.75 0 Z "/>
+                                                            <path class="typst-shape" fill="#e5c894" fill-rule="nonzero" d="M 1.75 28.812 L -1.75 28.812 L -1.75 28.812 L -1.75 -0 L 1.75 0 Z "/>
                                                         </g>
                                                         <g transform="translate(9.799999999999999 19.012)">
                                                             <g class="typst-text" transform="scale(1, -1)"/>
                                                         </g>
                                                         <g transform="translate(13.299999999999999 19.012)">
                                                             <g class="typst-text" transform="scale(1, -1)">
-                                                                <use xlink:href="#gE6DAE4C78001B29FF58859986FCC3C84" x="0" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="6.789999999999999" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="13.047999999999998" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="19.445999999999998" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g7C8C4A65E2D357749049DD9E56CDBC15" x="23.869999999999997" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="31.304" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="36.4" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gEAE0BEF0506AE6F6A4816E79AB8C0617" x="46.158" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="54.446" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="60.844" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g28BE182A01B6261127D50B32E7FF66B4" x="66.052" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="69.846" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g3F25A4150FCFE2501614EAD2123251A0" x="76.244" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="83.832" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF104B4CA71FB6525DD6EC416FFB6DBC2" x="91.756" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g98CC5C920B69D468BA9A5B678C9DB5EC" x="98.266" fill="#555555" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6DAE4C78001B29FF58859986FCC3C84" x="0" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="6.789999999999999" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="13.047999999999998" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="19.445999999999998" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g7C8C4A65E2D357749049DD9E56CDBC15" x="23.869999999999997" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="31.304" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="36.4" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gEAE0BEF0506AE6F6A4816E79AB8C0617" x="46.158" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="54.446" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="60.844" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g28BE182A01B6261127D50B32E7FF66B4" x="66.052" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="69.846" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g3F25A4150FCFE2501614EAD2123251A0" x="76.244" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="83.832" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF104B4CA71FB6525DD6EC416FFB6DBC2" x="91.756" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g98CC5C920B69D468BA9A5B678C9DB5EC" x="98.266" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
                                                             </g>
                                                         </g>
                                                         <g transform="translate(118.07599999999998 19.012)">
@@ -3346,7 +3346,7 @@
                                                 </g>
                                             </g>
                                             <g transform="translate(0 28.811999999999998)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(94.590% -0.07817 0.03735)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e5c894" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
                                             </g>
                                         </g>
                                     </g>
@@ -3419,35 +3419,35 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(0 0)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(94.590% -0.07817 0.03735)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e5c894" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
                                             </g>
                                             <g transform="translate(0 0)">
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(94.590% -0.07817 0.03735)" fill-rule="nonzero" d="M 1.75 84.336 L -1.75 84.336 L -1.75 84.336 L -1.75 -0 L 1.75 0 Z "/>
+                                                            <path class="typst-shape" fill="#e5c894" fill-rule="nonzero" d="M 1.75 84.336 L -1.75 84.336 L -1.75 84.336 L -1.75 -0 L 1.75 0 Z "/>
                                                         </g>
                                                         <g transform="translate(9.799999999999999 19.012)">
                                                             <g class="typst-text" transform="scale(1, -1)"/>
                                                         </g>
                                                         <g transform="translate(13.299999999999999 19.012)">
                                                             <g class="typst-text" transform="scale(1, -1)">
-                                                                <use xlink:href="#gE6DAE4C78001B29FF58859986FCC3C84" x="0" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="6.789999999999999" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="13.047999999999998" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="19.445999999999998" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g7C8C4A65E2D357749049DD9E56CDBC15" x="23.869999999999997" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="31.304" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="36.4" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gEAE0BEF0506AE6F6A4816E79AB8C0617" x="46.158" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="54.446" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="60.844" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g28BE182A01B6261127D50B32E7FF66B4" x="66.052" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="69.846" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g3F25A4150FCFE2501614EAD2123251A0" x="76.244" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="83.832" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF104B4CA71FB6525DD6EC416FFB6DBC2" x="91.756" fill="#555555" fill-rule="nonzero"/>
-                                                                <use xlink:href="#gF104B4CA71FB6525DD6EC416FFB6DBC2" x="98.266" fill="#555555" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6DAE4C78001B29FF58859986FCC3C84" x="0" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="6.789999999999999" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="13.047999999999998" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="19.445999999999998" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g7C8C4A65E2D357749049DD9E56CDBC15" x="23.869999999999997" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="31.304" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="36.4" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gEAE0BEF0506AE6F6A4816E79AB8C0617" x="46.158" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="54.446" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g6AB9B0DD2BC3B6D2718F4EE4FFD07E2E" x="60.844" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g28BE182A01B6261127D50B32E7FF66B4" x="66.052" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="69.846" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g3F25A4150FCFE2501614EAD2123251A0" x="76.244" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#g12E0E7FDE55FDA4D0406DF15C5032218" x="83.832" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF104B4CA71FB6525DD6EC416FFB6DBC2" x="91.756" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                <use xlink:href="#gF104B4CA71FB6525DD6EC416FFB6DBC2" x="98.266" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
                                                             </g>
                                                         </g>
                                                         <g transform="translate(118.07599999999998 19.012)">
@@ -3553,7 +3553,7 @@
                                                             </g>
                                                         </g>
                                                         <g transform="translate(-1.4000000000000015 51.32399999999999)">
-                                                            <path class="typst-shape" fill="none" stroke="oklab(94.590% -0.07817 0.03735)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 573.9984 0 "/>
+                                                            <path class="typst-shape" fill="none" stroke="#e5c894" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 573.9984 0 "/>
                                                         </g>
                                                         <g transform="translate(9.799999999999999 74.53599999999999)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -3606,7 +3606,7 @@
                                                 </g>
                                             </g>
                                             <g transform="translate(0 84.33599999999998)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(94.590% -0.07817 0.03735)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e5c894" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
                                             </g>
                                         </g>
                                     </g>
@@ -3671,13 +3671,13 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(-0 -0)">
-                                                <path class="typst-shape" fill="oklab(94.590% -0.07817 0.03735)" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 191.182 -0.91 C 193.94342 -0.91 196.182 1.3285762 196.182 4.09 L 196.182 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 194.362 22.302 L 194.362 4.09 C 194.362 2.3337345 192.93826 0.91 191.182 0.91 Z "/>
+                                                <path class="typst-shape" fill="#e5c894" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 191.182 -0.91 C 193.94342 -0.91 196.182 1.3285762 196.182 4.09 L 196.182 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 194.362 22.302 L 194.362 4.09 C 194.362 2.3337345 192.93826 0.91 191.182 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#c4348BD234ED04A9471AEB7A2E857F40)">
+                                                <g class="typst-group" clip-path="url(#c9AD20D8EE3FF9743777DB57E1A6E284C)">
                                                     <g>
                                                         <g transform="translate(0 0)">
-                                                            <path class="typst-shape" fill="oklab(94.590% -0.07817 0.03735)" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 195.272 23.212 L 195.272 0 Z "/>
+                                                            <path class="typst-shape" fill="#e5c894" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 195.272 23.212 L 195.272 0 Z "/>
                                                         </g>
                                                         <g transform="translate(7 16.212)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -3742,7 +3742,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(94.590% -0.07817 0.03735)" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 45.834 C 573.5084 48.595425 571.26984 50.834 568.5084 50.834 L 4.09 50.834 C 1.3285762 50.834 -0.91 48.595425 -0.91 45.834 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 45.834 C 0.91 47.590267 2.3337345 49.014 4.09 49.014 L 568.5084 49.014 C 570.2647 49.014 571.6884 47.590267 571.6884 45.834 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
+                                                            <path class="typst-shape" fill="#e5c894" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 45.834 C 573.5084 48.595425 571.26984 50.834 568.5084 50.834 L 4.09 50.834 C 1.3285762 50.834 -0.91 48.595425 -0.91 45.834 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 45.834 C 0.91 47.590267 2.3337345 49.014 4.09 49.014 L 568.5084 49.014 C 570.2647 49.014 571.6884 47.590267 571.6884 45.834 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -3863,19 +3863,19 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(-0 -0)">
-                                                <path class="typst-shape" fill="oklab(87.678% 0.03947 -0.06152)" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 256.254 -0.91 C 259.0154 -0.91 261.254 1.3285762 261.254 4.09 L 261.254 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 259.434 22.302 L 259.434 4.09 C 259.434 2.3337345 258.01025 0.91 256.254 0.91 Z "/>
+                                                <path class="typst-shape" fill="#e4bce9" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 256.254 -0.91 C 259.0154 -0.91 261.254 1.3285762 261.254 4.09 L 261.254 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 259.434 22.302 L 259.434 4.09 C 259.434 2.3337345 258.01025 0.91 256.254 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#c1AB3362DB549AA6C40BBBDECE9E88636)">
+                                                <g class="typst-group" clip-path="url(#cC00446F3CF7F094160CB808DDEBF132C)">
                                                     <g>
                                                         <g transform="translate(0 0)">
-                                                            <path class="typst-shape" fill="oklab(87.678% 0.03947 -0.06152)" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 120.82 23.212 L 120.82 0 Z "/>
+                                                            <path class="typst-shape" fill="#e4bce9" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 120.82 23.212 L 120.82 0 Z "/>
                                                         </g>
                                                         <g transform="translate(120.81999999999998 -0.91)">
-                                                            <path class="typst-shape" fill="none" stroke="oklab(87.678% 0.03947 -0.06152)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
+                                                            <path class="typst-shape" fill="none" stroke="#e4bce9" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
                                                         </g>
                                                         <g transform="translate(242.312 -0.91)">
-                                                            <path class="typst-shape" fill="none" stroke="oklab(87.678% 0.03947 -0.06152)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
+                                                            <path class="typst-shape" fill="none" stroke="#e4bce9" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
                                                         </g>
                                                         <g transform="translate(7 16.212)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -3947,7 +3947,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(87.678% 0.03947 -0.06152)" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 27.522 C 573.5084 30.283424 571.26984 32.522 568.5084 32.522 L 4.09 32.522 C 1.3285762 32.522 -0.91 30.283424 -0.91 27.522 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 27.522 C 0.91 29.278265 2.3337345 30.702 4.09 30.702 L 568.5084 30.702 C 570.2647 30.702 571.6884 29.278265 571.6884 27.522 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
+                                                            <path class="typst-shape" fill="#e4bce9" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 27.522 C 573.5084 30.283424 571.26984 32.522 568.5084 32.522 L 4.09 32.522 C 1.3285762 32.522 -0.91 30.283424 -0.91 27.522 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 27.522 C 0.91 29.278265 2.3337345 30.702 4.09 30.702 L 568.5084 30.702 C 570.2647 30.702 571.6884 29.278265 571.6884 27.522 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -4069,7 +4069,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="none" stroke="oklab(94.590% -0.07817 0.03735)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 568.5084 0 C 570.7673 0 572.59845 1.8311554 572.59845 4.09 L 572.59845 45.834 C 572.59845 48.092846 570.7673 49.924 568.5084 49.924 L 4.09 49.924 C 1.8311554 49.924 0 48.092846 0 45.834 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
+                                                            <path class="typst-shape" fill="none" stroke="#e5c894" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 568.5084 0 C 570.7673 0 572.59845 1.8311554 572.59845 4.09 L 572.59845 45.834 C 572.59845 48.092846 570.7673 49.924 568.5084 49.924 L 4.09 49.924 C 1.8311554 49.924 0 48.092846 0 45.834 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -4201,10 +4201,10 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(-0 -0)">
-                                                <path class="typst-shape" fill="oklab(87.678% 0.03947 -0.06152)" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 69.606 -0.91 C 72.367424 -0.91 74.606 1.3285762 74.606 4.09 L 74.606 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 72.786 22.302 L 72.786 4.09 C 72.786 2.3337345 71.36227 0.91 69.606 0.91 Z "/>
+                                                <path class="typst-shape" fill="#e4bce9" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 69.606 -0.91 C 72.367424 -0.91 74.606 1.3285762 74.606 4.09 L 74.606 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 72.786 22.302 L 72.786 4.09 C 72.786 2.3337345 71.36227 0.91 69.606 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#cCD3C8B969CCBB4DABEFDE24B595423C1)">
+                                                <g class="typst-group" clip-path="url(#cD4256318E813539B3E6E1AAF4BE41E63)">
                                                     <g>
                                                         <g transform="translate(7 16.212)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -4245,7 +4245,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(87.678% 0.03947 -0.06152)" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 27.522 C 573.5084 30.283424 571.26984 32.522 568.5084 32.522 L 4.09 32.522 C 1.3285762 32.522 -0.91 30.283424 -0.91 27.522 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 27.522 C 0.91 29.278265 2.3337345 30.702 4.09 30.702 L 568.5084 30.702 C 570.2647 30.702 571.6884 29.278265 571.6884 27.522 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
+                                                            <path class="typst-shape" fill="#e4bce9" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 27.522 C 573.5084 30.283424 571.26984 32.522 568.5084 32.522 L 4.09 32.522 C 1.3285762 32.522 -0.91 30.283424 -0.91 27.522 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 27.522 C 0.91 29.278265 2.3337345 30.702 4.09 30.702 L 568.5084 30.702 C 570.2647 30.702 571.6884 29.278265 571.6884 27.522 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -4319,7 +4319,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="none" stroke="oklab(87.678% 0.03947 -0.06152)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 568.5084 0 C 570.7673 0 572.59845 1.8311554 572.59845 4.09 L 572.59845 27.522 C 572.59845 29.780844 570.7673 31.612 568.5084 31.612 L 4.09 31.612 C 1.8311554 31.612 0 29.780844 0 27.522 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
+                                                            <path class="typst-shape" fill="none" stroke="#e4bce9" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 568.5084 0 C 570.7673 0 572.59845 1.8311554 572.59845 4.09 L 572.59845 27.522 C 572.59845 29.780844 570.7673 31.612 568.5084 31.612 L 4.09 31.612 C 1.8311554 31.612 0 29.780844 0 27.522 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -4399,16 +4399,16 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(-0 -0)">
-                                                <path class="typst-shape" fill="none" stroke="oklab(94.590% -0.07817 0.03735)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 281.398 0 C 283.65683 0 285.488 1.8311554 285.488 4.09 L 285.488 19.122 C 285.488 21.380844 283.65683 23.212 281.398 23.212 L 4.09 23.212 C 1.8311554 23.212 0 21.380844 0 19.122 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
+                                                <path class="typst-shape" fill="none" stroke="#e5c894" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 281.398 0 C 283.65683 0 285.488 1.8311554 285.488 4.09 L 285.488 19.122 C 285.488 21.380844 283.65683 23.212 281.398 23.212 L 4.09 23.212 C 1.8311554 23.212 0 21.380844 0 19.122 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#cCA5CECEF447A92BFCA5E3AE2E9D9741E)">
+                                                <g class="typst-group" clip-path="url(#c2389013B4C826AE9BCCA877D799980E1)">
                                                     <g>
                                                         <g transform="translate(0 0)">
-                                                            <path class="typst-shape" fill="oklab(94.590% -0.07817 0.03735)" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 159.586 23.212 L 159.586 0 Z "/>
+                                                            <path class="typst-shape" fill="#e5c894" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 159.586 23.212 L 159.586 0 Z "/>
                                                         </g>
                                                         <g transform="translate(159.58599999999998 -0.91)">
-                                                            <path class="typst-shape" fill="none" stroke="oklab(94.590% -0.07817 0.03735)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
+                                                            <path class="typst-shape" fill="none" stroke="#e5c894" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
                                                         </g>
                                                         <g transform="translate(7 16.212)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -4555,13 +4555,13 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(-0 -0)">
-                                                <path class="typst-shape" fill="oklab(94.590% -0.07817 0.03735)" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 133.11 -0.91 C 135.87143 -0.91 138.11 1.3285762 138.11 4.09 L 138.11 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 136.29 22.302 L 136.29 4.09 C 136.29 2.3337345 134.86627 0.91 133.11 0.91 Z "/>
+                                                <path class="typst-shape" fill="#e5c894" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 133.11 -0.91 C 135.87143 -0.91 138.11 1.3285762 138.11 4.09 L 138.11 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 136.29 22.302 L 136.29 4.09 C 136.29 2.3337345 134.86627 0.91 133.11 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#cDB66EEE1F32D7BFACD726C67FAE0DDE5)">
+                                                <g class="typst-group" clip-path="url(#cF38A3CDBC7746C7C454C67C8FB192D6D)">
                                                     <g>
                                                         <g transform="translate(0 0)">
-                                                            <path class="typst-shape" fill="oklab(94.590% -0.07817 0.03735)" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 137.2 23.212 L 137.2 0 Z "/>
+                                                            <path class="typst-shape" fill="#e5c894" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 137.2 23.212 L 137.2 0 Z "/>
                                                         </g>
                                                         <g transform="translate(7 16.212)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -4618,7 +4618,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(94.590% -0.07817 0.03735)" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 64.734 C 573.5084 67.49542 571.26984 69.734 568.5084 69.734 L 4.09 69.734 C 1.3285762 69.734 -0.91 67.49542 -0.91 64.734 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 64.734 C 0.91 66.490265 2.3337345 67.914 4.09 67.914 L 568.5084 67.914 C 570.2647 67.914 571.6884 66.490265 571.6884 64.734 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
+                                                            <path class="typst-shape" fill="#e5c894" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 64.734 C 573.5084 67.49542 571.26984 69.734 568.5084 69.734 L 4.09 69.734 C 1.3285762 69.734 -0.91 67.49542 -0.91 64.734 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 64.734 C 0.91 66.490265 2.3337345 67.914 4.09 67.914 L 568.5084 67.914 C 570.2647 67.914 571.6884 66.490265 571.6884 64.734 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -4693,7 +4693,7 @@
                                                             </g>
                                                         </g>
                                                         <g transform="translate(-0.000000000000010742063406766869 34.412000000000006)">
-                                                            <path class="typst-shape" fill="none" stroke="oklab(94.590% -0.07817 0.03735)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 572.59845 0 "/>
+                                                            <path class="typst-shape" fill="none" stroke="#e5c894" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 572.59845 0 "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 57.623999999999995)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -4803,13 +4803,13 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(-0 -0)">
-                                                <path class="typst-shape" fill="oklab(89.106% 0.03785 0.05623)" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 135.952 -0.91 C 138.71342 -0.91 140.952 1.3285762 140.952 4.09 L 140.952 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 139.132 22.302 L 139.132 4.09 C 139.132 2.3337345 137.70827 0.91 135.952 0.91 Z "/>
+                                                <path class="typst-shape" fill="#90dbe1" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 135.952 -0.91 C 138.71342 -0.91 140.952 1.3285762 140.952 4.09 L 140.952 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 139.132 22.302 L 139.132 4.09 C 139.132 2.3337345 137.70827 0.91 135.952 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#cD49C8B0A2F1A7DD3DD5288B253DEF5E8)">
+                                                <g class="typst-group" clip-path="url(#cA4E2202D50BDCEA47EA0B6958BE5324B)">
                                                     <g>
                                                         <g transform="translate(0 0)">
-                                                            <path class="typst-shape" fill="oklab(89.106% 0.03785 0.05623)" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 140.042 23.212 L 140.042 0 Z "/>
+                                                            <path class="typst-shape" fill="#90dbe1" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 140.042 23.212 L 140.042 0 Z "/>
                                                         </g>
                                                         <g transform="translate(7 16.212)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -4859,7 +4859,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(89.106% 0.03785 0.05623)" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 68.62075 C 573.5084 71.38217 571.26984 73.62075 568.5084 73.62075 L 4.09 73.62075 C 1.3285762 73.62075 -0.91 71.38217 -0.91 68.62075 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 68.62075 C 0.91 70.377014 2.3337345 71.80075 4.09 71.80075 L 568.5084 71.80075 C 570.2647 71.80075 571.6884 70.377014 571.6884 68.62075 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
+                                                            <path class="typst-shape" fill="#90dbe1" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 68.62075 C 573.5084 71.38217 571.26984 73.62075 568.5084 73.62075 L 4.09 73.62075 C 1.3285762 73.62075 -0.91 71.38217 -0.91 68.62075 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 68.62075 C 0.91 70.377014 2.3337345 71.80075 4.09 71.80075 L 568.5084 71.80075 C 570.2647 71.80075 571.6884 70.377014 571.6884 68.62075 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -5115,13 +5115,13 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(-0 -0)">
-                                                <path class="typst-shape" fill="oklab(89.106% 0.03785 0.05623)" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 160.13 -0.91 C 162.89142 -0.91 165.13 1.3285762 165.13 4.09 L 165.13 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 163.31 22.302 L 163.31 4.09 C 163.31 2.3337345 161.88626 0.91 160.13 0.91 Z "/>
+                                                <path class="typst-shape" fill="#90dbe1" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 160.13 -0.91 C 162.89142 -0.91 165.13 1.3285762 165.13 4.09 L 165.13 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 163.31 22.302 L 163.31 4.09 C 163.31 2.3337345 161.88626 0.91 160.13 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#c2D19A7F8799DA402A4F0BDA5DC5D0E0A)">
+                                                <g class="typst-group" clip-path="url(#cC16D804D4EF65D38A661B35975BA7424)">
                                                     <g>
                                                         <g transform="translate(0 0)">
-                                                            <path class="typst-shape" fill="oklab(89.106% 0.03785 0.05623)" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 164.22 23.212 L 164.22 0 Z "/>
+                                                            <path class="typst-shape" fill="#90dbe1" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 164.22 23.212 L 164.22 0 Z "/>
                                                         </g>
                                                         <g transform="translate(7 16.212)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -5174,7 +5174,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(89.106% 0.03785 0.05623)" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 104.15275 C 573.5084 106.91418 571.26984 109.15275 568.5084 109.15275 L 4.09 109.15275 C 1.3285762 109.15275 -0.91 106.91418 -0.91 104.15275 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 104.15275 C 0.91 105.90901 2.3337345 107.33275 4.09 107.33275 L 568.5084 107.33275 C 570.2647 107.33275 571.6884 105.90901 571.6884 104.15275 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
+                                                            <path class="typst-shape" fill="#90dbe1" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 104.15275 C 573.5084 106.91418 571.26984 109.15275 568.5084 109.15275 L 4.09 109.15275 C 1.3285762 109.15275 -0.91 106.91418 -0.91 104.15275 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 104.15275 C 0.91 105.90901 2.3337345 107.33275 4.09 107.33275 L 568.5084 107.33275 C 570.2647 107.33275 571.6884 105.90901 571.6884 104.15275 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -5595,13 +5595,13 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(-0 -0)">
-                                                <path class="typst-shape" fill="oklab(89.106% 0.03785 0.05623)" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 82.752 -0.91 C 85.51342 -0.91 87.752 1.3285762 87.752 4.09 L 87.752 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 85.932 22.302 L 85.932 4.09 C 85.932 2.3337345 84.50826 0.91 82.752 0.91 Z "/>
+                                                <path class="typst-shape" fill="#90dbe1" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 82.752 -0.91 C 85.51342 -0.91 87.752 1.3285762 87.752 4.09 L 87.752 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 85.932 22.302 L 85.932 4.09 C 85.932 2.3337345 84.50826 0.91 82.752 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#c61255670B1A5255E3918389D38AEECA)">
+                                                <g class="typst-group" clip-path="url(#c5367BFAF76E554AFC7C99DA92472B8AC)">
                                                     <g>
                                                         <g transform="translate(0 0)">
-                                                            <path class="typst-shape" fill="oklab(89.106% 0.03785 0.05623)" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 86.842 23.212 L 86.842 0 Z "/>
+                                                            <path class="typst-shape" fill="#90dbe1" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 86.842 23.212 L 86.842 0 Z "/>
                                                         </g>
                                                         <g transform="translate(7 16.212)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -5646,7 +5646,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(89.106% 0.03785 0.05623)" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 121.555626 C 573.5084 124.31705 571.26984 126.555626 568.5084 126.555626 L 4.09 126.555626 C 1.3285762 126.555626 -0.91 124.31705 -0.91 121.555626 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 121.555626 C 0.91 123.31189 2.3337345 124.73563 4.09 124.73563 L 568.5084 124.73563 C 570.2647 124.73563 571.6884 123.31189 571.6884 121.555626 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
+                                                            <path class="typst-shape" fill="#90dbe1" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 121.555626 C 573.5084 124.31705 571.26984 126.555626 568.5084 126.555626 L 4.09 126.555626 C 1.3285762 126.555626 -0.91 124.31705 -0.91 121.555626 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 121.555626 C 0.91 123.31189 2.3337345 124.73563 4.09 124.73563 L 568.5084 124.73563 C 570.2647 124.73563 571.6884 123.31189 571.6884 121.555626 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 11.200000000000001)">
                                                             <g class="typst-group">
@@ -6068,7 +6068,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="none" stroke="oklab(89.106% 0.03785 0.05623)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 568.5084 0 C 570.7673 0 572.59845 1.8311554 572.59845 4.09 L 572.59845 74.1875 C 572.59845 76.44634 570.7673 78.2775 568.5084 78.2775 L 4.09 78.2775 C 1.8311554 78.2775 0 76.44634 0 74.1875 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
+                                                            <path class="typst-shape" fill="none" stroke="#90dbe1" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 568.5084 0 C 570.7673 0 572.59845 1.8311554 572.59845 4.09 L 572.59845 74.1875 C 572.59845 76.44634 570.7673 78.2775 568.5084 78.2775 L 4.09 78.2775 C 1.8311554 78.2775 0 76.44634 0 74.1875 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 11.200000000000001)">
                                                             <g class="typst-group">
@@ -6345,7 +6345,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="none" stroke="oklab(89.106% 0.03785 0.05623)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 568.5084 0 C 570.7673 0 572.59845 1.8311554 572.59845 4.09 L 572.59845 246.25713 C 572.59845 248.51598 570.7673 250.34712 568.5084 250.34712 L 4.09 250.34712 C 1.8311554 250.34712 0 248.51598 0 246.25713 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
+                                                            <path class="typst-shape" fill="none" stroke="#90dbe1" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 568.5084 0 C 570.7673 0 572.59845 1.8311554 572.59845 4.09 L 572.59845 246.25713 C 572.59845 248.51598 570.7673 250.34712 568.5084 250.34712 L 4.09 250.34712 C 1.8311554 250.34712 0 248.51598 0 246.25713 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 11.200000000000001)">
                                                             <g class="typst-group">
@@ -7039,13 +7039,13 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(-0 -0)">
-                                                <path class="typst-shape" fill="oklab(89.106% 0.03785 0.05623)" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 152.556 -0.91 C 155.31743 -0.91 157.556 1.3285762 157.556 4.09 L 157.556 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 155.736 22.302 L 155.736 4.09 C 155.736 2.3337345 154.31227 0.91 152.556 0.91 Z "/>
+                                                <path class="typst-shape" fill="#90dbe1" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 152.556 -0.91 C 155.31743 -0.91 157.556 1.3285762 157.556 4.09 L 157.556 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 155.736 22.302 L 155.736 4.09 C 155.736 2.3337345 154.31227 0.91 152.556 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#cE9681D3F33504DEF646FD09D64BF2F12)">
+                                                <g class="typst-group" clip-path="url(#c1FB816E1859B3E718C31EBA07F9B2EAD)">
                                                     <g>
                                                         <g transform="translate(0 0)">
-                                                            <path class="typst-shape" fill="oklab(89.106% 0.03785 0.05623)" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 156.646 23.212 L 156.646 0 Z "/>
+                                                            <path class="typst-shape" fill="#90dbe1" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 156.646 23.212 L 156.646 0 Z "/>
                                                         </g>
                                                         <g transform="translate(7 16.212)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -7097,7 +7097,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(89.106% 0.03785 0.05623)" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 94.63275 C 573.5084 97.39417 571.26984 99.63275 568.5084 99.63275 L 4.09 99.63275 C 1.3285762 99.63275 -0.91 97.39417 -0.91 94.63275 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 94.63275 C 0.91 96.389015 2.3337345 97.81275 4.09 97.81275 L 568.5084 97.81275 C 570.2647 97.81275 571.6884 96.389015 571.6884 94.63275 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
+                                                            <path class="typst-shape" fill="#90dbe1" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 94.63275 C 573.5084 97.39417 571.26984 99.63275 568.5084 99.63275 L 4.09 99.63275 C 1.3285762 99.63275 -0.91 97.39417 -0.91 94.63275 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 94.63275 C 0.91 96.389015 2.3337345 97.81275 4.09 97.81275 L 568.5084 97.81275 C 570.2647 97.81275 571.6884 96.389015 571.6884 94.63275 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -7398,13 +7398,13 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(-0 -0)">
-                                                <path class="typst-shape" fill="oklab(89.106% 0.03785 0.05623)" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 102.282 -0.91 C 105.04343 -0.91 107.282 1.3285762 107.282 4.09 L 107.282 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 105.462 22.302 L 105.462 4.09 C 105.462 2.3337345 104.03827 0.91 102.282 0.91 Z "/>
+                                                <path class="typst-shape" fill="#90dbe1" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 102.282 -0.91 C 105.04343 -0.91 107.282 1.3285762 107.282 4.09 L 107.282 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 105.462 22.302 L 105.462 4.09 C 105.462 2.3337345 104.03827 0.91 102.282 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#c84265EC7E522EF6F2614014E2751C4F9)">
+                                                <g class="typst-group" clip-path="url(#cA3BC7EC8A53ADF8A9FFB088F7E22030F)">
                                                     <g>
                                                         <g transform="translate(0 0)">
-                                                            <path class="typst-shape" fill="oklab(89.106% 0.03785 0.05623)" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 106.372 23.212 L 106.372 0 Z "/>
+                                                            <path class="typst-shape" fill="#90dbe1" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 106.372 23.212 L 106.372 0 Z "/>
                                                         </g>
                                                         <g transform="translate(7 16.212)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -7450,7 +7450,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="oklab(89.106% 0.03785 0.05623)" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 52.831375 C 573.5084 55.5928 571.26984 57.831375 568.5084 57.831375 L 4.09 57.831375 C 1.3285762 57.831375 -0.91 55.5928 -0.91 52.831375 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 52.831375 C 0.91 54.58764 2.3337345 56.011375 4.09 56.011375 L 568.5084 56.011375 C 570.2647 56.011375 571.6884 54.58764 571.6884 52.831375 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
+                                                            <path class="typst-shape" fill="#90dbe1" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 52.831375 C 573.5084 55.5928 571.26984 57.831375 568.5084 57.831375 L 4.09 57.831375 C 1.3285762 57.831375 -0.91 55.5928 -0.91 52.831375 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 52.831375 C 0.91 54.58764 2.3337345 56.011375 4.09 56.011375 L 568.5084 56.011375 C 570.2647 56.011375 571.6884 54.58764 571.6884 52.831375 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -7805,19 +7805,19 @@
                                                 </g>
                                             </g>
                                             <g transform="translate(0 18.311999999999998)">
-                                                <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 521.806 -0.91 C 524.56744 -0.91 526.806 1.3285762 526.806 4.09 L 526.806 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 524.986 22.302 L 524.986 4.09 C 524.986 2.3337345 523.56226 0.91 521.806 0.91 Z "/>
+                                                <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 521.806 -0.91 C 524.56744 -0.91 526.806 1.3285762 526.806 4.09 L 526.806 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 524.986 22.302 L 524.986 4.09 C 524.986 2.3337345 523.56226 0.91 521.806 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 18.311999999999998)">
-                                                <g class="typst-group" clip-path="url(#cD67FB0D5C74D0F75874693047A8189DF)">
+                                                <g class="typst-group" clip-path="url(#c6E7ED52983E7BAA40004B60B17004689)">
                                                     <g>
                                                         <g transform="translate(0 0)">
-                                                            <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 37.618 23.212 L 37.618 0 Z "/>
+                                                            <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 37.618 23.212 L 37.618 0 Z "/>
                                                         </g>
                                                         <g transform="translate(37.618 -0.91)">
-                                                            <path class="typst-shape" fill="none" stroke="#aaaaaa" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
+                                                            <path class="typst-shape" fill="none" stroke="oklab(79.655% 0.00001 0.00003)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
                                                         </g>
                                                         <g transform="translate(348.6979999999999 -0.91)">
-                                                            <path class="typst-shape" fill="none" stroke="#aaaaaa" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
+                                                            <path class="typst-shape" fill="none" stroke="oklab(79.655% 0.00001 0.00003)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
                                                         </g>
                                                         <g transform="translate(7 16.212)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -7906,7 +7906,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 45.834 C 573.5084 48.595425 571.26984 50.834 568.5084 50.834 L 4.09 50.834 C 1.3285762 50.834 -0.91 48.595425 -0.91 45.834 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 45.834 C 0.91 47.590267 2.3337345 49.014 4.09 49.014 L 568.5084 49.014 C 570.2647 49.014 571.6884 47.590267 571.6884 45.834 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
+                                                            <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 45.834 C 573.5084 48.595425 571.26984 50.834 568.5084 50.834 L 4.09 50.834 C 1.3285762 50.834 -0.91 48.595425 -0.91 45.834 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 45.834 C 0.91 47.590267 2.3337345 49.014 4.09 49.014 L 568.5084 49.014 C 570.2647 49.014 571.6884 47.590267 571.6884 45.834 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -8052,22 +8052,22 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(-0 -0)">
-                                                <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 359.7868 -0.91 C 362.54822 -0.91 364.7868 1.3285762 364.7868 4.09 L 364.7868 52.468456 L -0.91 52.468456 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 50.648457 L 362.9668 50.648457 L 362.9668 4.09 C 362.9668 2.3337345 361.54306 0.91 359.7868 0.91 Z "/>
+                                                <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 359.7868 -0.91 C 362.54822 -0.91 364.7868 1.3285762 364.7868 4.09 L 364.7868 52.468456 L -0.91 52.468456 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 50.648457 L 362.9668 50.648457 L 362.9668 4.09 C 362.9668 2.3337345 361.54306 0.91 359.7868 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#cCE952627FCEF2AD5C046CA5ADF8C599D)">
+                                                <g class="typst-group" clip-path="url(#c4C578F42CBD24EDAAE73D43E8670B0F2)">
                                                     <g>
                                                         <g transform="translate(0 0)">
-                                                            <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 0 0 L 0 51.558456 L 63.336 51.558456 L 63.336 0 Z "/>
+                                                            <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 0 0 L 0 51.558456 L 63.336 51.558456 L 63.336 0 Z "/>
                                                         </g>
                                                         <g transform="translate(63.33600000000001 -0.91)">
-                                                            <path class="typst-shape" fill="none" stroke="#aaaaaa" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 53.378456 "/>
+                                                            <path class="typst-shape" fill="none" stroke="oklab(79.655% 0.00001 0.00003)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 53.378456 "/>
                                                         </g>
                                                         <g transform="translate(194.978 -0.91)">
-                                                            <path class="typst-shape" fill="none" stroke="#aaaaaa" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 53.378456 "/>
+                                                            <path class="typst-shape" fill="none" stroke="oklab(79.655% 0.00001 0.00003)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 53.378456 "/>
                                                         </g>
                                                         <g transform="translate(234.8948 -0.91)">
-                                                            <path class="typst-shape" fill="none" stroke="#aaaaaa" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 53.378456 "/>
+                                                            <path class="typst-shape" fill="none" stroke="oklab(79.655% 0.00001 0.00003)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 53.378456 "/>
                                                         </g>
                                                         <g transform="translate(7 30.385228346456692)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -8166,7 +8166,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 45.834 C 573.5084 48.595425 571.26984 50.834 568.5084 50.834 L 4.09 50.834 C 1.3285762 50.834 -0.91 48.595425 -0.91 45.834 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 45.834 C 0.91 47.590267 2.3337345 49.014 4.09 49.014 L 568.5084 49.014 C 570.2647 49.014 571.6884 47.590267 571.6884 45.834 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
+                                                            <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 45.834 C 573.5084 48.595425 571.26984 50.834 568.5084 50.834 L 4.09 50.834 C 1.3285762 50.834 -0.91 48.595425 -0.91 45.834 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 45.834 C 0.91 47.590267 2.3337345 49.014 4.09 49.014 L 568.5084 49.014 C 570.2647 49.014 571.6884 47.590267 571.6884 45.834 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -8334,7 +8334,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="none" stroke="#aaaaaa" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 568.5084 0 C 570.7673 0 572.59845 1.8311554 572.59845 4.09 L 572.59845 92.734 C 572.59845 94.99284 570.7673 96.824 568.5084 96.824 L 4.09 96.824 C 1.8311554 96.824 0 94.99284 0 92.734 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
+                                                            <path class="typst-shape" fill="none" stroke="oklab(79.655% 0.00001 0.00003)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 568.5084 0 C 570.7673 0 572.59845 1.8311554 572.59845 4.09 L 572.59845 92.734 C 572.59845 94.99284 570.7673 96.824 568.5084 96.824 L 4.09 96.824 C 1.8311554 96.824 0 94.99284 0 92.734 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 11.200000000000001)">
                                                             <g class="typst-group">
@@ -8368,7 +8368,7 @@
                                                                                                 <g class="typst-group">
                                                                                                     <g>
                                                                                                         <g transform="translate(-0 -0)">
-                                                                                                            <path class="typst-shape" fill="none" stroke="#aaaaaa" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 546.1084 0 C 548.36725 0 550.1984 1.8311554 550.1984 4.09 L 550.1984 47.122 C 550.1984 49.380844 548.36725 51.212 546.1084 51.212 L 4.09 51.212 C 1.8311554 51.212 0 49.380844 0 47.122 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
+                                                                                                            <path class="typst-shape" fill="none" stroke="oklab(79.655% 0.00001 0.00003)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 546.1084 0 C 548.36725 0 550.1984 1.8311554 550.1984 4.09 L 550.1984 47.122 C 550.1984 49.380844 548.36725 51.212 546.1084 51.212 L 4.09 51.212 C 1.8311554 51.212 0 49.380844 0 47.122 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
                                                                                                         </g>
                                                                                                         <g transform="translate(11.200000000000001 11.200000000000001)">
                                                                                                             <g class="typst-group">
@@ -8380,28 +8380,28 @@
                                                                                                                                     <g class="typst-group">
                                                                                                                                         <g>
                                                                                                                                             <g transform="translate(0 0)">
-                                                                                                                                                <path class="typst-shape" fill="none" stroke="#aaaaaa" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
+                                                                                                                                                <path class="typst-shape" fill="none" stroke="oklab(79.655% 0.00001 0.00003)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0.00000000000000017145055 2.8 "/>
                                                                                                                                             </g>
                                                                                                                                             <g transform="translate(0 0)">
                                                                                                                                                 <g class="typst-group">
                                                                                                                                                     <g>
                                                                                                                                                         <g transform="translate(-0 -0)">
-                                                                                                                                                            <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 1.75 28.812 L -1.75 28.812 L -1.75 28.812 L -1.75 -0 L 1.75 0 Z "/>
+                                                                                                                                                            <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 1.75 28.812 L -1.75 28.812 L -1.75 28.812 L -1.75 -0 L 1.75 0 Z "/>
                                                                                                                                                         </g>
                                                                                                                                                         <g transform="translate(9.799999999999999 19.012)">
                                                                                                                                                             <g class="typst-text" transform="scale(1, -1)"/>
                                                                                                                                                         </g>
                                                                                                                                                         <g transform="translate(13.299999999999999 19.012)">
                                                                                                                                                             <g class="typst-text" transform="scale(1, -1)">
-                                                                                                                                                                <use xlink:href="#g524B7485D5082F70D16FBA16DBD2AD9D" x="0" fill="#555555" fill-rule="nonzero"/>
-                                                                                                                                                                <use xlink:href="#g5A4398E02E715B7359A51D0DED9B0A26" x="7.798000000000001" fill="#555555" fill-rule="nonzero"/>
-                                                                                                                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="14.658000000000001" fill="#555555" fill-rule="nonzero"/>
-                                                                                                                                                                <use xlink:href="#g86210859E9CBAD7367F813174865F14B" x="21.056" fill="#555555" fill-rule="nonzero"/>
-                                                                                                                                                                <use xlink:href="#g75ACC9DB2D68FFD1344B9D9DC262D71" x="32.116" fill="#555555" fill-rule="nonzero"/>
-                                                                                                                                                                <use xlink:href="#g3B29BA14375B64D6399B63C9DB6720D5" x="39.382" fill="#555555" fill-rule="nonzero"/>
-                                                                                                                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="43.077999999999996" fill="#555555" fill-rule="nonzero"/>
-                                                                                                                                                                <use xlink:href="#gE970AD05DEF13E934246C8B6BC7D21DD" x="52.836" fill="#555555" fill-rule="nonzero"/>
-                                                                                                                                                                <use xlink:href="#g98CC5C920B69D468BA9A5B678C9DB5EC" x="59.346" fill="#555555" fill-rule="nonzero"/>
+                                                                                                                                                                <use xlink:href="#g524B7485D5082F70D16FBA16DBD2AD9D" x="0" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                                                                                                                <use xlink:href="#g5A4398E02E715B7359A51D0DED9B0A26" x="7.798000000000001" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                                                                                                                <use xlink:href="#gE6B183521F4DDA4FC4E3824EE3D34DE7" x="14.658000000000001" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                                                                                                                <use xlink:href="#g86210859E9CBAD7367F813174865F14B" x="21.056" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                                                                                                                <use xlink:href="#g75ACC9DB2D68FFD1344B9D9DC262D71" x="32.116" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                                                                                                                <use xlink:href="#g3B29BA14375B64D6399B63C9DB6720D5" x="39.382" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                                                                                                                <use xlink:href="#gF7BC819BB08ED7179A8BA0080EDD5EC3" x="43.077999999999996" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                                                                                                                <use xlink:href="#gE970AD05DEF13E934246C8B6BC7D21DD" x="52.836" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
+                                                                                                                                                                <use xlink:href="#g98CC5C920B69D468BA9A5B678C9DB5EC" x="59.346" fill="oklab(16.667% 0.00000 0.00001)" fill-rule="nonzero"/>
                                                                                                                                                             </g>
                                                                                                                                                         </g>
                                                                                                                                                         <g transform="translate(79.15600000000002 19.012)">
@@ -8466,7 +8466,7 @@
                                                                                                                                                 </g>
                                                                                                                                             </g>
                                                                                                                                             <g transform="translate(0 28.811999999999998)">
-                                                                                                                                                <path class="typst-shape" fill="none" stroke="#aaaaaa" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
+                                                                                                                                                <path class="typst-shape" fill="none" stroke="oklab(79.655% 0.00001 0.00003)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L -0.00000000000000017145055 -2.8 "/>
                                                                                                                                             </g>
                                                                                                                                         </g>
                                                                                                                                     </g>
@@ -8533,7 +8533,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="none" stroke="#aaaaaa" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 568.5084 0 C 570.7673 0 572.59845 1.8311554 572.59845 4.09 L 572.59845 27.522 C 572.59845 29.780844 570.7673 31.612 568.5084 31.612 L 4.09 31.612 C 1.8311554 31.612 0 29.780844 0 27.522 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
+                                                            <path class="typst-shape" fill="none" stroke="oklab(79.655% 0.00001 0.00003)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 4.09 0 L 568.5084 0 C 570.7673 0 572.59845 1.8311554 572.59845 4.09 L 572.59845 27.522 C 572.59845 29.780844 570.7673 31.612 568.5084 31.612 L 4.09 31.612 C 1.8311554 31.612 0 29.780844 0 27.522 L 0 4.09 C 0 1.8311554 1.8311554 0 4.09 0 "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -8733,16 +8733,16 @@
                                     <g class="typst-group">
                                         <g>
                                             <g transform="translate(-0 -0)">
-                                                <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 185.442 -0.91 C 188.20343 -0.91 190.442 1.3285762 190.442 4.09 L 190.442 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 188.622 22.302 L 188.622 4.09 C 188.622 2.3337345 187.19827 0.91 185.442 0.91 Z "/>
+                                                <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 4.09 0.91 L 4.09 -0.91 L 185.442 -0.91 C 188.20343 -0.91 190.442 1.3285762 190.442 4.09 L 190.442 24.122 L -0.91 24.122 L -0.91 4.09 C -0.91 1.3285762 1.3285762 -0.91 4.09 -0.91 L 4.09 0.91 C 2.3337345 0.91 0.91 2.3337345 0.91 4.09 L 0.91 22.302 L 188.622 22.302 L 188.622 4.09 C 188.622 2.3337345 187.19827 0.91 185.442 0.91 Z "/>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#cA98F252B84407FBCFC361A00482D0CFA)">
+                                                <g class="typst-group" clip-path="url(#c6298223FAFE5979F97B5A32F4697255D)">
                                                     <g>
                                                         <g transform="translate(0 0)">
-                                                            <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 130.242 23.212 L 130.242 0 Z "/>
+                                                            <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 0 0 L 0 23.212 L 130.242 23.212 L 130.242 0 Z "/>
                                                         </g>
                                                         <g transform="translate(130.24199999999996 -0.91)">
-                                                            <path class="typst-shape" fill="none" stroke="#aaaaaa" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
+                                                            <path class="typst-shape" fill="none" stroke="oklab(79.655% 0.00001 0.00003)" stroke-width="1.82" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 0 25.032 "/>
                                                         </g>
                                                         <g transform="translate(7 16.212)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -8802,7 +8802,7 @@
                                                 <g class="typst-group">
                                                     <g>
                                                         <g transform="translate(-0 -0)">
-                                                            <path class="typst-shape" fill="#aaaaaa" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 45.834 C 573.5084 48.595425 571.26984 50.834 568.5084 50.834 L 4.09 50.834 C 1.3285762 50.834 -0.91 48.595425 -0.91 45.834 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 45.834 C 0.91 47.590267 2.3337345 49.014 4.09 49.014 L 568.5084 49.014 C 570.2647 49.014 571.6884 47.590267 571.6884 45.834 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
+                                                            <path class="typst-shape" fill="oklab(79.655% 0.00001 0.00003)" fill-rule="nonzero" d="M 0.91 0.91 L -0.91 -0.91 L 568.5084 -0.91 C 571.26984 -0.91 573.5084 1.3285762 573.5084 4.09 L 573.5084 45.834 C 573.5084 48.595425 571.26984 50.834 568.5084 50.834 L 4.09 50.834 C 1.3285762 50.834 -0.91 48.595425 -0.91 45.834 L -0.91 -0.91 L -0.91 -0.91 L 0.91 0.91 L 0.91 45.834 C 0.91 47.590267 2.3337345 49.014 4.09 49.014 L 568.5084 49.014 C 570.2647 49.014 571.6884 47.590267 571.6884 45.834 L 571.6884 4.09 C 571.6884 2.3337345 570.2647 0.91 568.5084 0.91 Z "/>
                                                         </g>
                                                         <g transform="translate(11.200000000000001 20.412)">
                                                             <g class="typst-text" transform="scale(1, -1)">
@@ -9668,52 +9668,52 @@
         </symbol>
     </defs>
     <defs id="clip-path">
-        <clipPath id="cB52E9841419B5E74D18FAE76856EFE4F">
+        <clipPath id="c89EA5E407C3248D8CDF569F587A46694">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 363.872 0.91 C 365.62827 0.91 367.052 2.3337345 367.052 4.09 L 367.052 22.302 L 0.91 22.302 Z "/>
         </clipPath>
-        <clipPath id="cB8B090C48B6BDEDA8598DBEA490CEF55">
+        <clipPath id="cD7BF034BDD8F66EA7DAFB6C618DCB694">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 137.688 0.91 C 139.44426 0.91 140.868 2.3337345 140.868 4.09 L 140.868 22.302 L 0.91 22.302 Z "/>
         </clipPath>
-        <clipPath id="c36787A20DC381A284BA0A7AB06BF32DD">
+        <clipPath id="c5A5B2537C23063DF9DD29A45A00FF7FB">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 125.06 0.91 C 126.81627 0.91 128.24 2.3337345 128.24 4.09 L 128.24 22.302 L 0.91 22.302 Z "/>
         </clipPath>
-        <clipPath id="c4348BD234ED04A9471AEB7A2E857F40">
+        <clipPath id="c9AD20D8EE3FF9743777DB57E1A6E284C">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 191.182 0.91 C 192.93826 0.91 194.362 2.3337345 194.362 4.09 L 194.362 22.302 L 0.91 22.302 Z "/>
         </clipPath>
-        <clipPath id="c1AB3362DB549AA6C40BBBDECE9E88636">
+        <clipPath id="cC00446F3CF7F094160CB808DDEBF132C">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 256.254 0.91 C 258.01025 0.91 259.434 2.3337345 259.434 4.09 L 259.434 22.302 L 0.91 22.302 Z "/>
         </clipPath>
-        <clipPath id="cCD3C8B969CCBB4DABEFDE24B595423C1">
+        <clipPath id="cD4256318E813539B3E6E1AAF4BE41E63">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 69.606 0.91 C 71.36227 0.91 72.786 2.3337345 72.786 4.09 L 72.786 22.302 L 0.91 22.302 Z "/>
         </clipPath>
-        <clipPath id="cCA5CECEF447A92BFCA5E3AE2E9D9741E">
+        <clipPath id="c2389013B4C826AE9BCCA877D799980E1">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 281.398 0.91 C 283.15427 0.91 284.578 2.3337345 284.578 4.09 L 284.578 19.122 C 284.578 20.878265 283.15427 22.302 281.398 22.302 L 4.09 22.302 C 2.3337345 22.302 0.91 20.878265 0.91 19.122 Z "/>
         </clipPath>
-        <clipPath id="cDB66EEE1F32D7BFACD726C67FAE0DDE5">
+        <clipPath id="cF38A3CDBC7746C7C454C67C8FB192D6D">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 133.11 0.91 C 134.86627 0.91 136.29 2.3337345 136.29 4.09 L 136.29 22.302 L 0.91 22.302 Z "/>
         </clipPath>
-        <clipPath id="cD49C8B0A2F1A7DD3DD5288B253DEF5E8">
+        <clipPath id="cA4E2202D50BDCEA47EA0B6958BE5324B">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 135.952 0.91 C 137.70827 0.91 139.132 2.3337345 139.132 4.09 L 139.132 22.302 L 0.91 22.302 Z "/>
         </clipPath>
-        <clipPath id="c2D19A7F8799DA402A4F0BDA5DC5D0E0A">
+        <clipPath id="cC16D804D4EF65D38A661B35975BA7424">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 160.13 0.91 C 161.88626 0.91 163.31 2.3337345 163.31 4.09 L 163.31 22.302 L 0.91 22.302 Z "/>
         </clipPath>
-        <clipPath id="c61255670B1A5255E3918389D38AEECA">
+        <clipPath id="c5367BFAF76E554AFC7C99DA92472B8AC">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 82.752 0.91 C 84.50826 0.91 85.932 2.3337345 85.932 4.09 L 85.932 22.302 L 0.91 22.302 Z "/>
         </clipPath>
-        <clipPath id="cE9681D3F33504DEF646FD09D64BF2F12">
+        <clipPath id="c1FB816E1859B3E718C31EBA07F9B2EAD">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 152.556 0.91 C 154.31227 0.91 155.736 2.3337345 155.736 4.09 L 155.736 22.302 L 0.91 22.302 Z "/>
         </clipPath>
-        <clipPath id="c84265EC7E522EF6F2614014E2751C4F9">
+        <clipPath id="cA3BC7EC8A53ADF8A9FFB088F7E22030F">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 102.282 0.91 C 104.03827 0.91 105.462 2.3337345 105.462 4.09 L 105.462 22.302 L 0.91 22.302 Z "/>
         </clipPath>
-        <clipPath id="cD67FB0D5C74D0F75874693047A8189DF">
+        <clipPath id="c6E7ED52983E7BAA40004B60B17004689">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 521.806 0.91 C 523.56226 0.91 524.986 2.3337345 524.986 4.09 L 524.986 22.302 L 0.91 22.302 Z "/>
         </clipPath>
-        <clipPath id="cCE952627FCEF2AD5C046CA5ADF8C599D">
+        <clipPath id="c4C578F42CBD24EDAAE73D43E8670B0F2">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 359.7868 0.91 C 361.54306 0.91 362.9668 2.3337345 362.9668 4.09 L 362.9668 50.648457 L 0.91 50.648457 Z "/>
         </clipPath>
-        <clipPath id="cA98F252B84407FBCFC361A00482D0CFA">
+        <clipPath id="c6298223FAFE5979F97B5A32F4697255D">
             <path d="M 0.91 4.09 C 0.91 2.3337345 2.3337345 0.91 4.09 0.91 L 185.442 0.91 C 187.19827 0.91 188.622 2.3337345 188.622 4.09 L 188.622 22.302 L 0.91 22.302 Z "/>
         </clipPath>
     </defs>
