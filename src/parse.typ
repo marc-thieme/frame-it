@@ -1,14 +1,11 @@
-#let calculate-colors(count) = {
-  let samples = for i in range(count) {
-    (i * 100% / count,)
-  }
-  gradient
-    .linear(..color.map.rainbow.rev())
-    .samples(..samples)
-    .map(color => color.lighten(70%).desaturate(50%))
-}
+#let calculate-colors(base-color, count) = range(count).map(i => (
+  i / count * 360deg
+)).map(rotation => base-color.rotate(rotation))
 
-#let parse-args(frames) = {
+#let fill-missing-colors(
+  base-color,
+  frames,
+) = {
   assert(
     frames.pos() == (),
     message: "Unexpected positional arguments: " + repr(frames.pos()),
@@ -34,7 +31,7 @@
 
   // Count auto in args and generate colors
   let auto-count = args.filter(((_, _, col)) => col == auto).len()
-  let generated-colors = calculate-colors(auto-count)
+  let generated-colors = calculate-colors(base-color, auto-count)
   let next-color-idx = 0
 
   // Replace auto with respective colors
