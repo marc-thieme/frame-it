@@ -1,15 +1,18 @@
 #import "src/lib.typ": *
 
-#set page(height: auto, margin: 4mm, background: none)
+#set page(height: auto, margin: 4mm)
 #set text(14pt)
 
 #let base-color-arg = (:)
 #let text-color = black
+#let background-color = white
 
 #if sys.inputs.at("theme", default: "light") == "dark" {
   text-color = white
+  background-color = rgb("#0d1117")
   base-color-arg.base-color = blue.darken(40%).desaturate(25%)
 }
+#set page(fill: background-color)
 #set text(text-color)
 
 #let example-color = text-color.mix((text-color.negate(), 590%)).mix(gray)
