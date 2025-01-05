@@ -7,7 +7,7 @@ default:
 
 
 # –––––– [ Dev ] ––––––
-pre-commit: (readme-compile "/tmp/frame-it_typst-theorems-compile-check{p}.svg" "-f svg")
+pre-commit: (readme-compile-svgs)
     typos
     typstyle --check {{readme-typ-file}} \
         $(git diff-index --cached --name-only HEAD | grep '\.typ') \
@@ -28,7 +28,7 @@ release new-version:
 
 
 # –––––– [ Readme ] ––––––
-push-new-readme: (readme-compile "assets/README-{p}.svg") && commit-and-push-assets
+push-new-readme: (readme-compile-svgs) && commit-and-push-assets
 
 [confirm("Do you want to commit and push all changes on the assets branch?")]
 [script]
@@ -38,11 +38,15 @@ commit-and-push-assets commit-msg="Update.":
     git commit -m {{commit-msg}}
     git push
 
-readme-watch output="":
-    typst watch {{readme-typ-file}} {{output}}
+readme-watch:
+    typst watch {{readme-typ-file}}
 
-readme-compile output="" *options="":
-    typst compile {{options}} {{readme-typ-file}} {{output}}
+readme-compile theme="light":
+    typst compile --input theme={{theme}} {{readme-typ-file}}
+
+readme-compile-svgs:
+    typst compile -f svg {{readme-typ-file}} assets/README-{p}.svg
+    typst compile -f svg --input theme=dark {{readme-typ-file}} assets/README-dark-{p}.svg
 
 
 # –––––– [ Setup ] ––––––
