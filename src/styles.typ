@@ -115,7 +115,10 @@
     } else {
       []
     }
-    let supplement-str = text(gray.darken(50%))[#supplement #number]
+    let supplement-str = context {
+      let header-color = text.fill.mix((text.fill.negate(), 20%))
+      text(header-color)[#supplement #number]
+    }
     let head-body-separator = if body == [] [] else [:]
     [~#supplement-str~*#(title)*_#(tag-str)_#head-body-separator~]
   }
