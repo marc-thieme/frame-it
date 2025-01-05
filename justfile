@@ -20,7 +20,8 @@ release new-version:
     test -z "$(git status --porcelain)"
     sed -Ei 's|#import "@preview/frame-it:{{_version-regex}}"|#import "@preview/frame-it:{{new-version}}"|g' {{readme-typ-file}}
     sed -Ei 's|version = "{{_version-regex}}"|version = "{{new-version}}"|g' typst.toml
-    git add {{readme-typ-file}} typst.toml
+    sed -i "s/CURRENT/1.1.0/" CHANGELOG.md
+    git add {{readme-typ-file}} typst.toml CHANGELOG.md
     git commit -m "Bump version to {{new-version}}."
     test -z "$(git status --porcelain)" # Just to make sure we didn't screw up
     git tag -a {{new-version}}
