@@ -8,7 +8,7 @@
 #let background-color = white
 
 #if sys.inputs.at("theme", default: "light") == "dark" {
-  text-color = white
+  text-color = rgb(240, 246, 252)
   background-color = rgb("#0d1117")
   base-color-arg.base-color = blue.darken(40%).desaturate(25%)
 }
