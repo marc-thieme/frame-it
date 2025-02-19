@@ -24,7 +24,7 @@
     assert(type(supplement) in (content, str))
     assert(
       type(col) in (color, type(auto)),
-      message: "Please provide a color as second arguments: " + supplement + " (was " + type(col) + ")",
+      message: "Please provide a color as second arguments: " + supplement + " (was " + repr(type(col)) + ")",
     )
     ((id, supplement, col),)
   }
