@@ -49,7 +49,7 @@ If they don't appeal to you, you have complete freedom to define custom styling 
   You can define different classes or types of frames, which alter the substitute and the frame's color. As shown here, this is an example frame.
   You can create as many different kinds as you want.
 
-  As long as all kinds use the same identifier with `make-frames`, they share a common counter.
+  As long as all kinds use the same identifier with `frames`, they share a common counter.
 ]
 
 = Quick Start
@@ -58,9 +58,7 @@ Import and define your desired frames:
 ```typst
 #import "@preview/frame-it:1.0.0": *
 
-#let (example, feature, variant, syntax) = make-frames(
-  // This identifies the counter used for all theorems in this definition
-  "counter-id",
+#let (example, feature, variant, syntax) = frames(
   feature: ("Feature",),
   // For each frame kind, you have to provide its supplement title to be displayed
   variant: ("Variant",),
@@ -69,6 +67,8 @@ Import and define your desired frames:
   // You can add as many as you want
   syntax: ("Syntax",),
 )
+// This is necessary. Don't forget this!
+#show: frame-style(styles.boxy)
 ```
 
 How to use it is explained below. Here is a quick example:
@@ -123,8 +123,15 @@ The following features are demonstrated in both predefined styles.
 == Highlight parts distinctively
 #show: frame-style(styles.boxy)
 #layout-features()
-== Additional Capabilities
-#syntax[Labels and References][
+
+== Miscallaneous
+Internally, every frame is just a `figure` where the `kind` is set to `"frame"` (or a different custom value).
+As such, most things that can be done to a figure can be done with a frame as well.
+Whenever you would like to do something custom but don't know if it is supported,
+try achieving it with a normal figure first and then apply the same show rule to your frames.
+Here is a list of examples:
+
+#variant[Labels and References][
   Elements can be referenced as expected by appending `<label>` and referencing it:
   ```typst
   #syntax[Labels and References] <labels-and-refs>
@@ -133,71 +140,85 @@ The following features are demonstrated in both predefined styles.
 ] <reference-tag>
 For example: @reference-tag.
 
-#syntax[Break frames across pages][
-  If you want to make your frames breakable across pages, you have to apply the show rule
+#variant[Break frames across pages][
+  If you want to make your frames breakable across pages,
+  you have to use the show rule known from the official typst docs:
   ```typst
-  #show: breakable-frames("your-theorem-kind")
+  #show figure.where(kind: "frame"): set block(breakable: true)
   ```
   To turn off breakability, you can use the corresponding show rule
   ```typst
-  #show: breakable-frames("your-theorem-kind", breakable: false)
+  #show figure.where(kind: "frame"): set block(breakable: false)
   ```
 ]
 
-= Syntax
-You define one or more styles by using the `make-frames` function:
-
-#syntax[Initialization][
+#variant[Different numbering][
+  Numbering in figures is a bit of a mess.
+  Natively, you are limited to one number and a format suffix/prefix.
+  With that, you can do the following.
   ```typst
-  #let (example, feature, variant, syntax) = make-frames(
-    "core-frames",
-    feature: ("Feature",),
-    variant: ("Feature Variant",),
-    example: ("Example", gray),
+  #show figure.where(kind: "frame"): set figure(numbering: "a)")
+  ```
+  If you want to do more advanced and nested numbering, you can look into external packages for that.
+  When trying to make a system apply to the frames, remember that they are just figures with a specific kind.
+
+  In the background, there are also some show rules doing the styling for the frames.
+  However, these should only get in the way when you are doing some esoteric manipulation of the figure captions.
+]
+
+#syntax[Different kind][for the underlying figures][
+  When you have multiple different groups of frames you need to style independently,
+  you can provide an arbitrary `kind` to the `frames` function.
+
+  ```typst
+  #let (syntax,) = frames(
     syntax: ("Syntax",),
   )
+  #let (note,) = frames(
+    kind: "other-kind"
+    note: ("Note",),
+  )
+  #show: frame-style(styles.boxy)
+  #show: frame-style(kind: "other-kind", styles.hint)
   ```
 ]
 
-And use them like this:
-
-#syntax[
+#syntax[Change the styling][
+  To use a different styling function for just one frame, you can provide `style: styles.hint` as an extra argument:
   ```typst
-  #feature[Distinct Highlight][Best for occasional use][More noticeable][
-    The default style, `styles.boxy`, is eye-catching and intended to stand out from the surrounding text.
-  ]
-  ```
-]
-
-Or using an explicit styling function:
-
-#syntax[
-  ```typst
-  #variant(style: styles.boxy)[
+  #variant(style: styles.hint)[
     To skip the header entirely, leave the title parameter blank.
   ]
   ```
-  This styling function can be provided as default for all frame kinds:
+  Beware that internally, this has to second two figures for technical reason.
+  In general, this approach will be less robust than using the `show: frame-style()` function.
+  #divide()
+  When you want to change the styling used for a passage of your document,
+  you can just add more `show: frame-style()` rules:
   ```typst
-  #let (example, feature, variant, syntax) = make-frames(
-    style: styles.hint,
-    "core-frames",
-    feature: ("Feature",),
-    variant: ("Feature Variant",),
-    example: ("Example", gray),
-    syntax: ("Syntax",),
-  )
+  #show: frame-style(styles.boxy)
+  #example[In boxy style][]
+  #show: frame-style(styles.hint)
+  #example[In hint Style][]
   ```
-  Note that this only affects those defined in the same call to `make-frames`.
 ]
 
-#syntax[Custom Styling Function][
-  When defining your own styling function, it has to have the following signature:
+= Custom Styling
+Internally, there is nothing special about the predefined styles.
+The only requirement for any styling function is to adhere to the following
+function signature interface:
+
+
+#syntax[Interface for custom ctyling function][
   ```typst
-  #let factory(title: content, tags: (content), body: content, supplement: string or content, number, args) = …
+  #let custom-styling(title, tags, body, supplement, number, arg)
   ```
-  The content it returns will be placed into the document without modifications.
 ]
+where `arg` is going to be the value passed behind the supplement for each frame variant in the `frames` function.
+For the predefined styles, this is the color of the frames.
+When defining your own styling function, it has to have the following signature:
+
+The content returned will be placed as–is in the document.
 
 #syntax[Styling Dividers][
   If your custom styling function shall support dividers, it must include a show rule in its body:
