@@ -1,4 +1,8 @@
 ## CURRENT
+- In the `(make-)frames`–function, allow supplement to be supplied as single value
+  instead of array
+- Pass additional arguments in a frame function onto the figure function
+  when placing it in the document
 - Change API to declare the styling function to use using a show rule
 - Refactor layouting system to be simpler and more robust
 - Make frames breakable across pages
