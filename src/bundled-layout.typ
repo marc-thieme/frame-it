@@ -1,3 +1,5 @@
+// DEPRECATED. This file is deprecated. Use `layout.typ` instead.
+// The implementation in `layout.typ` is simpler and more robust.
 #let encode-caption-id(
   kind,
   title,

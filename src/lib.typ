@@ -2,6 +2,7 @@
 #import "styling.typ" as styling
 #import "bundled-layout.typ": divide, breakable-frames
 
+// DEPRECATED. Use `frames` and `show: frame-style()` instead
 #let make-frames(
   kind,
   style: styles.boxy,
