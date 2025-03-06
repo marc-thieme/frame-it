@@ -1,13 +1,5 @@
 #import "bundled-layout.typ": spawn-bundled-frame
 
-#let user-forgot-styling-message = align(left)[
-  *_ERROR_: You have to apply the frame styling in order for your frames to be rendered properly.*
-  Please add the following line to the start of your document
-  ```typst
-  #show: frame-style(kind: "frame", styles.boxy)
-  ```
-]
-
 #let unique-frame-metadata-tag = "_THIS-IS-METADATA-USED-FOR-FRAME-IT-FRAMES"
 
 // Encode info as invisible metadata so when rendered in outline, only the title is seen
