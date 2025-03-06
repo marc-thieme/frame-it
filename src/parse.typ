@@ -1,6 +1,10 @@
-#let calculate-colors(base-color, count) = range(count).map(i => (
-  i / count * 360deg
-)).map(rotation => base-color.rotate(rotation))
+#let calculate-colors(base-color, count) = (
+  range(count)
+    .map(i => (
+      i / count * 360deg
+    ))
+    .map(rotation => base-color.rotate(rotation))
+)
 
 #let fill-missing-colors(
   base-color,
@@ -13,18 +17,23 @@
 
   // Canonicalize and validate arguments
   let args = for (id, args) in frames.named() {
-    assert(
-      type(args) == array,
-      message: "Please provide an array of the form '(<substitute name>, [<custom argument passed to styling function>])', where the latter is optional.
-      The problem arises from frame-kind " + repr(id) + " which receives arguments " + repr(args),
-    )
-    let (supplement, col, ..) = args + (
-      auto,
+    if type(args) != array {
+      args = (args,)
+    }
+    let (supplement, col, ..) = (
+      args
+        + (
+          auto,
+        )
     ) // Denote color with 'auto' if omitted
     assert(type(supplement) in (content, str))
     assert(
       type(col) in (color, type(auto)),
-      message: "Please provide a color as second arguments: " + supplement + " (was " + repr(type(col)) + ")",
+      message: "Please provide a color as second arguments: "
+        + supplement
+        + " (was "
+        + repr(type(col))
+        + ")",
     )
     ((id, supplement, col),)
   }
