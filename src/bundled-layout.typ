@@ -1,4 +1,27 @@
-#let spawn-frame(
+#let encode-caption-id(
+  kind,
+  title,
+  tags,
+  body,
+  supplement,
+  custom-arg,
+) = [
+  Uniquely identify this to make the `show figure`-clause as specific as possible.
+  #(
+    (
+      kind,
+      title,
+      tags,
+      body,
+      supplement,
+      custom-arg,
+    )
+      .map(repr)
+      .join(", ")
+  )
+]
+
+#let spawn-bundled-frame(
   style,
   kind,
   title,
@@ -7,25 +30,20 @@
   supplement,
   custom-arg,
 ) = figure(
-  kind: kind,
+  kind: kind + " wrapper",
   supplement: supplement,
   {
-    let caption-id = [
-      Uniquely identify this to make the `show figure`-clause as specific as possible.
-      #(
-        style,
-        kind,
-        title,
-        tags,
-        body,
-        supplement,
-        custom-arg,
-      ).map(repr).join(", ")
-    ]
+    let caption-id = encode-caption-id(
+      kind,
+      title,
+      tags,
+      body,
+      supplement,
+      custom-arg,
+    )
     // Offset the counter because our outer helper figure has the same kind.
     // The outer figure must have the same kind as the inner because the user might rely
     // on the outer one having the kind he knows when he's writing rules for references
-    counter(figure.where(kind: kind)).update(old => old - 1)
     // NOTE I don't know the performance impact of this
     // Inject the customized styling into the caption.
     // We use the caption because we have access to the supplement and the numbering there.
@@ -52,23 +70,23 @@
 // 1. We need to return a type figure to make it labellable
 // 2. We need to specify rules (set and show) to modify caption styling
 // 3. If we specify rules in the block which is returned, a type 'styled' is returned instead of the figure
-#let factory(style, supplement, kind, custom-arg) = (
+#let bundled-factory(style, supplement, kind, custom-arg) = (
   (..title-and-tags, body, style: style, arg: custom-arg) => {
     assert(
       title-and-tags.named() == (:),
-      message: "You provided named arguments which are not supported: " + repr(
-        title-and-tags.named(),
-      ),
+      message: "You provided named arguments which are not supported: "
+        + repr(title-and-tags.named()),
     )
     let title = none
     let tags = ()
     if title-and-tags.pos() != () {
       (title, ..tags) = title-and-tags.pos()
     }
-    spawn-frame(style, kind, title, tags, body, supplement, arg)
+    spawn-bundled-frame(style, kind, title, tags, body, supplement, arg)
   }
 )
 
+// DEPRECATED
 #let breakable-frames(kind, breakable: true) = (
   it => {
     show figure.where(kind: kind): set block(breakable: breakable)

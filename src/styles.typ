@@ -1,5 +1,5 @@
 #import "styling.typ" as styling
-#import "layout.typ": divide
+#import "bundled-layout.typ": divide
 
 #let body-inset = 0.8em
 #let stroke-width = 0.13em
@@ -8,7 +8,8 @@
 #let boxy(title, tags, body, supplement, number, accent-color) = {
   assert(
     type(accent-color) == color,
-    message: "Please provide a color as argument for the frame instance" + supplement,
+    message: "Please provide a color as argument for the frame instance"
+      + supplement,
   )
 
   let stroke = accent-color + stroke-width
