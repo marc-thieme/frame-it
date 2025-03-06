@@ -1,4 +1,6 @@
 ## CURRENT
+- Change API to declare the styling function to use using a show rule
+- Refactor layouting system to be simpler and more robust
 - Make frames breakable across pages
 - Add version of readme for dark mode on GitHub
 - Influence the auto–generated colors for the frames using `base-color` parameter
