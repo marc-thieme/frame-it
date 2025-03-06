@@ -89,7 +89,7 @@ which yields
     The simplest way to create an element is by providing a title as the first argument and content as the second.
   ]
 
-  #variant[Element with Tags][Customizable Tags][!][
+  #variant[Element with Tags][Customizable Tags][Multiple][
     Elements can include multiple tags placed between the title and the content.
   ]
 
@@ -122,6 +122,9 @@ The following features are demonstrated in both predefined styles.
 #layout-features()
 == Highlight parts distinctively
 #show: frame-style(styles.boxy)
+#layout-features()
+== A third Alternative
+#show: frame-style(styles.thmbox)
 #layout-features()
 
 == Miscallaneous
