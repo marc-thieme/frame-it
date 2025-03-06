@@ -56,7 +56,7 @@ If they don't appeal to you, you have complete freedom to define custom styling 
 Import and define your desired frames:
 
 ```typst
-#import "@preview/frame-it:1.0.0": *
+#import "@preview/frame-it:1.1.0": *
 
 #let (example, feature, variant, syntax) = frames(
   feature: ("Feature",),

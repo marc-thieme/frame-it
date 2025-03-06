@@ -1,4 +1,4 @@
-## CURRENT
+## 1.1.0
 - Add new styling
 - In the `(make-)frames`–function, allow supplement to be supplied as single value
   instead of array
