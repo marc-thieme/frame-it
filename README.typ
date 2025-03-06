@@ -1,31 +1,29 @@
 #import "src/lib.typ": *
 
-#set page(height: auto, margin: 4mm)
-#set text(14pt)
-
 #let base-color-arg = (:)
 #let text-color = black
 #let background-color = white
-
 #if sys.inputs.at("theme", default: "light") == "dark" {
   text-color = rgb(240, 246, 252)
   background-color = rgb("#0d1117")
   base-color-arg.base-color = blue.darken(40%).desaturate(25%)
 }
-#set page(fill: background-color)
-#set text(text-color)
-
 #let example-color = text-color.mix((text-color.negate(), 590%)).mix(gray)
-#let (example, feature, variant, syntax) = make-frames(
-  "core-frames",
+
+#let (example, feature, variant, syntax) = frames(
   ..base-color-arg,
   feature: ("Feature",),
   variant: ("Feature Variant",),
   example: ("Example", example-color),
   syntax: ("Syntax",),
 )
+#show: frame-style(styles.boxy)
 
-#set heading(numbering: "1.1")
+#set page(fill: background-color)
+#set text(text-color)
+#set page(height: auto, margin: 4mm)
+#set text(14pt)
+
 
 = Introduction
 #link("https://github.com/marc-thieme/frame-it", text(blue)[Frame-It]) offers a straightforward way to define and use custom environments in your documents. Its syntax is designed to integrate seamlessly with your source code.
@@ -38,7 +36,9 @@ Two predefined styles are included by default. You can also create custom stylin
 
 In contrast:
 
-#feature(style: styles.hint)[Unobtrusive Style][Ideal for frequent use][Blends into text flow][
+#feature(
+  style: styles.hint,
+)[Unobtrusive Style][Ideal for frequent use][Blends into text flow][
   The alternative style `styles.hint` highlights text with a subtle colored line along the side, preserving the document's flow.
 ]
 
@@ -84,13 +84,7 @@ which yields
 
 = Feature List
 
-#let layout-features(style) = [
-  #let (example, feature, variant) = (
-    example.with(style: style),
-    variant.with(style: style),
-    feature.with(style: style),
-  )
-
+#let layout-features() = [
   #feature[Element with Title and Content][
     The simplest way to create an element is by providing a title as the first argument and content as the second.
   ]
@@ -124,9 +118,11 @@ which yields
 The following features are demonstrated in both predefined styles.
 
 == Seamlessly hightight parts of your document
-#layout-features(styles.hint)
+#show: frame-style(styles.hint)
+#layout-features()
 == Highlight parts distinctively
-#layout-features(styles.boxy)
+#show: frame-style(styles.boxy)
+#layout-features()
 == Additional Capabilities
 #syntax[Labels and References][
   Elements can be referenced as expected by appending `<label>` and referencing it:
@@ -238,9 +234,8 @@ Here are a few edge cases.
 
 == Breakable frames
 Following, we demonstrate how the different styles cope with pagebreaks
-#let place-breakables(style) = [
-  #let example = example.with(style: style)
-  #show: breakable-frames("core-frames")
+#let place-breakables() = [
+  #show figure.where(kind: "frame"): set block(breakable: true)
   #example[Broken across pages][#link("https://github.com/marc-thieme/frame-it/issues/1")[Issue \#1]][
     #lorem(20)
     #colbreak()
@@ -248,7 +243,7 @@ Following, we demonstrate how the different styles cope with pagebreaks
     #colbreak()
     #lorem(20)
   ]
-  #show: breakable-frames("core-frames", breakable: false)
+  #show figure.where(kind: "frame"): set block(breakable: false)
   #example[After turning it off again][
     #lorem(10)
     #colbreak()
@@ -259,6 +254,8 @@ Following, we demonstrate how the different styles cope with pagebreaks
   ]
 ]
 *Boxy style:*
-#place-breakables(styles.boxy)
+#show: frame-style(styles.boxy)
+#place-breakables()
+#show: frame-style(styles.hint)
 *Hint style:*
-#place-breakables(styles.hint)
+#place-breakables()
