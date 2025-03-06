@@ -1,4 +1,5 @@
 ## CURRENT
+- Add new styling
 - In the `(make-)frames`–function, allow supplement to be supplied as single value
   instead of array
 - Pass additional arguments in a frame function onto the figure function
