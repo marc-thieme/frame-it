@@ -16,6 +16,26 @@
   }
 }
 
+#let default-kind = "frame"
+
+#let frames(
+  kind: default-kind,
+  base-color: purple.lighten(60%).desaturate(40%),
+  ..frames,
+) = {
+  import "parse.typ": fill-missing-colors
+  import "layout.typ": frame-factory
+
+  for (id, supplement, color) in fill-missing-colors(base-color, frames) {
+    ((id): frame-factory(kind, supplement, color))
+  }
+}
+
+#let frame-style(kind: default-kind, style) = {
+  import "layout.typ" as layout
+  layout.frame-style(kind, style)
+}
+
 /*
 Definition of styling:
 
