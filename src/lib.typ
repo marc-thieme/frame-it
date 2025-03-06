@@ -4,7 +4,8 @@
 #let styles = {
   import "styles/boxy.typ": boxy
   import "styles/hint.typ": hint
-  (boxy: boxy, hint: hint)
+  import "styles/thmbox.typ": thmbox
+  (boxy: boxy, hint: hint, thmbox: thmbox)
 }
 
 // DEPRECATED. Use `frames` and `show: frame-style()` instead
