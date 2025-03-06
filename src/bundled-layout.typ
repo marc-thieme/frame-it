@@ -74,17 +74,21 @@
 // 3. If we specify rules in the block which is returned, a type 'styled' is returned instead of the figure
 #let bundled-factory(style, supplement, kind, custom-arg) = (
   (..title-and-tags, body, style: style, arg: custom-arg) => {
-    assert(
-      title-and-tags.named() == (:),
-      message: "You provided named arguments which are not supported: "
-        + repr(title-and-tags.named()),
-    )
     let title = none
     let tags = ()
     if title-and-tags.pos() != () {
       (title, ..tags) = title-and-tags.pos()
     }
-    spawn-bundled-frame(style, kind, title, tags, body, supplement, arg)
+    spawn-bundled-frame(
+      style,
+      kind,
+      title,
+      tags,
+      body,
+      supplement,
+      arg,
+      ..title-and-tags.named(),
+    )
   }
 )
 

@@ -20,6 +20,7 @@
   body,
   supplement,
   custom-arg,
+  ..figure-params,
 ) = {
   let frame-info = (
     title,
@@ -32,6 +33,7 @@
     caption: encode-title-and-info(title, frame-info),
     supplement: supplement,
     kind: kind,
+    ..figure-params,
     none,
   )
 }
@@ -61,20 +63,32 @@
 
 #let frame-factory(kind, supplement, custom-arg) = (
   (..title-and-tags, body, style: auto, arg: custom-arg) => {
-    assert(
-      title-and-tags.named() == (:),
-      message: "You provided named arguments which are not supported: "
-        + repr(title-and-tags.named()),
-    )
     let title = none
     let tags = ()
     if title-and-tags.pos() != () {
       (title, ..tags) = title-and-tags.pos()
     }
     if style == auto {
-      spawn-frame(kind, title, tags, body, supplement, arg)
+      spawn-frame(
+        kind,
+        title,
+        tags,
+        body,
+        supplement,
+        arg,
+        ..title-and-tags.named(),
+      )
     } else {
-      spawn-bundled-frame(style, kind, title, tags, body, supplement, arg)
+      spawn-bundled-frame(
+        style,
+        kind,
+        title,
+        tags,
+        body,
+        supplement,
+        arg,
+        ..title-and-tags.named(),
+      )
     }
   }
 )

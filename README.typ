@@ -152,6 +152,23 @@ For example: @reference-tag.
   ```
 ]
 
+#syntax[Per–frame custom figure parameters][Frame outline][
+  All named arguments passed to a frame–function like `example[][]` are going to be passed
+  to the figure function which places the frame in the document.
+  #divide()
+  For example, you can create an outline which only contains some intentional of your frames like so.
+  The `figure` function includes a parameter for including a figure in the outline.
+  ```typst
+  // By default, don't include a frame
+  #show figure.where(kind: "frame"): set figure(outlined: false)
+  // Create the outline
+  #outline(target: figure.where(kind: "frame"))
+  // Include a frame in the outline with the `outlined` parameter.
+  #example(outlined: true)[Important frame][For the outline]
+  ```
+
+]
+
 #variant[Different numbering][
   Numbering in figures is a bit of a mess.
   Natively, you are limited to one number and a format suffix/prefix.
