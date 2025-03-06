@@ -22,7 +22,7 @@
 #set page(fill: background-color)
 #set text(text-color)
 #set page(height: auto, margin: 4mm)
-#set text(14pt)
+#set text(16pt)
 
 
 = Introduction
@@ -115,7 +115,7 @@ which yields
   ]
 ]
 
-The following features are demonstrated in both predefined styles.
+The following features are demonstrated in all predefined styles.
 
 == Seamlessly hightight parts of your document
 #show: frame-style(styles.hint)
@@ -125,6 +125,7 @@ The following features are demonstrated in both predefined styles.
 #layout-features()
 == A third Alternative
 #show: frame-style(styles.thmbox)
+We recently a third style, namely `styles.thmbox`:
 #layout-features()
 
 == Miscallaneous
