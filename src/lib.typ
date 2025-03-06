@@ -1,6 +1,11 @@
-#import "styles.typ" as styles
 #import "styling.typ" as styling
 #import "bundled-layout.typ": divide, breakable-frames
+
+#let styles = {
+  import "styles/boxy.typ": boxy
+  import "styles/hint.typ": hint
+  (boxy: boxy, hint: hint)
+}
 
 // DEPRECATED. Use `frames` and `show: frame-style()` instead
 #let make-frames(
