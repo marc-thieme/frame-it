@@ -17,13 +17,21 @@
   example: ("Example", example-color),
   syntax: ("Syntax",),
 )
+
+#show figure.where(kind: "frame"): frame => {
+  html.frame({
+    v(2mm)
+    block(width: 23cm, frame)
+    v(2mm)
+  })
+}
+
 #show: frame-style(styles.boxy)
 
-#set page(fill: background-color)
+// #set page(fill: background-color)
 #set text(text-color)
-#set page(height: auto, margin: 4mm)
+// #set page(height: auto, margin: 4mm)
 #set text(16pt)
-
 
 = Introduction
 #link("https://github.com/marc-thieme/frame-it", text(blue)[Frame-It]) offers a straightforward way to define and use custom environments in your documents. Its syntax is designed to integrate seamlessly with your source code.
@@ -118,16 +126,21 @@ which yields
 The following features are demonstrated in all predefined styles.
 
 == Seamlessly hightight parts of your document
+#[
 #show: frame-style(styles.hint)
 #layout-features()
+]
 == Highlight parts distinctively
+#[
 #show: frame-style(styles.boxy)
 #layout-features()
+]
 == A third Alternative
+#[
 #show: frame-style(styles.thmbox)
 We recently a third style, namely `styles.thmbox`:
 #layout-features()
-
+]
 == Miscallaneous
 Internally, every frame is just a `figure` where the `kind` is set to `"frame"` (or a different custom value).
 As such, most things that can be done to a figure can be done with a frame as well.
@@ -142,7 +155,7 @@ Here is a list of examples:
   Referencing with @labels-and-refs.
   ```
 ] <reference-tag>
-For example: @reference-tag.
+// For example: @reference-tag.
 
 #variant[Break frames across pages][
   If you want to make your frames breakable across pages,
@@ -262,7 +275,8 @@ Here are a few edge cases.
   #lorem(20)
 ]
 
-#example[][
+#example[Nested][
+  (Nesting currently does not work in html export)
   #example[][
     #example(style: styles.hint)[][
       When nested, counters increment from outer to inner elements.
@@ -273,31 +287,3 @@ Here are a few edge cases.
 #example[][
   Counters continue incrementing sequentially in non-nested elements.
 ]
-
-== Breakable frames
-Following, we demonstrate how the different styles cope with pagebreaks
-#let place-breakables() = [
-  #show figure.where(kind: "frame"): set block(breakable: true)
-  #example[Broken across pages][#link("https://github.com/marc-thieme/frame-it/issues/1")[Issue \#1]][
-    #lorem(20)
-    #colbreak()
-    #lorem(20)
-    #colbreak()
-    #lorem(20)
-  ]
-  #show figure.where(kind: "frame"): set block(breakable: false)
-  #example[After turning it off again][
-    #lorem(10)
-    #colbreak()
-    ```typst
-    #colbreak() // Check source code to verify that the colbreak was actually there
-    ```
-    Now, we should see that we see no pagebreak despite the line break
-  ]
-]
-*Boxy style:*
-#show: frame-style(styles.boxy)
-#place-breakables()
-#show: frame-style(styles.hint)
-*Hint style:*
-#place-breakables()
