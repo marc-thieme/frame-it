@@ -1,10 +1,90 @@
 #import "../styling.typ" as styling
+#import "../utils/html.typ": css, span, div
 
 #let body-inset = 0.8em
 #let stroke-width = 0.13em
 #let corner-radius = 5pt
 
-#let boxy(title, tags, body, supplement, number, accent-color) = {
+#let boxy-html(title, tags, body, supplement, number, accent-color) = {
+  let has-body = body != []
+  let body-only = title == none
+  let has-title = title not in ([], "")
+  let has-headers = int(has-title) + tags.len() > 0
+  let header-contents = tags
+  if has-title {
+    header-contents.insert(0, title)
+  }
+
+  let header-styles = (
+    padding: "5px 10px",
+    border: (stroke-width, "solid", accent-color),
+    margin-left: "-2px",
+  )
+  if has-body {
+    header-styles.border-bottom = none
+  }
+  let first-header-elem-css-overlay = (
+    margin-left: 0,
+    border-top-left-radius: corner-radius,
+  )
+  let last-header-elem-css-overlay = (
+    border-top-right-radius: corner-radius,
+  )
+  let html-suppl = span(
+    css(
+      ..header-styles,
+      border-color: "transparent",
+      margin-left: if has-title { auto } else { 0 },
+      mragin-right: body-inset,
+    ),
+    supplement + " " + number,
+  )
+  let headers-html() = {
+    let header-contents = if has-title {
+      (title, ..tags)
+    } else {
+      tags
+    }
+    let header-css = (header-styles,) * header-contents.len()
+    header-css.first() += first-header-elem-css-overlay
+    header-css.last() += last-header-elem-css-overlay
+
+    if has-title {
+      header-css.first() += (background-color: accent-color)
+    }
+    for (content, css-dict) in header-contents.zip(header-css) {
+      span(css(..css-dict), content)
+    }
+  }
+  if not body-only {
+    div(
+      css(display: "flex", align-items: center),
+      {
+        if has-headers {
+          headers-html()
+        }
+        html-suppl
+      },
+    )
+  }
+  if has-body {
+    let css-dict = (
+      border: "2px solid",
+      border-color: accent-color,
+      border-radius: (0, corner-radius, corner-radius, corner-radius),
+      padding: body-inset,
+    )
+    if not has-headers {
+      css-dict.border-top-left-radius = corner-radius
+    }
+    div(
+      css(css-dict),
+      body,
+    )
+  }
+}
+
+#let boxy-paged(title, tags, body, supplement, number, accent-color) = {
   assert(
     type(accent-color) == color,
     message: "Please provide a color as argument for the frame instance"
@@ -96,3 +176,10 @@
   stack(..parts)
 }
 
+#let boxy(title, tags, body, supplement, number, accent-color) = context (
+  if target() == "html" {
+    boxy-html
+  } else {
+    boxy-paged
+  }
+)(title, tags, body, supplement, number, accent-color)
