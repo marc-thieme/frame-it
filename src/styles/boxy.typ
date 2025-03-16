@@ -68,6 +68,15 @@
     )
   }
   if has-body {
+    show: styling.dividers-as({
+      let css-dict = (
+        border: 0,
+        height: stroke-width,
+        background: accent-color,
+        margin: (body-inset, -body-inset),
+      )
+      html.elem("hr", attrs: (style: css(css-dict)))
+    })
     let css-dict = (
       border: "2px solid",
       border-color: accent-color,
