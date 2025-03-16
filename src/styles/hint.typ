@@ -1,16 +1,12 @@
 #import "../styling.typ" as styling
+#import "../utils/html.typ": css, span, div
 
 #let body-inset = 0.8em
 #let stroke-width = 0.13em
+#let line-width = 3.5pt
 
-#let hint(title, tags, body, supplement, number, accent-color) = {
-  let stroke = stroke(
-    thickness: 3.5pt,
-    paint: accent-color,
-    cap: "round",
-  )
-
-  let header = if title == none {
+#let header-suppl(title, tags, body, supplement, number) = {
+  if title == none {
     none
   } else {
     if title != [] {
@@ -29,7 +25,47 @@
     let head-body-separator = if body == [] [] else [:]
     [~#supplement-str~*#(title)*_#(tag-str)_#head-body-separator~]
   }
+}
 
+#let hint-html(title, tags, body, supplement, number, accent-color) = {
+  let has-body = body != []
+  let body-only = title == none
+  let has-title = title not in ([], "")
+  let has-headers = int(has-title) + tags.len() > 0
+  show: styling.dividers-as(
+    html.elem(
+      "hr",
+      attrs: (
+        style: css(
+          background: accent-color,
+          height: stroke-width,
+          border: 0,
+          margin: (body-inset, -body-inset),
+        ),
+      ),
+    ),
+  )
+  div(
+    css(
+      border-left: (line-width, "solid ", accent-color),
+      padding: body-inset,
+      margin: body-inset,
+    ),
+    {
+      header-suppl(title, tags, body, supplement, number)
+      body
+    },
+  )
+}
+
+#let hint-paged(title, tags, body, supplement, number, accent-color) = {
+  let stroke = stroke(
+    thickness: line-width,
+    paint: accent-color,
+    cap: "round",
+  )
+
+  let header = header-suppl(title, tags, body, supplement, number)
   layout(((width,)) => {
     let text = {
       show: styling.dividers-as({
@@ -63,4 +99,11 @@
   })
 }
 
+#let hint(title, tags, body, supplement, number, accent-color) = context (
+  if target() == "html" {
+    hint-html
+  } else {
+    hint-paged
+  }
+)(title, tags, body, supplement, number, accent-color)
 
