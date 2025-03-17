@@ -12,6 +12,7 @@
   } else {
     args.named()
   }
+
   let parse(val) = if type(val) == color {
     val.to-hex()
   } else if type(val) != str {
@@ -19,12 +20,13 @@
   } else {
     val
   }
+
   for (key, value) in css-dict {
     value = if type(value) == array {
       value.map(parse).join(" ")
     } else {
       parse(value)
     }
-    key + ": " + value + ";"
+    key + ": " + value + "; "
   }
 }
