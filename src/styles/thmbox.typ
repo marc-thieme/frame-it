@@ -1,18 +1,82 @@
 #import "../styling.typ" as styling
+#import "../utils/html.typ": css, span, div
 
-#let bar-thickness = 3pt
+#let line-width = 3pt
+#let body-inset = 1em
+#let text-color(accent-color) = accent-color.saturate(60%).darken(20%)
+
+#let thmbox-html(title, tags, body, supplement, number, accent-color) = {
+  let has-body = body != []
+  let has-title = title not in ([], "", none)
+  let has-headers = int(has-title) + tags.len() > 0
+  let body-only = title == none
+  let header-contents = tags
+  div(
+    css(
+      border-left: (line-width, "solid", accent-color),
+      padding: body-inset,
+    ),
+    {
+      if not body-only {
+        div(
+          css(
+            ..(
+              if has-headers {
+                (
+                  display: "flex",
+                  justify-content: "space-between",
+                  align-items: center,
+                )
+              } else { (:) }
+            ),
+            color: text-color(accent-color),
+          ),
+          {
+            if has-title {
+              div(css(flex: "1.7 1 1", text-align: left), strong(title))
+            }
+            let is-first = true
+            for tag in tags {
+              div(css(flex: "1 1 1", text-align: center), tag)
+              is-first = false
+            }
+            div(
+              css(
+                flex: "1.7 1 1",
+                text-align: if has-headers { right } else { left },
+              ),
+              strong(supplement + " " + number),
+            )
+          },
+        )
+      }
+      show: styling.dividers-as(
+        html.elem(
+          "hr",
+          attrs: (
+            style: css(
+              background: accent-color,
+              height: 0.18em,
+              border: 0,
+              margin: (0, 0, 0, -body-inset),
+            ),
+          ),
+        ),
+      )
+      body
+    },
+  )
+}
 
 // Credits to https://github.com/s15n/typst-thmbox
-#let thmbox(title, tags, body, supplement, number, accent-color) = {
-  let text-color = accent-color.saturate(60%).darken(20%)
-
-  let bar = stroke(paint: accent-color, thickness: bar-thickness)
+#let thmbox-paged(title, tags, body, supplement, number, accent-color) = {
+  let bar = stroke(paint: accent-color, thickness: line-width)
 
   show: styling.dividers-as({
     line(
       length: 100% + 1em,
       start: (-1em, 0pt),
-      stroke: accent-color + bar-thickness * 0.8,
+      stroke: accent-color + line-width * 0.8,
     )
     v(-0.2em)
   })
@@ -35,7 +99,7 @@
         above: 0em,
         below: 1.2em,
       )[
-        #set text(text-color, weight: "bold")
+        #set text(text-color(accent-color), weight: "bold")
         #if title != [] {
           title
           h(3fr)
@@ -62,3 +126,10 @@
   ]
 }
 
+#let thmbox(title, tags, body, supplement, number, accent-color) = context (
+  if target() == "html" {
+    thmbox-html
+  } else {
+    thmbox-paged
+  }
+)(title, tags, body, supplement, number, accent-color)
