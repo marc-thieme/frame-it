@@ -1,5 +1,3 @@
-#import "bundled-layout.typ": spawn-bundled-frame
-
 #let unique-frame-metadata-tag = "_THIS-IS-METADATA-USED-FOR-FRAME-IT-FRAMES"
 
 // Encode info as invisible metadata so when rendered in outline, only the title is seen
@@ -79,15 +77,22 @@
         ..title-and-tags.named(),
       )
     } else {
-      spawn-bundled-frame(
-        style,
-        kind,
-        title,
-        tags,
-        body,
-        supplement,
-        arg,
-        ..title-and-tags.named(),
+      figure(
+        kind: kind + "-wrapper",
+        supplement: supplement,
+        outlined: false,
+        {
+          show: frame-style(kind, style)
+          spawn-frame(
+            kind,
+            title,
+            tags,
+            body,
+            supplement,
+            custom-arg,
+            ..title-and-tags.named(),
+          )
+        },
       )
     }
   }
