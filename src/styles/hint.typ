@@ -47,9 +47,8 @@
   )
   div(
     css(
-      border-left: (line-width, "solid ", accent-color),
+      border-left: (line-width, "solid", accent-color),
       padding: body-inset,
-      margin: body-inset,
     ),
     {
       header-suppl(title, tags, body, supplement, number)
