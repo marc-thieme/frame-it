@@ -97,7 +97,7 @@
     }
     div(
       css(css-dict),
-      repr(has-headers) + body,
+      body,
     )
   }
 }
