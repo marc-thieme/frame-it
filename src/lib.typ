@@ -1,5 +1,5 @@
-#import "styling.typ" as styling
-#import "bundled-layout.typ": divide, breakable-frames
+#import "styling.typ" as styling: divide
+#import "bundled-layout.typ": breakable-frames
 
 #let styles = {
   import "styles/boxy.typ": boxy

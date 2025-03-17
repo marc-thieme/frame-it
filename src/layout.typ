@@ -1,3 +1,5 @@
+#import "styling.typ"
+
 #let unique-frame-metadata-tag = "_THIS-IS-METADATA-USED-FOR-FRAME-IT-FRAMES"
 
 // Encode info as invisible metadata so when rendered in outline, only the title is seen
@@ -60,6 +62,9 @@
       style(title, tags, body, supplement, number, custom-arg)
     }
   }
+  show: styling.dividers-as[
+    `Error: Dividers not supported by this styling function.`
+  ]
 
   context if target() == "html" {
     show figure
