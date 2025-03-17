@@ -279,31 +279,3 @@ Here are a few edge cases.
 #example[][
   Counters continue incrementing sequentially in non-nested elements.
 ]
-
-== Breakable frames
-Following, we demonstrate how the different styles cope with pagebreaks
-#let place-breakables() = [
-  #show figure.where(kind: "frame"): set block(breakable: true)
-  #example[Broken across pages][#link("https://github.com/marc-thieme/frame-it/issues/1")[Issue \#1]][
-    #lorem(20)
-    #colbreak()
-    #lorem(20)
-    #colbreak()
-    #lorem(20)
-  ]
-  #show figure.where(kind: "frame"): set block(breakable: false)
-  #example[After turning it off again][
-    #lorem(10)
-    #colbreak()
-    ```typst
-    #colbreak() // Check source code to verify that the colbreak was actually there
-    ```
-    Now, we should see that we see no pagebreak despite the line break
-  ]
-]
-*Boxy style:*
-#show: frame-style(styles.boxy)
-#place-breakables()
-#show: frame-style(styles.hint)
-*Hint style:*
-#place-breakables()
