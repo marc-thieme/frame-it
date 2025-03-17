@@ -1,4 +1,5 @@
 #import "src/lib.typ": *
+#import "src/utils/html.typ": *
 
 #let base-color-arg = (:)
 #let text-color = black
@@ -17,21 +18,27 @@
   example: ("Example", example-color),
   syntax: ("Syntax",),
 )
-
-#show figure.where(kind: "frame"): frame => {
-  html.frame({
-    v(2mm)
-    block(width: 23cm, frame)
-    v(2mm)
-  })
+#set text(text-color)
+#set text(16pt)
+#show: it => context if target() == "html" {
+  html.elem(
+    "style",
+    "body {"
+      + css(
+        padding: 0.75em,
+        background-color: background-color,
+        color: text-color,
+      )
+      + "}",
+  )
+  it
+} else {
+  set page(fill: background-color)
+  set page(height: auto, margin: 4mm)
+  it
 }
 
 #show: frame-style(styles.boxy)
-
-// #set page(fill: background-color)
-#set text(text-color)
-// #set page(height: auto, margin: 4mm)
-#set text(16pt)
 
 = Introduction
 #link("https://github.com/marc-thieme/frame-it", text(blue)[Frame-It]) offers a straightforward way to define and use custom environments in your documents. Its syntax is designed to integrate seamlessly with your source code.
@@ -105,7 +112,7 @@ which yields
     If you don’t require a custom title but still want to display the element type, use `[]` as the title placeholder.
   ]
 
-  #variant[][Single Tag][
+  #variant[][Single Tag][Next tag][
     You can include tags even when no title is provided.
   ]
 
@@ -127,19 +134,19 @@ The following features are demonstrated in all predefined styles.
 
 == Seamlessly hightight parts of your document
 #[
-#show: frame-style(styles.hint)
-#layout-features()
+  #show: frame-style(styles.hint)
+  #layout-features()
 ]
 == Highlight parts distinctively
 #[
-#show: frame-style(styles.boxy)
-#layout-features()
+  #show: frame-style(styles.boxy)
+  #layout-features()
 ]
 == A third Alternative
 #[
-#show: frame-style(styles.thmbox)
-We recently a third style, namely `styles.thmbox`:
-#layout-features()
+  #show: frame-style(styles.thmbox)
+  We recently a third style, namely `styles.thmbox`:
+  #layout-features()
 ]
 == Miscallaneous
 Internally, every frame is just a `figure` where the `kind` is set to `"frame"` (or a different custom value).
@@ -263,27 +270,29 @@ The content returned will be placed as–is in the document.
 
 For more information on how to define your own styling function, please look into the `styling` module.
 
-= Edge Cases
+// Comment out because they do not work in HTML export as of yet
 
-Here are a few edge cases.
+// = Edge Cases
 
-#example[Test][Long tag example without space for the supplement][notice the number moves up][
-  #lorem(20)
-]
+// Here are a few edge cases. Temporarily, they do not work because
 
-#example[Example][Tags of various sizes][$sum_sum^sum$][Extra vertical space: #v(1cm)][
-  #lorem(20)
-]
+// #example[Test][Long tag example without space for the supplement][notice the number moves up][
+//   #lorem(20)
+// ]
 
-#example[Nested][
-  (Nesting currently does not work in html export)
-  #example[][
-    #example(style: styles.hint)[][
-      When nested, counters increment from outer to inner elements.
-    ]
-  ]
-]
+// #example[Example][Tags of various sizes][$sum_sum^sum$][Extra vertical space: #v(1cm)][
+//   #lorem(20)
+// ]
 
-#example[][
-  Counters continue incrementing sequentially in non-nested elements.
-]
+// #example[Nested][
+//   (Nesting currently does not work in html export)
+//   #example[][
+//     #example(style: styles.hint)[][
+//       When nested, counters increment from outer to inner elements.
+//     ]
+//   ]
+// ]
+
+// #example[][
+//   Counters continue incrementing sequentially in non-nested elements.
+// ]
