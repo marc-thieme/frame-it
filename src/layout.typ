@@ -36,10 +36,14 @@
   )
 }
 
+#let __frame-id-counter-state = state("__frame-it_frame-id-state", 1)
+
 #let frame-style(
   kind,
   style,
 ) = document => {
+  // Don't restrict to correct kind. We already discern between framees and user–figures
+  // inspecting the metadata. This way, the user can manipulate the kind if desired.
   show figure.caption: caption => {
     let code = caption.body
     if not code-has-info-attached(code) {
@@ -56,7 +60,28 @@
       style(title, tags, body, supplement, number, custom-arg)
     }
   }
-  document
+
+  context if target() == "html" {
+    show figure
+      .where(kind: kind)
+      .or(figure.where(kind: kind + "-wrapper")): it => {
+      // Necessary because html-figure unfortunately inserts padding we don't want
+      let id = __frame-id-counter-state.get()
+      __frame-id-counter-state.update(it => it + 1)
+      let figure-id = "frame-wrapper-" + str(id)
+      let style-code = {
+        "#" + figure-id + " > figure {"
+        "  margin-left: 0px;"
+        "  margin-right: 0px;"
+        "}"
+      }
+      html.elem("style", style-code)
+      html.elem("div", attrs: (id: figure-id), it)
+    }
+    document
+  } else {
+    document
+  }
 }
 
 #let frame-factory(kind, supplement, custom-arg) = (
