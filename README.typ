@@ -17,13 +17,21 @@
   example: ("Example", example-color),
   syntax: ("Syntax",),
 )
+
+#show figure.where(kind: "frame"): frame => {
+  html.frame({
+    v(2mm)
+    block(width: 23cm, frame)
+    v(2mm)
+  })
+}
+
 #show: frame-style(styles.boxy)
 
-#set page(fill: background-color)
+// #set page(fill: background-color)
 #set text(text-color)
-#set page(height: auto, margin: 4mm)
+// #set page(height: auto, margin: 4mm)
 #set text(16pt)
-
 
 = Introduction
 #link("https://github.com/marc-thieme/frame-it", text(blue)[Frame-It]) offers a straightforward way to define and use custom environments in your documents. Its syntax is designed to integrate seamlessly with your source code.
@@ -132,7 +140,6 @@ The following features are demonstrated in all predefined styles.
 #show: frame-style(styles.thmbox)
 We recently a third style, namely `styles.thmbox`:
 #layout-features()
-
 ]
 == Miscallaneous
 Internally, every frame is just a `figure` where the `kind` is set to `"frame"` (or a different custom value).
@@ -148,7 +155,7 @@ Here is a list of examples:
   Referencing with @labels-and-refs.
   ```
 ] <reference-tag>
-For example: @reference-tag.
+// For example: @reference-tag.
 
 #variant[Break frames across pages][
   If you want to make your frames breakable across pages,
@@ -268,7 +275,8 @@ Here are a few edge cases.
   #lorem(20)
 ]
 
-#example[][
+#example[Nested][
+  (Nesting currently does not work in html export)
   #example[][
     #example(style: styles.hint)[][
       When nested, counters increment from outer to inner elements.
