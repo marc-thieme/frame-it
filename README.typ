@@ -118,16 +118,22 @@ which yields
 The following features are demonstrated in all predefined styles.
 
 == Seamlessly hightight parts of your document
+#[
 #show: frame-style(styles.hint)
 #layout-features()
+]
 == Highlight parts distinctively
+#[
 #show: frame-style(styles.boxy)
 #layout-features()
+]
 == A third Alternative
+#[
 #show: frame-style(styles.thmbox)
 We recently a third style, namely `styles.thmbox`:
 #layout-features()
 
+]
 == Miscallaneous
 Internally, every frame is just a `figure` where the `kind` is set to `"frame"` (or a different custom value).
 As such, most things that can be done to a figure can be done with a frame as well.
