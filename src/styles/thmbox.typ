@@ -3,14 +3,16 @@
 
 #let line-width = 3pt
 #let body-inset = 1em
-#let text-color(accent-color) = accent-color.saturate(60%).darken(20%)
+#let text-color(accent-color) = (
+  accent-color.mix((text.fill.lighten(80%), 100%)).saturate(60%)
+)
+
 
 #let thmbox-html(title, tags, body, supplement, number, accent-color) = {
   let has-body = body != []
   let has-title = title not in ([], "", none)
   let has-headers = int(has-title) + tags.len() > 0
   let body-only = title == none
-  let header-contents = tags
   div(
     css(
       border-left: (line-width, "solid", accent-color),
@@ -18,7 +20,7 @@
     ),
     {
       if not body-only {
-        div(
+        context div(
           css(
             ..(
               if has-headers {
@@ -98,19 +100,20 @@
       block(
         above: 0em,
         below: 1.2em,
-      )[
-        #set text(text-color(accent-color), weight: "bold")
-        #if title != [] {
-          title
-          h(3fr)
-          for tag in tags {
-            text(tag, weight: "regular")
-            h(1fr)
+        context [
+          #set text(text-color(accent-color), weight: "bold")
+          #if title != [] {
+            title
+            h(3fr)
+            for tag in tags {
+              text(tag, weight: "regular")
+              h(1fr)
+            }
+            h(2fr)
           }
-          h(2fr)
-        }
-        #supplement #number
-      ]
+          #supplement #number
+        ],
+      )
     }
     // Body
     #if body != [] {
