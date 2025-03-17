@@ -29,9 +29,9 @@
 
 #let hint-html(title, tags, body, supplement, number, accent-color) = {
   let has-body = body != []
-  let body-only = title == none
-  let has-title = title not in ([], "")
+  let has-title = title not in ([], "", none)
   let has-headers = int(has-title) + tags.len() > 0
+  let body-only = title == none
   show: styling.dividers-as(
     html.elem(
       "hr",

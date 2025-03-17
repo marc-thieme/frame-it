@@ -7,9 +7,9 @@
 
 #let boxy-html(title, tags, body, supplement, number, accent-color) = {
   let has-body = body != []
-  let body-only = title == none
-  let has-title = title not in ([], "")
+  let has-title = title not in ([], "", none)
   let has-headers = int(has-title) + tags.len() > 0
+  let body-only = title == none
   let header-contents = tags
   if has-title {
     header-contents.insert(0, title)
