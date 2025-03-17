@@ -23,18 +23,28 @@
   if has-body {
     header-styles.border-bottom = none
   }
-  let first-header-elem-css-overlay = (
-    margin-left: 0,
-    border-top-left-radius: corner-radius,
-  )
-  let last-header-elem-css-overlay = (
-    border-top-right-radius: corner-radius,
-  )
+  let first-header-elem-css-overlay = {
+    (
+      margin-left: 0,
+      border-top-left-radius: corner-radius,
+    )
+    if not has-body {
+      (border-bottom-left-radius: corner-radius)
+    }
+  }
+  let last-header-elem-css-overlay = {
+    (
+      border-top-right-radius: corner-radius,
+    )
+    if not has-body {
+      (border-bottom-right-radius: corner-radius)
+    }
+  }
   let html-suppl = span(
     css(
       ..header-styles,
       border-color: "transparent",
-      margin-left: if has-title { auto } else { 0 },
+      margin-left: if has-headers { auto } else { 0 },
       mragin-right: body-inset,
     ),
     supplement + " " + number,
@@ -73,13 +83,12 @@
         border: 0,
         height: stroke-width,
         background: accent-color,
-        margin: (body-inset, -body-inset),
+        margin: (0, -body-inset),
       )
       html.elem("hr", attrs: (style: css(css-dict)))
     })
     let css-dict = (
-      border: "2px solid",
-      border-color: accent-color,
+      border: (stroke-width, "solid", accent-color),
       border-radius: (0, corner-radius, corner-radius, corner-radius),
       padding: body-inset,
     )
@@ -88,7 +97,7 @@
     }
     div(
       css(css-dict),
-      body,
+      repr(has-headers) + body,
     )
   }
 }
