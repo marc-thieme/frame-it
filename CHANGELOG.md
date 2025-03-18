@@ -1,3 +1,8 @@
+## CURRENT
+- Rework README building
+- Add abitlity to export to HTML
+- Support dark theme for thmbox styling
+
 ## 1.1.0
 - Add new styling
 - In the `(make-)frames`–function, allow supplement to be supplied as single value
