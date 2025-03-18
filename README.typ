@@ -13,7 +13,7 @@
 
 #let (example, feature, variant, syntax) = frames(
   ..base-color-arg,
-  feature: ("Feature",),
+  feature: "Feature",
   variant: ("Feature Variant",),
   example: ("Example", example-color),
   syntax: ("Syntax",),
@@ -21,16 +21,21 @@
 #set text(text-color)
 #set text(16pt)
 #show: it => context if target() == "html" {
-  html.elem(
-    "style",
-    "body {"
-      + css(
-        padding: 0.75em,
-        background-color: background-color,
-        color: text-color,
-      )
-      + "}",
-  )
+  show raw.where(lang: "typst"): html.frame
+  it
+} else {
+  it
+}
+#show: it => context if (
+  target() == "html" and sys.inputs.at("svg-frames", default: "false") == "true"
+) {
+  show figure.where(kind: "frame"): content => html.frame({
+    v(2mm)
+    block(width: 24cm, content)
+    v(2mm)
+  })
+  it
+} else if target() == "html" {
   it
 } else {
   set page(fill: background-color)
