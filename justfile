@@ -16,7 +16,7 @@ release new-version: && (update-and-push-assets "Release version {{new-version}}
     test -z "$(git status --porcelain)"
     sed -Ei 's|#import "@preview/frame-it:{{_version-regex}}"|#import "@preview/frame-it:{{new-version}}"|g' {{readme-typ-file}}
     sed -Ei 's|version = "{{_version-regex}}"|version = "{{new-version}}"|g' typst.toml
-    sed -i "s/CURRENT/1.1.0/" CHANGELOG.md
+    sed -i "s/CURRENT/{{new-version}}/" CHANGELOG.md
     git add {{readme-typ-file}} typst.toml CHANGELOG.md
     git commit -m "Bump version to {{new-version}}."
     test -z "$(git status --porcelain)" # Just to make sure we didn't screw up
