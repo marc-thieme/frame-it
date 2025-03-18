@@ -21,7 +21,6 @@
 #set text(text-color)
 #set text(16pt)
 #show: it => context if target() == "html" {
-  show raw.where(lang: "typst"): html.frame
   it
 } else {
   it
@@ -36,6 +35,7 @@
   })
   it
 } else if target() == "html" {
+  show raw.where(lang: "typst"): html.frame
   it
 } else {
   set page(fill: background-color)
