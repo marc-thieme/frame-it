@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>
+      Frame-It
+    </title>
+    <style>
+        @media (prefers-color-scheme: light) {
+        body {padding: 0.75em; background-color: #ffffff; color: #000000; }
+          .light-content {
+              display: block;
+          }
+
+          .dark-content {
+              display: none;
+          }
+        }
+
+        @media (prefers-color-scheme: dark) {
+        body {padding: 0.75em; background-color: #0d1117; color: #f0f6fc; }
+            .light-content {
+                display: none;
+            }
+
+            .dark-content {
+                display: block;
+            }
+        }
+    
+    </style>
+  </head>
+<body>
+    <!-- Light mode content -->
+    <div class="light-content">
+        LIGHT
+    </div>
+
+    <!-- Dark mode content -->
+    <div class="dark-content">
+        DARK
+    </div>
+</body>
+</html>
