@@ -47,17 +47,31 @@ styling functions yourself.
 
 Import and define your desired frames:
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-3.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-3.svg"> </picture> 
+    #import "@preview/frame-it:1.1.0": *
+
+    #let (example, feature, variant, syntax) = frames(
+      feature: ("Feature",),
+      // For each frame kind, you have to provide its supplement title to be displayed
+      variant: ("Variant",),
+      // You can provide a color or leave it out and it will be generated
+      example: ("Example", gray),
+      // You can add as many as you want
+      syntax: ("Syntax",),
+    )
+    // This is necessary. Don't forget this!
+    #show: frame-style(styles.boxy)
 
 How to use it is explained below. Here is a quick example:
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-4.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-4.svg"> </picture> 
+    #example[Title][Optional Tag][
+      Body, i.e. large content block for the frame.
+    ]
 
 which yields
 
 <div id="frame-wrapper-6">
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-5.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-5.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-3.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-3.svg"> </picture> 
 
 </div>
 
@@ -71,15 +85,35 @@ The following features are demonstrated in all predefined styles.
 
 <div id="frame-wrapper-7">
 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-4.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-4.svg"> </picture> 
+
+</div>
+
+</div>
+
+<div id="frame-wrapper-9">
+
+<div id="frame-wrapper-9">
+
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-5.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-5.svg"> </picture> 
+
+</div>
+
+</div>
+
+<div id="frame-wrapper-11">
+
+<div id="frame-wrapper-11">
+
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-6.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-6.svg"> </picture> 
 
 </div>
 
 </div>
 
-<div id="frame-wrapper-9">
+<div id="frame-wrapper-13">
 
-<div id="frame-wrapper-9">
+<div id="frame-wrapper-13">
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-7.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-7.svg"> </picture> 
 
@@ -87,9 +121,9 @@ The following features are demonstrated in all predefined styles.
 
 </div>
 
-<div id="frame-wrapper-11">
+<div id="frame-wrapper-15">
 
-<div id="frame-wrapper-11">
+<div id="frame-wrapper-15">
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-8.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-8.svg"> </picture> 
 
@@ -97,31 +131,11 @@ The following features are demonstrated in all predefined styles.
 
 </div>
 
-<div id="frame-wrapper-13">
+<div id="frame-wrapper-17">
 
-<div id="frame-wrapper-13">
+<div id="frame-wrapper-17">
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-9.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-9.svg"> </picture> 
-
-</div>
-
-</div>
-
-<div id="frame-wrapper-15">
-
-<div id="frame-wrapper-15">
-
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-10.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-10.svg"> </picture> 
-
-</div>
-
-</div>
-
-<div id="frame-wrapper-17">
-
-<div id="frame-wrapper-17">
-
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-11.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-11.svg"> </picture> 
 
 </div>
 
@@ -133,7 +147,7 @@ For brief elements, use \[\] as the body to omit the content.
 
 <div id="frame-wrapper-19">
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-12.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-12.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-10.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-10.svg"> </picture> 
 
 </div>
 
@@ -145,15 +159,35 @@ For brief elements, use \[\] as the body to omit the content.
 
 <div id="frame-wrapper-21">
 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-11.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-11.svg"> </picture> 
+
+</div>
+
+</div>
+
+<div id="frame-wrapper-23">
+
+<div id="frame-wrapper-23">
+
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-12.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-12.svg"> </picture> 
+
+</div>
+
+</div>
+
+<div id="frame-wrapper-25">
+
+<div id="frame-wrapper-25">
+
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-13.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-13.svg"> </picture> 
 
 </div>
 
 </div>
 
-<div id="frame-wrapper-23">
+<div id="frame-wrapper-27">
 
-<div id="frame-wrapper-23">
+<div id="frame-wrapper-27">
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-14.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-14.svg"> </picture> 
 
@@ -161,9 +195,9 @@ For brief elements, use \[\] as the body to omit the content.
 
 </div>
 
-<div id="frame-wrapper-25">
+<div id="frame-wrapper-29">
 
-<div id="frame-wrapper-25">
+<div id="frame-wrapper-29">
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-15.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-15.svg"> </picture> 
 
@@ -171,31 +205,11 @@ For brief elements, use \[\] as the body to omit the content.
 
 </div>
 
-<div id="frame-wrapper-27">
+<div id="frame-wrapper-31">
 
-<div id="frame-wrapper-27">
+<div id="frame-wrapper-31">
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-16.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-16.svg"> </picture> 
-
-</div>
-
-</div>
-
-<div id="frame-wrapper-29">
-
-<div id="frame-wrapper-29">
-
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-17.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-17.svg"> </picture> 
-
-</div>
-
-</div>
-
-<div id="frame-wrapper-31">
-
-<div id="frame-wrapper-31">
-
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-18.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-18.svg"> </picture> 
 
 </div>
 
@@ -207,7 +221,7 @@ For brief elements, use \[\] as the body to omit the content.
 
 <div id="frame-wrapper-33">
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-19.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-19.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-17.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-17.svg"> </picture> 
 
 </div>
 
@@ -221,15 +235,35 @@ We recently a third style, namely `styles.thmbox`:
 
 <div id="frame-wrapper-35">
 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-18.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-18.svg"> </picture> 
+
+</div>
+
+</div>
+
+<div id="frame-wrapper-37">
+
+<div id="frame-wrapper-37">
+
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-19.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-19.svg"> </picture> 
+
+</div>
+
+</div>
+
+<div id="frame-wrapper-39">
+
+<div id="frame-wrapper-39">
+
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-20.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-20.svg"> </picture> 
 
 </div>
 
 </div>
 
-<div id="frame-wrapper-37">
+<div id="frame-wrapper-41">
 
-<div id="frame-wrapper-37">
+<div id="frame-wrapper-41">
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-21.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-21.svg"> </picture> 
 
@@ -237,9 +271,9 @@ We recently a third style, namely `styles.thmbox`:
 
 </div>
 
-<div id="frame-wrapper-39">
+<div id="frame-wrapper-43">
 
-<div id="frame-wrapper-39">
+<div id="frame-wrapper-43">
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-22.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-22.svg"> </picture> 
 
@@ -247,31 +281,11 @@ We recently a third style, namely `styles.thmbox`:
 
 </div>
 
-<div id="frame-wrapper-41">
+<div id="frame-wrapper-45">
 
-<div id="frame-wrapper-41">
+<div id="frame-wrapper-45">
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-23.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-23.svg"> </picture> 
-
-</div>
-
-</div>
-
-<div id="frame-wrapper-43">
-
-<div id="frame-wrapper-43">
-
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-24.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-24.svg"> </picture> 
-
-</div>
-
-</div>
-
-<div id="frame-wrapper-45">
-
-<div id="frame-wrapper-45">
-
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-25.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-25.svg"> </picture> 
 
 </div>
 
@@ -283,7 +297,7 @@ For brief elements, use \[\] as the body to omit the content.
 
 <div id="frame-wrapper-47">
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-26.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-26.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-24.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-24.svg"> </picture> 
 
 </div>
 
@@ -300,37 +314,37 @@ rule to your frames. Here is a list of examples:
 
 <div id="frame-wrapper-49">
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-27.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-27.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-25.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-25.svg"> </picture> 
 
 </div>
 
 <div id="frame-wrapper-50">
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-28.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-28.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-26.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-26.svg"> </picture> 
 
 </div>
 
 <div id="frame-wrapper-51">
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-29.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-29.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-27.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-27.svg"> </picture> 
 
 </div>
 
 <div id="frame-wrapper-52">
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-30.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-30.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-28.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-28.svg"> </picture> 
 
 </div>
 
 <div id="frame-wrapper-53">
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-31.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-31.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-29.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-29.svg"> </picture> 
 
 </div>
 
 <div id="frame-wrapper-54">
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-32.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-32.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-30.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-30.svg"> </picture> 
 
 </div>
 
@@ -342,7 +356,7 @@ function signature interface:
 
 <div id="frame-wrapper-55">
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-33.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-33.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-31.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-31.svg"> </picture> 
 
 </div>
 
@@ -355,7 +369,7 @@ The content returned will be placed as–is in the document.
 
 <div id="frame-wrapper-56">
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-34.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-34.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-32.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-32.svg"> </picture> 
 
 </div>
 
