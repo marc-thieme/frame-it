@@ -20,11 +20,6 @@
 )
 #set text(text-color)
 #set text(16pt)
-#show: it => context if target() == "html" {
-  it
-} else {
-  it
-}
 #show: it => context if (
   target() == "html" and sys.inputs.at("svg-frames", default: "false") == "true"
 ) {
@@ -33,9 +28,13 @@
     block(width: 24cm, content)
     v(2mm)
   })
+  show raw.where(lang: "typst"): html.frame
   it
 } else if target() == "html" {
-  show raw.where(lang: "typst"): html.frame
+  show raw.where(lang: "typst"): html.elem.with(
+    "code",
+    attrs: (class: "language-typst"),
+  )
   it
 } else {
   set page(fill: background-color)
