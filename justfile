@@ -70,19 +70,7 @@ update-readme dir:
         ' | str replace -ra '\s+' ' ')
     }
 
-    $readme | save -f {{dir / "README-v3.md"}}
-    let code_block_regex = '((?: {4}.*\n+)+)'
-    let matches = $readme | parse $code_block_regex | get capture0
-    print $matches
-    for match in $matches {
-        print Found match! $match
-        $readme = $readme | str replace -rm $code_block_regex $'
-    ```typst
-    ($match)
-    ```
-    '
-    }
-    $readme | save -f {{dir / "README.md"}}
+    $readme | save -f {{tmpdir / "README.md"}}
 
 check-style staging-only="false":
     typos --exclude '*.html'
