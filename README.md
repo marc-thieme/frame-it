@@ -1,7 +1,7 @@
 > [!NOTE]
 > This is the version of the readme adapted for the Github Readme.
   This adaption is less than ideal.
-  For a faithful render, go to [this link](https://html-preview.github.io/?url=https://github.com/marc-thieme/frame-it/blob/assets/README.html)
+  If you want to copy text and have a faithful render, go to [this link](https://html-preview.github.io/?url=https://github.com/marc-thieme/frame-it/blob/assets/README.html).
 ## Introduction
 
 [Frame-It](https://github.com/marc-thieme/frame-it) offers a
