@@ -1,4 +1,4 @@
-## CURRENT
+## 1.1.0
 - Rework README building
 - Add abitlity to export to HTML
 - Support dark theme for thmbox styling
