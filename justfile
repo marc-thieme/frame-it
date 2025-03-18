@@ -31,7 +31,7 @@ update-html dir:
     let light_split = ^cat assets/README-stub.html | split row LIGHT
     let full_split = [$light_split.0, ...($light_split.1 | split row DARK)]
     echo $full_split.0 $light $full_split.1 $dark $full_split.2 | str join
-        | htmlq -p -r 'body > div > style:first-child' | save -f {{dir}}/assets/README.html
+        | htmlq -r 'body > div > style:first-child' | save -f {{dir}}/assets/README.html
 
 [script('nu')]
 update-readme dir:
