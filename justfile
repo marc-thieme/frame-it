@@ -70,7 +70,7 @@ update-readme dir:
         ' | str replace -ra '\s+' ' ')
     }
 
-    $readme | save -f {{tmpdir / "README.md"}}
+    $readme | save -f {{dir / "README.md"}}
 
 check-style staging-only="false":
     typos --exclude '*.html'

@@ -21,14 +21,15 @@
 #set text(text-color)
 #set text(16pt)
 #show: it => context if (
-  target() == "html" and sys.inputs.at("svg-frames", default: "false") == "true"
+  // Markdown Readme export
+  target() == "html"
+    and sys.inputs.at("svg-frames", default: "false") != "false"
 ) {
   show figure.where(kind: "frame"): content => html.frame({
     v(2mm)
     block(width: 24cm, content)
     v(2mm)
   })
-  show raw.where(lang: "typst"): html.frame
   it
 } else if target() == "html" {
   show raw.where(lang: "typst"): html.elem.with(
@@ -254,7 +255,7 @@ The only requirement for any styling function is to adhere to the following
 function signature interface:
 
 
-#syntax[Interface for custom ctyling function][
+#syntax[Interface for custom styling function][
   ```typst
   #let custom-styling(title, tags, body, supplement, number, arg)
   ```
