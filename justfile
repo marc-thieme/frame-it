@@ -79,7 +79,8 @@ check-style staging-only="false":
          | grep '\.typ') README.typ \
         > /dev/null
 
-update-assets: (update-html ".") (update-readme ".")
+update-assets: (update-html ".") && (update-readme ".")
+    git add README.md # Make sure not to override changes in README
     
 test-compile: (update-html tmpdir) (update-readme tmpdir)
 
