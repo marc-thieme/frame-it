@@ -47,7 +47,7 @@ styling functions yourself.
 
 Import and define your desired frames:
 ```typst
-#import "@preview/frame-it:1.1.0": *
+#import "@preview/frame-it:1.1.1": *
 
 #let (example, feature, variant, syntax) = frames(
   feature: ("Feature",),
