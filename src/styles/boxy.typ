@@ -169,9 +169,13 @@
         {
           // Divide constructs a line where we need to inject the stroke style because we only have access to the color here
           show: styling.dividers-as({
-            v(body-inset - 1em)
-            line(length: 100% + 2 * body-inset, stroke: stroke)
-            v(body-inset - 1em)
+            v(-0.5em + stroke-width)
+            line(
+              start: (-body-inset, 0em),
+              length: 100% + 2 * body-inset,
+              stroke: stroke,
+            )
+            v(-0.5em + stroke-width)
           })
           body
         },
