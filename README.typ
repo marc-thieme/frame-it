@@ -22,8 +22,7 @@
 #set text(16pt)
 #show: it => context if (
   // Markdown Readme export
-  target() == "html"
-    and sys.inputs.at("svg-frames", default: "false") != "false"
+  wants-html() and sys.inputs.at("svg-frames", default: "false") != "false"
 ) {
   show figure.where(kind: "frame"): content => html.frame({
     v(2mm)
@@ -31,7 +30,7 @@
     v(2mm)
   })
   it
-} else if target() == "html" {
+} else if wants-html() {
   show raw.where(lang: "typst"): html.elem.with(
     "code",
     attrs: (class: "language-typst"),
