@@ -1,5 +1,35 @@
-#let span(style, body) = html.elem("span", attrs: (style: style), body)
-#let div(style, body) = html.elem("div", attrs: (style: style), body)
+#let wants-html() = {
+  let html-frames = sys.inputs.at("html-frames", default: "false")
+  assert(
+    html-frames in ("true", "false"),
+    message: html-frames
+      + " is not valid for `--input html-frames={true|false}`",
+  )
+  (
+    html-frames == "true" and target() == "html"
+  )
+}
+
+#let target-choose(html: none, paged: none) = context {
+  assert(
+    html != none and paged != none,
+    message: "Please provide options for both `html` and `paged`.",
+  )
+  if wants-html() {
+    if type(html) == function { html() } else { html }
+  } else {
+    if type(paged) == function { paged() } else { paged }
+  }
+}
+
+#let span(style, body, ..attrs) = target-choose(
+  paged: body,
+  html: html.elem("span", attrs: (style: style, ..attrs.named()), body),
+)
+#let div(style, body, ..attrs) = target-choose(
+  paged: body,
+  html: html.elem("div", attrs: (style: style, ..attrs.named()), body),
+)
 
 #let css(..args) = {
   assert(
