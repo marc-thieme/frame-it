@@ -3,8 +3,8 @@ set unstable
 readme-typ-file := 'README.typ'
 tmpdir := env('XDG_RUNTIME_DIR', '/tmp') / 'frame-it'
 dummy := shell('mkdir -p ' + tmpdir)
-
-export TYPST_FEATURES := "html"
+compile-html := 'typst compile --features html -f "html" --input html-frames=true '
+unexport TYPST_FEATURES
 
 default:
     just --list
@@ -26,8 +26,8 @@ release new-version: && (update-and-push-assets "Release version {{new-version}}
 [script('nu')]
 update-html dir:
     ^mkdir -p {{dir}}/assets
-    let light = typst compile -f html {{readme-typ-file}} - | htmlq "body > *"
-    let dark = typst compile --input theme=dark -f html {{readme-typ-file}} - | htmlq "body > *"
+    let light = {{compile-html}} {{readme-typ-file}} - | htmlq "body > *"
+    let dark = {{compile-html}} --input theme=dark {{readme-typ-file}} - | htmlq "body > *"
     let light_split = ^cat assets/README-stub.html | split row LIGHT
     let full_split = [$light_split.0, ...($light_split.1 | split row DARK)]
     echo $full_split.0 $light $full_split.1 $dark $full_split.2 | str join
@@ -35,8 +35,8 @@ update-html dir:
 
 [script('nu')]
 update-readme dir:
-    typst compile --input svg-frames=true {{readme-typ-file}} {{tmpdir / "light.html"}}
-    typst compile --input svg-frames=true --input theme=dark {{readme-typ-file}} {{tmpdir / "dark.html"}}
+    {{compile-html}} --input svg-frames=true {{readme-typ-file}} {{tmpdir / "light.html"}}
+    {{compile-html}} --input svg-frames=true --input theme=dark {{readme-typ-file}} {{tmpdir / "dark.html"}}
     ^cat {{tmpdir / "light.html"}} | pandoc -f html -t gfm -o {{tmpdir / "README-v1.md"}}
 
     let svgs_light = htmlq -f {{tmpdir / "light.html"}} "svg" | split row "<svg"
