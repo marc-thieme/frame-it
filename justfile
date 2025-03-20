@@ -83,6 +83,7 @@ update-assets: (update-html ".") && (update-readme ".")
     git add README.md # Make sure not to override changes in README
     
 test-compile: (update-html tmpdir) (update-readme tmpdir)
+    typst compile README.typ {{tmpdir / "README.pdf"}}
 
 [confirm("Do you want to commit and push all changes on the assets branch?")]
 [working-directory("assets")]
