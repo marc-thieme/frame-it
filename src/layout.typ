@@ -66,27 +66,29 @@
     `Error: Dividers not supported by this styling function.`
   ]
 
-  context if target() == "html" {
-    show figure
-      .where(kind: kind)
-      .or(figure.where(kind: kind + "-wrapper")): it => {
-      // Necessary because html-figure unfortunately inserts padding we don't want
-      let id = __frame-id-counter-state.get()
-      __frame-id-counter-state.update(it => it + 1)
-      let figure-id = "frame-wrapper-" + str(id)
-      let style-code = {
-        "#" + figure-id + " > figure {"
-        "  margin-left: 0px;"
-        "  margin-right: 0px;"
-        "}"
+  import "utils/html.typ": *
+  target-choose(
+    paged: document,
+    html: () => {
+      show figure
+        .where(kind: kind)
+        .or(figure.where(kind: kind + "-wrapper")): it => {
+        // Necessary because html-figure unfortunately inserts padding we don't want
+        let id = __frame-id-counter-state.get()
+        __frame-id-counter-state.update(it => it + 1)
+        let figure-id = "frame-wrapper-" + str(id)
+        let style-code = {
+          "#" + figure-id + " > figure {"
+          "  margin-left: 0px;"
+          "  margin-right: 0px;"
+          "}"
+        }
+        html.elem("style", style-code)
+        div("", id: figure-id, it)
       }
-      html.elem("style", style-code)
-      html.elem("div", attrs: (id: figure-id), it)
-    }
-    document
-  } else {
-    document
-  }
+      document
+    },
+  )
 }
 
 #let frame-factory(kind, supplement, custom-arg) = (

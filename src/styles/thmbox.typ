@@ -1,5 +1,5 @@
 #import "../styling.typ" as styling
-#import "../utils/html.typ": css, span, div
+#import "../utils/html.typ": css, span, div, target-choose
 
 #let line-width = 3pt
 #let body-inset = 1em
@@ -129,10 +129,15 @@
   ]
 }
 
-#let thmbox(title, tags, body, supplement, number, accent-color) = context (
-  if target() == "html" {
-    thmbox-html
-  } else {
-    thmbox-paged
-  }
-)(title, tags, body, supplement, number, accent-color)
+#let thmbox(
+  title,
+  tags,
+  body,
+  supplement,
+  number,
+  accent-color,
+) = target-choose(
+  html: () => thmbox-html(title, tags, body, supplement, number, accent-color),
+  paged: thmbox-paged(title, tags, body, supplement, number, accent-color),
+)
+

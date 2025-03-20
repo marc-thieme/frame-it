@@ -1,5 +1,5 @@
 #import "../styling.typ" as styling
-#import "../utils/html.typ": css, span, div
+#import "../utils/html.typ": css, span, div, target-choose
 
 #let body-inset = 0.8em
 #let stroke-width = 0.13em
@@ -198,10 +198,7 @@
   stack(..parts)
 }
 
-#let boxy(title, tags, body, supplement, number, accent-color) = context (
-  if target() == "html" {
-    boxy-html
-  } else {
-    boxy-paged
-  }
-)(title, tags, body, supplement, number, accent-color)
+#let boxy(title, tags, body, supplement, number, accent-color) = target-choose(
+  html: () => boxy-html(title, tags, body, supplement, number, accent-color),
+  paged: boxy-paged(title, tags, body, supplement, number, accent-color),
+)

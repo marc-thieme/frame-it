@@ -1,5 +1,5 @@
 #import "../styling.typ" as styling
-#import "../utils/html.typ": css, span, div
+#import "../utils/html.typ": css, span, div, target-choose
 
 #let body-inset = 0.8em
 #let stroke-width = 0.13em
@@ -98,11 +98,7 @@
   })
 }
 
-#let hint(title, tags, body, supplement, number, accent-color) = context (
-  if target() == "html" {
-    hint-html
-  } else {
-    hint-paged
-  }
-)(title, tags, body, supplement, number, accent-color)
-
+#let hint(title, tags, body, supplement, number, accent-color) = target-choose(
+  html: () => hint-html(title, tags, body, supplement, number, accent-color),
+  paged: hint-paged(title, tags, body, supplement, number, accent-color),
+)
