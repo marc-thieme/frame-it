@@ -10,9 +10,9 @@
   )
 }
 
-#let target-choose(html: none, paged: none) = context {
+#let target-choose(html: auto, paged: auto) = context {
   assert(
-    html != none and paged != none,
+    html != auto and paged != auto,
     message: "Please provide options for both `html` and `paged`.",
   )
   if wants-html() {
@@ -22,14 +22,42 @@
   }
 }
 
-#let span(style, body, ..attrs) = target-choose(
-  paged: body,
-  html: html.elem("span", attrs: (style: style, ..attrs.named()), body),
+#let elem(tag, body, ..attrs) = {
+  assert(attrs.pos() == (), message: "You can only provide named arguments.")
+  assert(
+    wants-html(),
+    message: "You can only use the `elem` function in an HTML context.",
+  )
+  let body-arg = if type(body) == function { body() } else { body }
+  html.elem(tag, attrs: attrs.named(), body-arg)
+}
+
+#let elem-ignore(tag, body, ..attrs) = {
+  assert(attrs.pos() == (), message: "You can only provide named arguments.")
+  if wants-html() {
+    let body-arg = if type(body) == function { body() } else { body }
+    html.elem(tag, attrs: attrs.named(), body-arg)
+  }
+}
+
+#let elem-ident(tag, body, ..attrs) = {
+  assert(attrs.pos() == (), message: "You can only provide named arguments.")
+  if wants-html() {
+    let body-arg = if type(body) == function { body() } else { body }
+    html.elem(tag, attrs: attrs.named(), body-arg)
+  } else {
+    body
+  }
+}
+
+#let span(style, body, ..attrs) = elem(
+  "span",
+  body,
+  style: style,
+  ..attrs,
 )
-#let div(style, body, ..attrs) = target-choose(
-  paged: body,
-  html: html.elem("div", attrs: (style: style, ..attrs.named()), body),
-)
+#let div(style, body, ..attrs) = elem("div", body, style: style, ..attrs)
+#let hr(style, ..attrs) = elem("hr", style: style, ..attrs, none)
 
 #let css(..args) = {
   assert(
