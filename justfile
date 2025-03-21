@@ -4,6 +4,7 @@ readme-typ-file := 'README.typ'
 tmpdir := env('XDG_RUNTIME_DIR', '/tmp') / 'frame-it'
 dummy := shell('mkdir -p ' + tmpdir)
 compile-html := 'typst compile --features html -f "html" --input html-frames=true '
+
 unexport TYPST_FEATURES
 
 default:
@@ -22,6 +23,23 @@ release new-version: && (update-and-push-assets "Release version {{new-version}}
     test -z "$(git status --porcelain)" # Just to make sure we didn't screw up
     git tag -a {{new-version}}
     @echo Don\'t forget to open a pull request for the new version!
+
+_packages-suffix := "packages/preview/frame-it/"
+[script]
+cp-to-packages new-version $PACKAGES_REPO_ROOT:
+    folder=$PACKAGES_REPO_ROOT{{_packages-suffix / new-version}}
+    if [ -d $folder ];
+        echo Folder $folder already exists >&2
+        exit 1
+    fi
+    echo $folder
+    exit 1
+    cp . $folder -r
+    cd $folder
+    rm .github/ assets/ .git/ -r
+    rm CHANGELOG.md justfile .gitignore .typos.toml .envrc
+    find . -type f -name "*.pdf" -exec rm -f {}
+    
 
 [script('nu')]
 update-html dir:
