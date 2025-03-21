@@ -152,7 +152,20 @@ The following features are demonstrated in all predefined styles.
   We recently a third style, namely `styles.thmbox`:
   #layout-features()
 ]
-== Miscallaneous
+== Miscellaneous
+=== HTML
+We were one of the first packages to add support for html!
+This means you can use our frames for example if you're writing an html wiki or blog in typst
+or using typst to get a headstart writing your website.
+#feature[HTML export][
+  Due to the currently experimental nature of the feature, you need to pass two CLI–flags when
+  compiling your document with the frames to html:
+  ```
+  typst compile --features html --input html-frames=true --format html FILE.typ
+  ```
+]
+
+=== General
 Internally, every frame is just a `figure` where the `kind` is set to `"frame"` (or a different custom value).
 As such, most things that can be done to a figure can be done with a frame as well.
 Whenever you would like to do something custom but don't know if it is supported,
