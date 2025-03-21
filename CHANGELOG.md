@@ -1,4 +1,4 @@
-## CURRENT
+## 1.1.2
 - Fix compilation without feature flag html
 
 ## 1.1.1
