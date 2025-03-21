@@ -1,5 +1,5 @@
 #import "../styling.typ" as styling
-#import "../utils/html.typ": css, span, div, target-choose
+#import "../utils/html.typ": css, span, div, hr, target-choose
 
 #let body-inset = 0.8em
 #let stroke-width = 0.13em
@@ -85,7 +85,7 @@
         background: accent-color,
         margin: (0, -body-inset),
       )
-      html.elem("hr", attrs: (style: css(css-dict)))
+      hr(css(css-dict))
     })
     let css-dict = (
       border: (stroke-width, "solid", accent-color),

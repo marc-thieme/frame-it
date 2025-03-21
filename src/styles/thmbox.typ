@@ -1,5 +1,5 @@
 #import "../styling.typ" as styling
-#import "../utils/html.typ": css, span, div, target-choose
+#import "../utils/html.typ": css, span, div, hr, target-choose
 
 #let line-width = 3pt
 #let body-inset = 1em
@@ -53,15 +53,12 @@
         )
       }
       show: styling.dividers-as(
-        html.elem(
-          "hr",
-          attrs: (
-            style: css(
-              background: accent-color,
-              height: 0.18em,
-              border: 0,
-              margin: (0, 0, 0, -body-inset),
-            ),
+        hr(
+          css(
+            background: accent-color,
+            height: 0.18em,
+            border: 0,
+            margin: (0, 0, 0, -body-inset),
           ),
         ),
       )
