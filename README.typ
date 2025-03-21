@@ -287,29 +287,27 @@ The content returned will be placed as–is in the document.
 
 For more information on how to define your own styling function, please look into the `styling` module.
 
-// Comment out because they do not work in HTML export as of yet
+= Edge Cases
 
-// = Edge Cases
+Here are a few edge cases. Temporarily, they do not work because
 
-// Here are a few edge cases. Temporarily, they do not work because
+#example[Test][Long tag example without space for the supplement][notice the number moves up][
+  #lorem(20)
+]
 
-// #example[Test][Long tag example without space for the supplement][notice the number moves up][
-//   #lorem(20)
-// ]
+#example[Example][Tags of various sizes][$sum_sum^sum$][Extra vertical space: #v(1cm)][
+  (Leads to formatting errors in html export because support is missing)\
+  #lorem(20)
+]
 
-// #example[Example][Tags of various sizes][$sum_sum^sum$][Extra vertical space: #v(1cm)][
-//   #lorem(20)
-// ]
+#example[Nested][
+  #example[][
+    #example(style: styles.hint)[][
+      When nested, counters increment from outer to inner elements.
+    ]
+  ]
+]
 
-// #example[Nested][
-//   (Nesting currently does not work in html export)
-//   #example[][
-//     #example(style: styles.hint)[][
-//       When nested, counters increment from outer to inner elements.
-//     ]
-//   ]
-// ]
-
-// #example[][
-//   Counters continue incrementing sequentially in non-nested elements.
-// ]
+#example[][
+  Counters continue incrementing sequentially in non-nested elements.
+]
