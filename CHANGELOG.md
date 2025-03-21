@@ -1,3 +1,6 @@
+## CURRENT
+- Fix compilation without feature flag html
+
 ## 1.1.1
 - Rework README building
 - Add abitlity to export to HTML
