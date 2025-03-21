@@ -89,7 +89,7 @@ test-compile: (update-html tmpdir) (update-readme tmpdir)
 [working-directory("assets")]
 update-and-push-assets commit-msg="Update.": update-assets
     git add .
-    git commit -m {{commit-msg}} --no-verify
+    git commit -m "{{commit-msg}}" --no-verify
     git push
 
 # –––––– [ Setup ] ––––––
