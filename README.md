@@ -47,6 +47,9 @@ styling functions yourself.
 
 Import and define your desired frames:
 
+```typst
+#import "@preview/frame-it:1.1.2": *
+
 #let (example, feature, variant, syntax) = frames(
   feature: ("Feature",),
   // For each frame kind, you have to provide its supplement title to be displayed
@@ -59,6 +62,7 @@ Import and define your desired frames:
 // This is necessary. Don't forget this!
 #show: frame-style(styles.boxy)
 ```
+
 How to use it is explained below. Here is a quick example:
 ```typst
 #example[Title][Optional Tag][
