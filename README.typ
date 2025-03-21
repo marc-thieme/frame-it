@@ -18,29 +18,31 @@
   example: ("Example", example-color),
   syntax: ("Syntax",),
 )
+
 #set text(text-color)
-#set text(16pt)
-#show: it => context if (
-  // Markdown Readme export
-  wants-html() and sys.inputs.at("svg-frames", default: "false") != "false"
+#set text(17pt)
+
+#let wants-svg-frames = sys.inputs.at("svg-frames", default: "false") != "false"
+#show figure.where(kind: "frame"): it => context if (
+  wants-html() and wants-svg-frames
 ) {
-  show figure.where(kind: "frame"): content => html.frame({
+  html.frame({
     v(2mm)
-    block(width: 24cm, content)
+    block(width: 24cm, it)
     v(2mm)
   })
-  it
-} else if wants-html() {
+} else { it }
+#show: it => context if wants-html() and not wants-svg-frames {
   show raw.where(lang: "typst"): html.elem.with(
     "code",
     attrs: (class: "language-typst"),
   )
   it
-} else {
+} else if not wants-html() {
   set page(fill: background-color)
   set page(height: auto, margin: 4mm)
   it
-}
+} else { it }
 
 #show: frame-style(styles.boxy)
 
