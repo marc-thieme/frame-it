@@ -13,7 +13,7 @@
                                                 <path class="typst-shape" d="M 3.895 1.105 L 3.895 -1.105 L 437.9554 -1.105 C 440.71683 -1.105 442.9554 1.1335763 442.9554 3.895 L 442.9554 57.637455 L -1.105 57.637455 L -1.105 3.895 C -1.105 1.1335763 1.1335763 -1.105 3.895 -1.105 L 3.895 1.105 C 2.3541255 1.105 1.105 2.3541255 1.105 3.895 L 1.105 55.427456 L 440.7454 55.427456 L 440.7454 3.895 C 440.7454 2.3541255 439.49628 1.105 437.9554 1.105 Z " fill="oklab(45.213% 0.00200 0.00192)" fill-rule="nonzero"></path>
                                             </g>
                                             <g transform="translate(0 0)">
-                                                <g class="typst-group" clip-path="url(#cE0C4ABF5268D184EE87787E064F4F2BC)">
+                                                <g class="typst-group" clip-path="url(#cACEBE99647DEDC40025419329429FA5)">
                                                     <g>
                                                         <g transform="translate(0 0)">
                                                             <path class="typst-shape" d="M 0 0 L 0 56.532455 L 76.908 56.532455 L 76.908 0 Z " fill="oklab(45.213% 0.00200 0.00192)" fill-rule="nonzero"></path>
@@ -434,7 +434,7 @@
         </symbol>
     </defs>
     <defs id="clip-path">
-        <clipPath id="cE0C4ABF5268D184EE87787E064F4F2BC">
+        <clipPath id="cACEBE99647DEDC40025419329429FA5">
             <path d="M 1.105 3.895 C 1.105 2.3541255 2.3541255 1.105 3.895 1.105 L 437.9554 1.105 C 439.49628 1.105 440.7454 2.3541255 440.7454 3.895 L 440.7454 55.427456 L 1.105 55.427456 Z "></path>
         </clipPath>
     </defs>
