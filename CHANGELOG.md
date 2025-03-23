@@ -1,4 +1,6 @@
 ## 1.1.2
+- Add inspection functions `lookup-frame-info` and `is-frame`
+- Add suggestions for abbreviations to readme
 - Fix compilation without feature flag html
 
 ## 1.1.1
