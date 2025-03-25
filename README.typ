@@ -329,6 +329,19 @@ For example, you can use this to color the entries in a outline according to the
 ]
 Whenever possible, try to discern it using the figures kind instead of this function.
 
+This can be useful, for example, when you want to format references in your document differently.
+For example, you can do something like this in order to display just title if the referenced element
+and link to it:
+```typst
+#show ref: it => {
+  if inspect.is-frame(it.element) {
+    link(it.element.location(), inspect.lookup-frame-info(it.element).title)
+  } else {
+    it
+  }
+}
+```
+
 = Edge Cases
 
 Here are a few edge cases.
