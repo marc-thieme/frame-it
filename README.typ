@@ -359,6 +359,7 @@ Here are a few edge cases.
   let frames = query(figure.where(kind: "frame"))
   for frame in query(figure.where(kind: "frame")) {
     assert(inspect.is-frame(frame), message: repr(frame))
+    assert(not inspect.is-frame[], message: "Should work for all content")
     assert(type(inspect.lookup-frame-info(frame).color) == color)
   }
 }

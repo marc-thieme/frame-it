@@ -1,8 +1,17 @@
-#import "utils/encode.typ": retrieve-info-from-code, code-has-info-attached
+#let is-frame(figure) = {
+  import "utils/encode.typ": code-has-info-attached
+  (
+    "caption" in figure.fields()
+      and "body" in figure.caption.fields()
+      and code-has-info-attached(figure.caption.body)
+  )
+}
 
 #let lookup-frame-info(figure) = {
+  import "utils/encode.typ": retrieve-info-from-code
+
   assert(
-    code-has-info-attached(figure.caption.body),
+    is-frame(figure),
     message: "You can only provide figures to `lookup-frame-info`"
       + "which represent frame-it–frames",
   )
@@ -23,5 +32,3 @@
     color: custom-arg,
   )
 }
-
-#let is-frame(figure) = code-has-info-attached(figure.caption.body)

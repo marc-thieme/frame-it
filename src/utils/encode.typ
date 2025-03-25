@@ -6,7 +6,7 @@
 )
 #let retrieve-info-from-code(code) = code.children.at(1).value
 #let code-has-info-attached(code) = (
-  "children" in code.fields().keys()
+  "children" in code.fields()
     and code.children.first().fields().at("value", default: "")
       == _unique-frame-metadata-tag
 )
