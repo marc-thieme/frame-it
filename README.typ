@@ -268,7 +268,7 @@ I usually define the abbreviations for the show rule:
 #let boxy(document) = {show: frame-style(styles.boxy); document}
 #let hint(document) = {show: frame-style(styles.hint); document}
 
-// Use changing the style used
+// Use it for changing the style used
 #show: boxy
 #example[In boxy style]
 #example[Also in boxy style]
