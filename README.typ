@@ -130,7 +130,7 @@ which yields
   For brief elements, use [] as the body to omit the content.
 
   #feature[Element with Divider][
-    Insert `divide()` to add a divider within your content for a visual break:
+    Insert ```typst #divide()``` to add a divider within your content for a visual break:
     #divide()
     And then continue with your text below the divider.
   ]
