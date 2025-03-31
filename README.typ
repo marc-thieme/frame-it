@@ -32,13 +32,19 @@
     v(2mm)
   })
 } else { it }
-#show: it => context if wants-html() and not wants-svg-frames {
-  show raw.where(lang: "typst"): html.elem.with(
-    "code",
-    attrs: (class: "language-typst"),
+
+#show raw.where(lang: "typst"): code => context if wants-html() {
+  html.elem(
+    "pre",
+    html.elem(
+      "code",
+      attrs: (class: "typst"),
+      code,
+    ),
   )
-  it
-} else if not wants-html() {
+} else { code }
+
+#show: it => context if not wants-html() {
   set page(fill: background-color)
   set page(height: auto, margin: 4mm)
   it
