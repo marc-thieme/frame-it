@@ -78,6 +78,11 @@ update-readme dir:
 
     mut readme = open {{tmpdir / "README-v2.md"}}
 
+    def "str erase" [...patterns: string] {
+        let text = $in
+        $patterns | reduce --fold $text { |pattern, acc| $acc | str replace -rma $pattern '' }
+    }
+
     for i in 0..($svgs_light | length) {
         let idx = $i | into string
          $readme = $readme | str replace -rm '<img\s+src=".+?"\s+class="typst-doc"\s+/>' ('
@@ -88,7 +93,7 @@ update-readme dir:
         ' | str replace -ra '\s+' ' ')
     }
 
-    $readme | save -f {{dir / "README.md"}}
+    $readme | str erase '\n*^</?div.*>$' '^\s*</?figure>\s*$' | save -f {{dir / "README.md"}}
 
 check-style staging-only="false":
     typos --exclude '*.html'
