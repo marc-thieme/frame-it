@@ -1,4 +1,4 @@
-## CURRENT
+## 1.2.0
 ### Features
 - feat(layout): add frame function to create a single frame
 - docs(readme): showcase syntax for individual frame creation
