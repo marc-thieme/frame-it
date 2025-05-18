@@ -28,18 +28,14 @@ _packages-suffix := "packages/preview/frame-it/"
 [script]
 cp-to-packages new-version packages-repo-root:
     folder={{packages-repo-root / _packages-suffix / new-version}}
-    if [ -d $folder ];
-        echo Folder $folder already exists >&2
-        exit 1
-    fi
     echo $folder
-    exit 1
+    rm $folder -rf
     cp . $folder -r
     cd $folder
-    rm .github/ assets/ .git/ -r
-    rm CHANGELOG.md justfile .gitignore .typos.toml .envrc
-    sed -iE 's|^#import "src/lib.typ"|#import "@preview/frame-it:{{new-version}}"|g' $folder/README.typ
-    find . -type f -name "*.pdf" -exec rm -f {}
+    rm .github/ assets/ .git/ -rf
+    rm CHANGELOG.md justfile .gitignore .typos.toml .envrc -f
+    sed -i '' 's|^#import "src/lib.typ"|#import "@preview/frame-it:{{new-version}}"|g' README.typ
+    find . -type f -name "*.pdf" | xargs rm
     
 
 [script('nu')]
