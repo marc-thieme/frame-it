@@ -30,7 +30,7 @@ styling functions yourself.
 Import and define your desired frames:
 
 ``` typst
-#import "@preview/frame-it:1.1.2": *
+#import "@preview/frame-it:1.2.0": *
 
 #let (example, feature, variant, syntax) = frames(
   feature: ("Feature",),
@@ -99,7 +99,7 @@ For brief elements, use \[\] as the body to omit the content.
 
 ### A third Alternative
 
-We recently a third style, namely `styles.thmbox`:
+We recently added third style, namely `styles.thmbox`:
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-18.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-18.svg"> </picture> 
 
@@ -119,13 +119,18 @@ For brief elements, use \[\] as the body to omit the content.
 
 ### Miscellaneous
 
-#### HTML
-
-We were one of the first packages to add support for html! This means
-you can use our frames for example if you're writing an html wiki or
-blog in typst or using typst to get a headstart writing your website.
+#### Syntax to create single frames
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-25.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-25.svg"> </picture> 
+
+#### HTML
+
+We were one of the first packages to add support for html!  
+This means you can use our frames for example if you're writing an html
+wiki or blog in typst or using typst to get a headstart writing your
+website.
+
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-26.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-26.svg"> </picture> 
 
 #### General
 
@@ -136,11 +141,11 @@ like to do something custom but don't know if it is supported, try
 achieving it with a normal figure first and then apply the same show
 rule to your frames. Here is a list of examples:
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-26.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-26.svg"> </picture> 
-
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-27.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-27.svg"> </picture> 
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-28.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-28.svg"> </picture> 
+
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-29.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-29.svg"> </picture> 
 
 For example, you can create an outline which only contains some
 intentional of your frames like so. The `figure` function includes a
@@ -155,15 +160,11 @@ parameter for including a figure in the outline.
 #example(outlined: true)[Important frame][For the outline]
 ```
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-29.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-29.svg"> </picture> 
-
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-30.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-30.svg"> </picture> 
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-31.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-31.svg"> </picture> 
 
-Beware that internally, this has to create two distinct figures for
-technical reason. In general, this approach will be less robust than
-using the `show: frame-style()` function.
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-32.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-32.svg"> </picture> 
 
 When you want to change the styling used for a passage of your document,
 you can just add more `show: frame-style()` rules:
@@ -196,7 +197,7 @@ Internally, there is nothing special about the predefined styles. The
 only requirement for any styling function is to adhere to the following
 function signature interface:
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-32.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-32.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-33.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-33.svg"> </picture> 
 
 where `arg` is going to be the value passed behind the supplement for
 each frame variant in the `frames` function. For the predefined styles,
@@ -205,7 +206,7 @@ function, it has to have the following signature:
 
 The content returned will be placed as–is in the document.
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-33.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-33.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-34.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-34.svg"> </picture> 
 
 For more information on how to define your own styling function, please
 look into the `styling` module.
@@ -214,7 +215,7 @@ look into the `styling` module.
 
 These APIs are still experimental and subject to change. Use sparingly.
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-34.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-34.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-35.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-35.svg"> </picture> 
 
 For example, you can use this to color the entries in a outline
 according to the color of the frame:
@@ -227,7 +228,7 @@ according to the color of the frame:
 #outline(target: figure.where(kind: "frame"))
 ```
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-35.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-35.svg"> </picture> 
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-36.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-36.svg"> </picture> 
 
 Whenever possible, try to discern it using the figures kind instead of
 this function.
@@ -250,10 +251,25 @@ in order to display just title if the referenced element and link to it:
 
 Here are a few edge cases.
 
- <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-36.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-36.svg"> </picture> 
-
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-37.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-37.svg"> </picture> 
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-38.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-38.svg"> </picture> 
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-39.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-39.svg"> </picture> 
+
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-40.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-40.svg"> </picture> 
+
+<div
+style="display: flex; justify-content: space-between; align-items: center; color: #ca4fdb; ">
+<strong>Should be thmbox</strong>
+<strong>Other Frame 1</strong>
+<p>thmbox</p>
+
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-41.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-41.svg"> </picture> 
+
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-42.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-42.svg"> </picture> 
+
+ <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-43.svg"> <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-43.svg"> </picture> 
+
+ Some Additional Frame
+1 <strong>  Individual </strong><em></em>: Individual
