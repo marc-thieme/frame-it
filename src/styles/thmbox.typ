@@ -69,6 +69,12 @@
 
 // Credits to https://github.com/s15n/typst-thmbox
 #let thmbox-paged(title, tags, body, supplement, number, accent-color) = {
+  let has-body = body != []
+  let has-title = title not in ([], "", none)
+  let has-tags = tags.len() > 0
+  let has-headers = has-title or has-tags
+  let body-only = title == none
+
   let bar = stroke(paint: accent-color, thickness: line-width)
 
   show: styling.dividers-as({
@@ -93,27 +99,33 @@
   )[
     #set align(left)
     // Title bar
-    #if title != none {
+    #if not body-only {
       block(
         above: 0em,
         below: 1.2em,
-        context [
-          #set text(text-color(accent-color), weight: "bold")
-          #if title != [] {
+        context {
+          set text(text-color(accent-color), weight: "bold")
+          if has-title {
             title
+          }
+          if has-headers {
             h(3fr)
+          }
+          if has-tags {
             for tag in tags {
               text(tag, weight: "regular")
               h(1fr)
             }
             h(2fr)
           }
-          #supplement #number
-        ],
+          supplement
+          " "
+          number
+        },
       )
     }
     // Body
-    #if body != [] {
+    #if has-body {
       block(
         inset: (
           right: 1em,
