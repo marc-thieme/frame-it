@@ -157,12 +157,23 @@ The following features are demonstrated in all predefined styles.
 == A third Alternative
 #[
   #show: frame-style(styles.thmbox)
-  We recently a third style, namely `styles.thmbox`:
+  We recently added third style, namely `styles.thmbox`:
   #layout-features()
 ]
 == Miscellaneous
+=== Syntax to create single frames
+#syntax[Single–Frame–Creation][
+  When the above method for creating frames is not flexible enough, you can use this alternative method
+  for creating frames one–by–one:
+  ```typ
+  #let theorem = frame("Theorem", red)
+  #let definition = frame(kind: "not-the-default", "Definition", blue)
+  ```
+  Contrary to the first method, you have to specify a color.
+]
+
 === HTML
-We were one of the first packages to add support for html!
+We were one of the first packages to add support for html! \
 This means you can use our frames for example if you're writing an html wiki or blog in typst
 or using typst to get a headstart writing your website.
 #feature[HTML export][
