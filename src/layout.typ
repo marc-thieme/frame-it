@@ -40,7 +40,7 @@
   // inspecting the metadata. This way, the user can manipulate the kind if desired.
   show figure.caption: caption => {
     let code = caption.body
-    if not code-has-info-attached(code) {
+    if not code-has-info-attached(code) or caption.kind != kind {
       caption
     } else {
       let number = context caption.counter.display(caption.numbering)

@@ -373,6 +373,16 @@ Here are a few edge cases.
   Counters continue incrementing sequentially in non-nested elements.
 ]
 
+#show: frame-style(kind: "frame", styles.boxy)
+#let (f2,) = frames(kind: "frame2", f2: "Other Frame")
+#show: frame-style(kind: "frame2", styles.thmbox)
+#f2[Should be thmbox][
+  thmbox
+]
+#example[Should be boxy][
+  boxy
+]
+
 // Tests
 #context {
   let frames = query(figure.where(kind: "frame"))
