@@ -1,3 +1,17 @@
+## CURRENT
+### Features
+- feat(layout): add frame function to create a single frame
+- docs(readme): showcase syntax for individual frame creation
+
+### Fixes
+- fix(layout): `frame-style` only applies to specific kind
+- fix(styles): accept tags without title in thmbox
+- fix: polylux presentation compatibility
+- fix(inspection): `is-frame` works for all content
+
+### Implementation
+- refactor(layout): ad–hoc style by placing it into metadata
+
 ## 1.1.2
 - Add inspection functions `lookup-frame-info` and `is-frame`
 - Add suggestions for abbreviations to readme
