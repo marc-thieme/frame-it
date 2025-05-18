@@ -39,6 +39,16 @@
   }
 }
 
+#let frame(
+  kind: default-kind,
+  supplement,
+  arg
+) = {
+  import "layout.typ": frame-factory
+
+  frame-factory(kind, supplement, arg)
+}
+
 #let frame-style(kind: default-kind, style) = {
   import "layout.typ" as layout
   layout.frame-style(kind, style)
