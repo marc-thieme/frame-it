@@ -42,7 +42,7 @@
 #let frame(
   kind: default-kind,
   supplement,
-  arg
+  arg,
 ) = {
   import "layout.typ": frame-factory
 

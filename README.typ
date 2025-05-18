@@ -396,7 +396,11 @@ Here are a few edge cases.
 ]
 
 #let individual-frame1 = frame("Some Additional Frame", orange)
-#let individual-frame2 = frame(kind: "not-the-default", "Some Additional Frame", yellow)
+#let individual-frame2 = frame(
+  kind: "not-the-default",
+  "Some Additional Frame",
+  yellow,
+)
 #show: frame-style(kind: "not-the-default", styles.hint)
 #individual-frame1[Individual][Individual]
 #individual-frame2[Individual][Individual]
