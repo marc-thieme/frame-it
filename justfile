@@ -12,7 +12,7 @@ default:
 
 # –––––– [ Release ] ––––––
 _version-regex := '[0-9]+\.[0-9]+\.[0-9]+'
-release new-version: && (update-and-push-assets "Release version {{new-version}}")
+release new-version packages-repo-root: && (update-and-push-assets "Release version {{new-version}}") (cp-to-packages new-version packages-repo-root)
     @echo Testing if index and staging area are empty
     test -z "$(git status --porcelain)"
     sed -Ei 's|#import "@preview/frame-it:{{_version-regex}}"|#import "@preview/frame-it:{{new-version}}"|g' {{readme-typ-file}}
@@ -26,8 +26,8 @@ release new-version: && (update-and-push-assets "Release version {{new-version}}
 
 _packages-suffix := "packages/preview/frame-it/"
 [script]
-cp-to-packages new-version $PACKAGES_REPO_ROOT:
-    folder=$PACKAGES_REPO_ROOT{{_packages-suffix / new-version}}
+cp-to-packages new-version packages-repo-root:
+    folder={{packages-repo-root / _packages-suffix / new-version}}
     if [ -d $folder ];
         echo Folder $folder already exists >&2
         exit 1
@@ -38,6 +38,7 @@ cp-to-packages new-version $PACKAGES_REPO_ROOT:
     cd $folder
     rm .github/ assets/ .git/ -r
     rm CHANGELOG.md justfile .gitignore .typos.toml .envrc
+    sed -iE 's|^#import "src/lib.typ"|#import "@preview/frame-it:{{new-version}}"|g' $folder/README.typ
     find . -type f -name "*.pdf" -exec rm -f {}
     
 
@@ -110,7 +111,7 @@ test-compile: (update-html tmpdir) (update-readme tmpdir)
 
 [confirm("Do you want to commit and push all changes on the assets branch?")]
 [working-directory("assets")]
-update-and-push-assets commit-msg="Update.": update-assets
+update-and-push-assets commit-msg="chore: update": update-assets
     git add .
     git commit -m "{{commit-msg}}" --no-verify
     git push
