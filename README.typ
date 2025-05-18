@@ -260,15 +260,13 @@ The `figure` function includes a parameter for including a figure in the outline
 ]
 
 #syntax[Change the styling][
-  To use a different styling function for just one frame, you can provide `style: styles.hint` as an extra argument:
+  To use a different styling function for just one frame, you can provide `style: some-style` as an extra argument:
   ```typst
   #variant(style: styles.hint)[
-    To skip the header entirely, leave the title parameter blank.
+    This has hint styling
   ]
   ```
 ]
-Beware that internally, this has to create two distinct figures for technical reason.
-In general, this approach will be less robust than using the `show: frame-style()` function.
 
 When you want to change the styling used for a passage of your document,
 you can just add more `show: frame-style()` rules:
@@ -384,7 +382,7 @@ Here are a few edge cases.
   Counters continue incrementing sequentially in non-nested elements.
 ]
 
-#show: frame-style(kind: "frame", styles.boxy)
+#show: frame-style(styles.boxy)
 #let (f2,) = frames(kind: "frame2", f2: "Other Frame")
 #show: frame-style(kind: "frame2", styles.thmbox)
 #f2[Should be thmbox][
@@ -392,6 +390,9 @@ Here are a few edge cases.
 ]
 #example[Should be boxy][
   boxy
+]
+#example(style: styles.hint)[Should be hint][
+  This used an ad–hoc style argument
 ]
 
 #let individual-frame1 = frame("Some Additional Frame", orange)

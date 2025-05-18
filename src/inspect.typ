@@ -22,6 +22,7 @@
     body,
     supplement,
     custom-arg,
+    style,
   ) = retrieve-info-from-code(figure.caption.body)
 
   (

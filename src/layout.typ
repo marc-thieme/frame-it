@@ -12,17 +12,18 @@
   body,
   supplement,
   custom-arg,
+  style,
   ..figure-params,
 ) = {
-  let frame-info = (
-    title,
-    tags,
-    body,
-    supplement,
-    custom-arg,
-  )
   figure(
-    caption: encode-title-and-info(title, frame-info),
+    caption: encode-title-and-info(
+      title,
+      tags,
+      body,
+      supplement,
+      custom-arg,
+      style,
+    ),
     supplement: supplement,
     kind: kind,
     ..figure-params,
@@ -50,8 +51,12 @@
         body,
         supplement,
         custom-arg,
+        style: bundled-style,
       ) = retrieve-info-from-code(code)
-      style(title, tags, body, supplement, number, custom-arg)
+      let actual-style = if bundled-style != auto { bundled-style } else {
+        style
+      }
+      actual-style(title, tags, body, supplement, number, custom-arg)
     }
   }
   show: styling.dividers-as[
@@ -86,34 +91,15 @@
     if title-and-tags.pos() != () {
       (title, ..tags) = title-and-tags.pos()
     }
-    if style == auto {
-      spawn-frame(
-        kind,
-        title,
-        tags,
-        body,
-        supplement,
-        arg,
-        ..title-and-tags.named(),
-      )
-    } else {
-      figure(
-        kind: kind + "-wrapper",
-        supplement: supplement,
-        outlined: false,
-        {
-          show: frame-style(kind, style)
-          spawn-frame(
-            kind,
-            title,
-            tags,
-            body,
-            supplement,
-            custom-arg,
-            ..title-and-tags.named(),
-          )
-        },
-      )
-    }
+    spawn-frame(
+      kind,
+      title,
+      tags,
+      body,
+      supplement,
+      arg,
+      style,
+      ..title-and-tags.named(),
+    )
   }
 )
