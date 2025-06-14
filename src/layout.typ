@@ -17,6 +17,7 @@
 ) = {
   figure(
     caption: encode-title-and-info(
+      kind,
       title,
       tags,
       body,
@@ -37,11 +38,11 @@
   kind,
   style,
 ) = document => {
-  // Don't restrict to correct kind. We already discern between framees and user–figures
+  // Don't restrict to correct kind. We already discern between frames and user–figures
   // inspecting the metadata. This way, the user can manipulate the kind if desired.
   show figure.caption: caption => {
     let code = caption.body
-    if not code-has-info-attached(code) or caption.kind != kind {
+    if not code-has-info-attached(code) or retrieve-info-from-code(code).kind != kind {
       caption
     } else {
       let number = context caption.counter.display(caption.numbering)

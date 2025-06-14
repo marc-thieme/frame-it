@@ -1,7 +1,7 @@
 #let _unique-frame-metadata-tag = "_THIS-IS-METADATA-USED-FOR-FRAME-IT-FRAMES"
 
 // Encode info as invisible metadata so when rendered in outline, only the title is seen
-#let encode-title-and-info(title, tags, body, supplement, custom-arg, style) = {
+#let encode-title-and-info(kind, title, tags, body, supplement, custom-arg, style) = {
   let info = (
     title: title,
     tags: tags,
@@ -9,6 +9,7 @@
     supplement: supplement,
     custom-arg: custom-arg,
     style: style,
+    kind: kind
   )
   // Add "" so when title is `none`, result still has type 'sequence'
   metadata((_unique-frame-metadata-tag, info)) + "" + title
