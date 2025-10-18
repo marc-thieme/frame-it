@@ -1,5 +1,6 @@
 #import "../styling.typ" as styling
-#import "../utils/html.typ": css, span, div, hr, target-choose
+#import "../utils/html.typ": css, div, hr, span, target-choose
+#import "../utils/text-queries.typ": real-text-direction, text-is-left-to-right
 
 #let body-inset = 0.8em
 #let stroke-width = 0.13em
@@ -113,10 +114,9 @@
 
   let round-bottom-corners-of-tags = body == []
   let display-title = title not in ([], "")
-  let round-top-left-body-corner = title in ([], none) and tags == ()
 
   let header() = align(
-    left,
+    start,
     {
       let inset = 0.5em
 
@@ -138,7 +138,12 @@
         h(1fr)
       }
 
-      let supplement-str = box(inset: inset)[#supplement #number]
+      let supplement-str = box(inset: inset, context stack(
+        dir: real-text-direction(),
+        supplement,
+        [~],
+        number,
+      ))
 
       layout(((width: available-width)) => {
         if measure(rendered-tags + supplement-str).width < available-width {
@@ -152,13 +157,18 @@
     },
   )
 
-  let board() = {
-    let round-corners = (bottom: corner-radius, top-right: corner-radius)
-    if round-top-left-body-corner {
-      round-corners.top-left = corner-radius
+  let board() = context {
+    let sharp-top-left-body-corner = title not in ([], none) or tags != ()
+    let round-corners = (rest: corner-radius)
+    if sharp-top-left-body-corner {
+      if text-is-left-to-right() {
+        round-corners.top-left = 0%
+      } else {
+        round-corners.top-right = 0%
+      }
     }
     align(
-      left,
+      start,
       block(
         width: 100%,
         inset: body-inset,

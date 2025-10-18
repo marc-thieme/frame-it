@@ -405,6 +405,16 @@ Here are a few edge cases.
 #individual-frame1[Individual][Individual]
 #individual-frame2[Individual][Individual]
 
+#show: frame-style(styles.boxy)
+#[
+  #set text(lang: "he")
+  #example[Title][Tag][Right to left by language]
+]
+#[
+  #set text(dir: rtl)
+  #example[Title][Tag][Right to left by dir]
+]
+
 // Tests
 #context {
   let frames = query(figure.where(kind: "frame"))
