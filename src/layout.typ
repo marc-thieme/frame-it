@@ -45,7 +45,9 @@
     if not code-has-info-attached(code) or retrieve-info-from-code(code).kind != kind {
       caption
     } else {
-      let number = context caption.counter.display(caption.numbering)
+      let number = if caption.numbering != none {
+        context caption.counter.display(caption.numbering)
+      }
       let (
         title,
         tags,
