@@ -2,7 +2,7 @@ set unstable
 
 readme-typ-file := 'README.typ'
 tmpdir := env('XDG_RUNTIME_DIR', '/tmp') / 'frame-it'
-dummy := shell('mkdir -p ' + tmpdir)
+_dummy := shell('mkdir -p ' + tmpdir)
 compile-html := 'typst compile --features html -f "html" --input html-frames=true '
 
 unexport TYPST_FEATURES
