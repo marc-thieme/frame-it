@@ -185,13 +185,12 @@ The following features are demonstrated in all predefined styles.
 
 === HTML
 We were one of the first packages to add support for html! \
-This means you can use our frames for example if you're writing an html wiki or blog in typst
-or using typst to get a headstart writing your website.
+This means you can use our frames if you're writing an html wiki or blog in typst.
 #feature[HTML export][
   Due to the currently experimental nature of the feature, you need to pass two CLI–flags when
   compiling your document with the frames to html:
   ```
-  typst compile --features html --input html-frames=true --format html FILE.typ
+  typst compile --features html --format html FILE.typ
   ```
 ]
 

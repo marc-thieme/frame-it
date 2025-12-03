@@ -1,13 +1,5 @@
 #let wants-html() = {
-  let html-frames = sys.inputs.at("html-frames", default: "false")
-  assert(
-    html-frames in ("true", "false"),
-    message: html-frames
-      + " is not valid for `--input html-frames={true|false}`",
-  )
-  (
-    html-frames == "true" and target() == "html"
-  )
+  "target" in dictionary(std) and target() == "html"
 }
 
 #let target-choose(html: auto, paged: auto) = context {
