@@ -413,6 +413,10 @@ Here are a few edge cases.
   This used an ad–hoc style argument
 ]
 
+#example(numbering: none)[No numbering][
+  Here, `numbering = none` is being passed.
+]
+
 #let individual-frame1 = frame("Some Additional Frame", orange)
 #let individual-frame2 = frame(
   kind: "not-the-default",
