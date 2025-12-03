@@ -326,13 +326,15 @@ When defining your own styling function, it has to have the following signature:
 The content returned will be placed as–is in the document.
 
 #syntax[Styling Dividers][
-  If your custom styling function shall support dividers, it must include a show rule in its body:
+  If your custom styling function shall support dividers, it must include this show rule in its body:
   ```typst
   #show: styling.dividers-as(object-which-will-be-used-as-divider)
   ```
 ]
 
 For more information on how to define your own styling function, please look into the `styling` module.
+
+`frame-it` combines very well with [showybox](https://typst.app/universe/package/showybox/) in order to create beautiful styles easily!
 
 = Experimentl APIs
 These APIs are still experimental and subject to change. Use sparingly.
