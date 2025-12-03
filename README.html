@@ -35,7 +35,9 @@
         <h2>Introduction</h2>
 <p><a href="https://github.com/marc-thieme/frame-it">Frame-It</a> offers a straightforward way to define and use custom environments in your documents. Its syntax is designed to integrate seamlessly with your source code.</p>
 <p>Two predefined styles are included by default. You can also create custom styling functions that use the same user-facing API while giving you complete control over the Typst elements in your document.</p>
-<style>#frame-wrapper-1 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
+<style>
+      #frame-wrapper-1 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
 <div id="frame-wrapper-1">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #e4bce9; ">Distinct Highlight</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: -2px; border-bottom: none; ">Best for occasional use</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">More noticeable</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 1</span></div>
@@ -43,102 +45,153 @@
       </figure>
     </div>
 <p>In contrast:</p>
-<style>#frame-wrapper-2 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
+<style>
+      #frame-wrapper-2 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
 <div id="frame-wrapper-2">
       <figure>
-        <div style="border-left: 3.5pt solid #e4bce9; padding: 0.8em; ">&nbsp;Feature 2&nbsp;<strong>&nbsp;&nbsp;Unobtrusive Style&nbsp;</strong><em>&nbsp;(Ideal for frequent use, Blends into text flow)&nbsp;</em>:&nbsp; The alternative style <code>styles.hint</code> highlights text with a subtle colored line along the side, preserving the document's flow.</div>
+        <div style="border-left: 3.5pt solid #e4bce9; padding: 0.8em; ">&nbsp;Feature 2&nbsp;<strong>&nbsp;&nbsp;Unobtrusive Style&nbsp;</strong><em>&nbsp;(Ideal for frequent use, Blends into text flow)&nbsp;</em>:&nbsp; The alternative style <code>styles.hint</code> highlights text with a subtle colored line along the side, preserving the document’s flow.</div>
       </figure>
     </div>
-<p>The default styles are merely functions with the correct signature. If they don't appeal to you, you have complete freedom to define custom styling functions yourself.</p>
-<style>#frame-wrapper-3 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
+<style>
+      #frame-wrapper-3 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
 <div id="frame-wrapper-3">
       <figure>
-        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #bcbcbc; ">A different frame kind</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 3</span></div>
+        <div style="border-left: 3pt solid #e4bce9; padding: 1em; ">
+          <div style="display: flex; justify-content: space-between; align-items: center; color: #ca4fdb; ">
+            <div style="flex: 1.7 1 1; text-align: left; "><strong>Elegant</strong></div>
+            <div style="flex: 1 1 1; text-align: center; ">Separates header and content</div>
+            <div style="flex: 1 1 1; text-align: center; ">not too obtrusive</div>
+            <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature 3</strong></div>
+          </div>
+          <p>The third default style <code>styles.hint</code> clearly separates frame header and frame body. This style was taken from [typst-thmbox](<a href="https://github.com/s15n/typst-thmbox">https://github.com/s15n/typst-thmbox</a>).</p>
+        </div>
+      </figure>
+    </div>
+<p>The default styles are merely functions with the correct signature. If they don’t appeal to you, you have complete freedom to define custom styling functions yourself. For reference, this is that signature:</p>
+<pre><code class="typst"><pre><code data-lang="typst">let your-custom-styling-function(title, tags, body, supplement, number, accent-color) = […]</code></pre></code></pre>
+<style>
+      #frame-wrapper-4 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-4">
+      <figure>
+        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #bcbcbc; ">A different frame kind</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 4</span></div>
         <div style="border: 0.13em solid #bcbcbc; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
-          <p>You can define different classes or types of frames, which alter the substitute and the frame's color. As shown here, this is an example frame. You can create as many different kinds as you want.</p>
-          <p>As long as all kinds use the same identifier with <code>frames</code>, they share a common counter.</p>
+          <p>You can define different classes or types of frames, which alter the substitute and the frame’s color. As shown here, this is an example frame. You can create as many different kinds as you want.</p>
+          <p>As long as all kinds use the same kind, they share a common counter.</p>
         </div>
       </figure>
     </div>
 <h2>Quick Start</h2>
 <p>Import and define your desired frames:</p>
-<pre><code class="typst"><pre>#import "@preview/frame-it:1.2.0": *<br><br>#let (example, feature, variant, syntax) = frames(<br>  feature: ("Feature",),<br>  // For each frame kind, you have to provide its supplement title to be displayed<br>  variant: ("Variant",),<br>  // You can provide a color or leave it out and it will be generated<br>  example: ("Example", gray),<br>  // You can add as many as you want<br>  syntax: ("Syntax",),<br>)<br>// This is necessary. Don't forget this!<br>#show: frame-style(styles.boxy)</pre></code></pre>
+<pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">import</span> <span style="color: #198810">"@preview/frame-it:2.0.0"</span>: <span style="color: #d73948">*</span><br><br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> (example, feature, variant, syntax) <span style="color: #d73948">=</span> <span style="color: #4b69c6">frames</span>(<br>  feature: (<span style="color: #198810">"Feature"</span>,),<br>  <span style="color: #74747c">// For each frame kind, you have to provide its supplement title to be displayed</span><br>  variant: (<span style="color: #198810">"Variant"</span>,),<br>  <span style="color: #74747c">// You can provide a color or leave it out and it will be generated</span><br>  example: (<span style="color: #198810">"Example"</span>, gray),<br>)<br><span style="color: #74747c">// This syntax works as well, but colors are not generated automatically</span><br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> syntax <span style="color: #d73948">=</span> <span style="color: #4b69c6">frame</span>(<span style="color: #198810">"Syntax"</span>, green)<br><span style="color: #74747c">// This is necessary. Don't forget this!</span><br><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">frame-style</span>(styles.boxy)</code></pre></code></pre>
 <p>How to use it is explained below. Here is a quick example:</p>
-<pre><code class="typst"><pre>#example[Title][Optional Tag][<br>  Body, i.e. large content block for the frame.<br>]</pre></code></pre>
+<pre><code class="typst"><pre><code data-lang="typst"><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>[Title][Optional Tag][<br>  Body, i.e. large content block for the frame.<br>]</code></pre></code></pre>
 <p>which yields</p>
-<style>#frame-wrapper-4 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-4">
+<style>
+      #frame-wrapper-5 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-5">
       <figure>
-        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #bcbcbc; ">Title</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Optional Tag</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 4</span></div>
+        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #bcbcbc; ">Title</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Optional Tag</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 5</span></div>
         <div style="border: 0.13em solid #bcbcbc; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">Body, i.e. large content block for the frame.</div>
       </figure>
     </div>
 <h2>Feature List</h2>
 <p>The following features are demonstrated in all predefined styles.</p>
 <h3>Seamlessly hightight parts of your document</h3>
-<style>#frame-wrapper-5 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-5">
-      <style>#frame-wrapper-5 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-5">
+<style>
+      #frame-wrapper-6 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-6">
+      <style>
+        #frame-wrapper-6 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-6">
         <figure>
-          <div style="border-left: 3.5pt solid #e4bce9; padding: 0.8em; ">&nbsp;Feature 5&nbsp;<strong>&nbsp;&nbsp;Element with Title and Content&nbsp;</strong><em></em>:&nbsp; The simplest way to create an element is by providing a title as the first argument and content as the second.</div>
+          <div style="border-left: 3.5pt solid #e4bce9; padding: 0.8em; ">&nbsp;Feature 6&nbsp;<strong>&nbsp;&nbsp;Element with Title and Content&nbsp;</strong><em></em>:&nbsp; The simplest way to create an element is by providing a title as the first argument and content as the second.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-7 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-7">
-      <style>#frame-wrapper-7 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-7">
+<style>
+      #frame-wrapper-8 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-8">
+      <style>
+        #frame-wrapper-8 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-8">
         <figure>
-          <div style="border-left: 3.5pt solid #e5c894; padding: 0.8em; ">&nbsp;Feature Variant 6&nbsp;<strong>&nbsp;&nbsp;Element with Tags&nbsp;</strong><em>&nbsp;(Customizable Tags, Multiple)&nbsp;</em>:&nbsp; Elements can include multiple tags placed between the title and the content.</div>
+          <div style="border-left: 3.5pt solid #e5c894; padding: 0.8em; ">&nbsp;Feature Variant 7&nbsp;<strong>&nbsp;&nbsp;Element with Tags&nbsp;</strong><em>&nbsp;(Customizable Tags, Multiple)&nbsp;</em>:&nbsp; Elements can include multiple tags placed between the title and the content.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-9 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-9">
-      <style>#frame-wrapper-9 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-9">
+<style>
+      #frame-wrapper-10 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-10">
+      <style>
+        #frame-wrapper-10 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-10">
         <figure>
-          <div style="border-left: 3.5pt solid #e4bce9; padding: 0.8em; ">&nbsp;Feature 7&nbsp;<strong></strong><em></em>:&nbsp; If you don’t require a custom title but still want to display the element type, use <code>[]</code> as the title placeholder.</div>
+          <div style="border-left: 3.5pt solid #e4bce9; padding: 0.8em; ">&nbsp;Feature 8&nbsp;<strong></strong><em></em>:&nbsp; If you don’t require a custom title but still want to display the element type, use <code>[]</code> as the title placeholder.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-11 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-11">
-      <style>#frame-wrapper-11 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-11">
+<style>
+      #frame-wrapper-12 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-12">
+      <style>
+        #frame-wrapper-12 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-12">
         <figure>
-          <div style="border-left: 3.5pt solid #e5c894; padding: 0.8em; ">&nbsp;Feature Variant 8&nbsp;<strong></strong><em>&nbsp;(Single Tag, Next tag)&nbsp;</em>:&nbsp; You can include tags even when no title is provided.</div>
+          <div style="border-left: 3.5pt solid #e5c894; padding: 0.8em; ">&nbsp;Feature Variant 9&nbsp;<strong></strong><em>&nbsp;(Single Tag, Next tag)&nbsp;</em>:&nbsp; You can include tags even when no title is provided.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-13 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-13">
-      <style>#frame-wrapper-13 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-13">
+<style>
+      #frame-wrapper-14 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-14">
+      <style>
+        #frame-wrapper-14 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-14">
         <figure>
           <div style="border-left: 3.5pt solid #e5c894; padding: 0.8em; ">To omit the header entirely, leave the title parameter empty.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-15 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-15">
-      <style>#frame-wrapper-15 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-15">
+<style>
+      #frame-wrapper-16 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-16">
+      <style>
+        #frame-wrapper-16 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-16">
         <figure>
-          <div style="border-left: 3.5pt solid #e4bce9; padding: 0.8em; ">&nbsp;Feature 10&nbsp;<strong>&nbsp;&nbsp;Element without Content&nbsp;</strong><em>&nbsp;(Optional Tags Only)&nbsp;</em>&nbsp;</div>
+          <div style="border-left: 3.5pt solid #e4bce9; padding: 0.8em; ">&nbsp;Feature 11&nbsp;<strong>&nbsp;&nbsp;Element without Content&nbsp;</strong><em>&nbsp;(Optional Tags Only)&nbsp;</em>&nbsp;</div>
         </figure>
       </div>
     </div>
 <p>For brief elements, use [] as the body to omit the content.</p>
-<style>#frame-wrapper-17 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-17">
-      <style>#frame-wrapper-17 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-17">
+<style>
+      #frame-wrapper-18 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-18">
+      <style>
+        #frame-wrapper-18 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-18">
         <figure>
           <div style="border-left: 3.5pt solid #e4bce9; padding: 0.8em; ">
-            <p>&nbsp;Feature 11&nbsp;<strong>&nbsp;&nbsp;Element with Divider&nbsp;</strong><em></em>:&nbsp; Insert</p>
-            <pre><code class="typst"><code>#divide()</code></code></pre>
+            <p>&nbsp;Feature 12&nbsp;<strong>&nbsp;&nbsp;Element with Divider&nbsp;</strong><em></em>:&nbsp; Insert</p>
+            <pre><code class="typst"><code data-lang="typst"><span style="color: #4b69c6">#</span><span style="color: #4b69c6">divide</span>()</code></code></pre>
             <p>to add a divider within your content for a visual break:</p>
             <hr style="background: #e4bce9; height: 0.13em; border: 0; margin: 0.8em -0.8em; ">
             <p>And then continue with your text below the divider.</p>
@@ -147,74 +200,102 @@
       </div>
     </div>
 <h3>Highlight parts distinctively</h3>
-<style>#frame-wrapper-19 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-19">
-      <style>#frame-wrapper-19 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-19">
+<style>
+      #frame-wrapper-20 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-20">
+      <style>
+        #frame-wrapper-20 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-20">
         <figure>
-          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #e4bce9; ">Element with Title and Content</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 12</span></div>
+          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #e4bce9; ">Element with Title and Content</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 13</span></div>
           <div style="border: 0.13em solid #e4bce9; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">The simplest way to create an element is by providing a title as the first argument and content as the second.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-21 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-21">
-      <style>#frame-wrapper-21 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-21">
+<style>
+      #frame-wrapper-22 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-22">
+      <style>
+        #frame-wrapper-22 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-22">
         <figure>
-          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #e5c894; ">Element with Tags</span><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: -2px; border-bottom: none; ">Customizable Tags</span><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Multiple</span><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 13</span></div>
+          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #e5c894; ">Element with Tags</span><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: -2px; border-bottom: none; ">Customizable Tags</span><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Multiple</span><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 14</span></div>
           <div style="border: 0.13em solid #e5c894; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">Elements can include multiple tags placed between the title and the content.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-23 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-23">
-      <style>#frame-wrapper-23 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-23">
+<style>
+      #frame-wrapper-24 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-24">
+      <style>
+        #frame-wrapper-24 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-24">
         <figure>
-          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: 0; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 14</span></div>
+          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: 0; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 15</span></div>
           <div style="border: 0.13em solid #e4bce9; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; border-top-left-radius: 5pt; ">If you don’t require a custom title but still want to display the element type, use <code>[]</code> as the title placeholder.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-25 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-25">
-      <style>#frame-wrapper-25 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-25">
+<style>
+      #frame-wrapper-26 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-26">
+      <style>
+        #frame-wrapper-26 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-26">
         <figure>
-          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; ">Single Tag</span><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Next tag</span><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 15</span></div>
+          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; ">Single Tag</span><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Next tag</span><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 16</span></div>
           <div style="border: 0.13em solid #e5c894; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">You can include tags even when no title is provided.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-27 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-27">
-      <style>#frame-wrapper-27 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-27">
+<style>
+      #frame-wrapper-28 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-28">
+      <style>
+        #frame-wrapper-28 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-28">
         <figure>
           <div style="border: 0.13em solid #e5c894; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; border-top-left-radius: 5pt; ">To omit the header entirely, leave the title parameter empty.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-29 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-29">
-      <style>#frame-wrapper-29 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-29">
+<style>
+      #frame-wrapper-30 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-30">
+      <style>
+        #frame-wrapper-30 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-30">
         <figure>
-          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: 0; border-top-left-radius: 5pt; border-bottom-left-radius: 5pt; background-color: #e4bce9; ">Element without Content</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: -2px; border-top-right-radius: 5pt; border-bottom-right-radius: 5pt; ">Optional Tags Only</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: auto; border-color: transparent; mragin-right: 0.8em; ">Feature 17</span></div>
+          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: 0; border-top-left-radius: 5pt; border-bottom-left-radius: 5pt; background-color: #e4bce9; ">Element without Content</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: -2px; border-top-right-radius: 5pt; border-bottom-right-radius: 5pt; ">Optional Tags Only</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: auto; border-color: transparent; mragin-right: 0.8em; ">Feature 18</span></div>
         </figure>
       </div>
     </div>
 <p>For brief elements, use [] as the body to omit the content.</p>
-<style>#frame-wrapper-31 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-31">
-      <style>#frame-wrapper-31 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-31">
+<style>
+      #frame-wrapper-32 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-32">
+      <style>
+        #frame-wrapper-32 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-32">
         <figure>
-          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #e4bce9; ">Element with Divider</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 18</span></div>
+          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #e4bce9; ">Element with Divider</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 19</span></div>
           <div style="border: 0.13em solid #e4bce9; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
             <p>Insert</p>
-            <pre><code class="typst"><code>#divide()</code></code></pre>
+            <pre><code class="typst"><code data-lang="typst"><span style="color: #4b69c6">#</span><span style="color: #4b69c6">divide</span>()</code></code></pre>
             <p>to add a divider within your content for a visual break:</p>
             <hr style="border: 0; height: 0.13em; background: #e4bce9; margin: 0 -0.8em; ">
             <p>And then continue with your text below the divider.</p>
@@ -224,105 +305,133 @@
     </div>
 <h3>A third Alternative</h3>
 <p>We recently added third style, namely <code>styles.thmbox</code>:</p>
-<style>#frame-wrapper-33 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-33">
-      <style>#frame-wrapper-33 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-33">
+<style>
+      #frame-wrapper-34 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-34">
+      <style>
+        #frame-wrapper-34 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-34">
         <figure>
           <div style="border-left: 3pt solid #e4bce9; padding: 1em; ">
             <div style="display: flex; justify-content: space-between; align-items: center; color: #ca4fdb; ">
               <div style="flex: 1.7 1 1; text-align: left; "><strong>Element with Title and Content</strong></div>
-              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature 19</strong></div>
+              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature 20</strong></div>
             </div>
             <p>The simplest way to create an element is by providing a title as the first argument and content as the second.</p>
           </div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-35 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-35">
-      <style>#frame-wrapper-35 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-35">
+<style>
+      #frame-wrapper-36 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-36">
+      <style>
+        #frame-wrapper-36 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-36">
         <figure>
           <div style="border-left: 3pt solid #e5c894; padding: 1em; ">
             <div style="display: flex; justify-content: space-between; align-items: center; color: #d8a447; ">
               <div style="flex: 1.7 1 1; text-align: left; "><strong>Element with Tags</strong></div>
               <div style="flex: 1 1 1; text-align: center; ">Customizable Tags</div>
               <div style="flex: 1 1 1; text-align: center; ">Multiple</div>
-              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature Variant 20</strong></div>
+              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature Variant 21</strong></div>
             </div>
             <p>Elements can include multiple tags placed between the title and the content.</p>
           </div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-37 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-37">
-      <style>#frame-wrapper-37 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-37">
+<style>
+      #frame-wrapper-38 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-38">
+      <style>
+        #frame-wrapper-38 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-38">
         <figure>
           <div style="border-left: 3pt solid #e4bce9; padding: 1em; ">
             <div style="color: #ca4fdb; ">
-              <div style="flex: 1.7 1 1; text-align: left; "><strong>Feature 21</strong></div>
+              <div style="flex: 1.7 1 1; text-align: left; "><strong>Feature 22</strong></div>
             </div>
             <p>If you don’t require a custom title but still want to display the element type, use <code>[]</code> as the title placeholder.</p>
           </div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-39 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-39">
-      <style>#frame-wrapper-39 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-39">
+<style>
+      #frame-wrapper-40 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-40">
+      <style>
+        #frame-wrapper-40 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-40">
         <figure>
           <div style="border-left: 3pt solid #e5c894; padding: 1em; ">
             <div style="display: flex; justify-content: space-between; align-items: center; color: #d8a447; ">
               <div style="flex: 1 1 1; text-align: center; ">Single Tag</div>
               <div style="flex: 1 1 1; text-align: center; ">Next tag</div>
-              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature Variant 22</strong></div>
+              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature Variant 23</strong></div>
             </div>
             <p>You can include tags even when no title is provided.</p>
           </div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-41 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-41">
-      <style>#frame-wrapper-41 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-41">
+<style>
+      #frame-wrapper-42 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-42">
+      <style>
+        #frame-wrapper-42 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-42">
         <figure>
           <div style="border-left: 3pt solid #e5c894; padding: 1em; ">To omit the header entirely, leave the title parameter empty.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-43 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-43">
-      <style>#frame-wrapper-43 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-43">
+<style>
+      #frame-wrapper-44 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-44">
+      <style>
+        #frame-wrapper-44 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-44">
         <figure>
           <div style="border-left: 3pt solid #e4bce9; padding: 1em; ">
             <div style="display: flex; justify-content: space-between; align-items: center; color: #ca4fdb; ">
               <div style="flex: 1.7 1 1; text-align: left; "><strong>Element without Content</strong></div>
               <div style="flex: 1 1 1; text-align: center; ">Optional Tags Only</div>
-              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature 24</strong></div>
+              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature 25</strong></div>
             </div>
           </div>
         </figure>
       </div>
     </div>
 <p>For brief elements, use [] as the body to omit the content.</p>
-<style>#frame-wrapper-45 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-45">
-      <style>#frame-wrapper-45 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-45">
+<style>
+      #frame-wrapper-46 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-46">
+      <style>
+        #frame-wrapper-46 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-46">
         <figure>
           <div style="border-left: 3pt solid #e4bce9; padding: 1em; ">
             <div style="display: flex; justify-content: space-between; align-items: center; color: #ca4fdb; ">
               <div style="flex: 1.7 1 1; text-align: left; "><strong>Element with Divider</strong></div>
-              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature 25</strong></div>
+              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature 26</strong></div>
             </div>
             <p>Insert</p>
-            <pre><code class="typst"><code>#divide()</code></code></pre>
+            <pre><code class="typst"><code data-lang="typst"><span style="color: #4b69c6">#</span><span style="color: #4b69c6">divide</span>()</code></code></pre>
             <p>to add a divider within your content for a visual break:</p>
             <hr style="background: #e4bce9; height: 0.18em; border: 0; margin: 0 0 0 -1em; ">
             <p>And then continue with your text below the divider.</p>
@@ -332,126 +441,154 @@
     </div>
 <h3>Miscellaneous</h3>
 <h4>Syntax to create single frames</h4>
-<style>#frame-wrapper-47 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-47">
+<style>
+      #frame-wrapper-48 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-48">
       <figure>
-        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #90dbe1; ">Single–Frame–Creation</span><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 26</span></div>
+        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #90dbe1; ">Single–Frame–Creation</span><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 27</span></div>
         <div style="border: 0.13em solid #90dbe1; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
           <p>When the above method for creating frames is not flexible enough, you can use this alternative method for creating frames one–by–one:</p>
-          <pre>#let theorem = frame("Theorem", red)<br>#let definition = frame(kind: "not-the-default", "Definition", blue)</pre>
+          <pre><code data-lang="typ"><span style="color: #d73948">#</span><span style="color: #d73948">let</span> theorem <span style="color: #d73948">=</span> <span style="color: #4b69c6">frame</span>(<span style="color: #198810">"Theorem"</span>, red)<br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> definition <span style="color: #d73948">=</span> <span style="color: #4b69c6">frame</span>(kind: <span style="color: #198810">"not-the-default"</span>, <span style="color: #198810">"Definition"</span>, blue)</code></pre>
           <p>Contrary to the first method, you have to specify a color.</p>
         </div>
       </figure>
     </div>
 <h4>HTML</h4>
-<p>We were one of the first packages to add support for html!<br>This means you can use our frames for example if you're writing an html wiki or blog in typst or using typst to get a headstart writing your website.</p>
-<style>#frame-wrapper-48 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-48">
+<p>We were one of the first packages to add support for html!<br>This means you can use our frames if you’re writing an html wiki or blog in typst.</p>
+<style>
+      #frame-wrapper-49 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-49">
       <figure>
-        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #e4bce9; ">HTML export</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 27</span></div>
+        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #e4bce9; ">HTML export</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 28</span></div>
         <div style="border: 0.13em solid #e4bce9; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
           <p>Due to the currently experimental nature of the feature, you need to pass two CLI–flags when compiling your document with the frames to html:</p>
-          <pre>typst compile --features html --input html-frames=true --format html FILE.typ</pre>
+          <pre><code>typst compile --features html --format html FILE.typ</code></pre>
         </div>
       </figure>
     </div>
 <h4>General</h4>
-<p>Internally, every frame is just a <code>figure</code> where the <code>kind</code> is set to <code>"frame"</code> (or a different custom value). As such, most things that can be done to a figure can be done with a frame as well. Whenever you would like to do something custom but don't know if it is supported, try achieving it with a normal figure first and then apply the same show rule to your frames. Here is a list of examples:</p>
-<style>#frame-wrapper-49 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-49">
-      <figure>
-        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #e5c894; ">Labels and References</span><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 28</span></div>
-        <div style="border: 0.13em solid #e5c894; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
-          <p>Elements can be referenced as expected by appending <code>&lt;label&gt;</code> and referencing it:</p>
-          <pre><code class="typst"><pre>#syntax[Labels and References] &lt;labels-and-refs&gt;<br>Referencing with @labels-and-refs.</pre></code></pre>
-        </div>
-      </figure>
-    </div>
-<style>#frame-wrapper-50 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
+<p>Internally, every frame is just a <code>figure</code> where the <code>kind</code> is set to <code>"frame"</code> (or a different custom value). As such, most things that can be done to a figure can be done with a frame as well. Whenever you would like to do something custom but don’t know if it is supported, try achieving it with a normal figure first and then apply the same show rule to your frames. Here is a list of examples:</p>
+<style>
+      #frame-wrapper-50 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
 <div id="frame-wrapper-50">
       <figure>
-        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #e5c894; ">Break frames across pages</span><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 29</span></div>
+        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #e5c894; ">Labels and References</span><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 29</span></div>
         <div style="border: 0.13em solid #e5c894; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
-          <p>If you want to make your frames breakable across pages, you have to use the show rule known from the official typst docs:</p>
-          <pre><code class="typst"><pre>#show figure.where(kind: "frame"): set block(breakable: true)</pre></code></pre>
-          <p>To turn off breakability, you can use the corresponding show rule</p>
-          <pre><code class="typst"><pre>#show figure.where(kind: "frame"): set block(breakable: false)</pre></code></pre>
+          <p>Elements can be referenced as expected by appending <code>&lt;label&gt;</code> and referencing it:</p>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #4b69c6">#</span><span style="color: #4b69c6">syntax</span>[Labels and References] <span style="color: #1d6c76">&lt;labels-and-refs&gt;</span><br>Referencing with <span style="color: #1d6c76">@labels-and-refs</span>.</code></pre></code></pre>
         </div>
       </figure>
     </div>
-<style>#frame-wrapper-51 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
+<style>
+      #frame-wrapper-51 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
 <div id="frame-wrapper-51">
       <figure>
-        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #e4bce9; ">Per–frame custom figure parameters</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Frame outline</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 30</span></div>
-        <div style="border: 0.13em solid #e4bce9; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">All named parameters passed to a frame–function like <code>example[][]</code> are going to be passed to the figure function which places the frame in the document.</div>
+        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #e5c894; ">Break frames across pages</span><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 30</span></div>
+        <div style="border: 0.13em solid #e5c894; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
+          <p>If you want to make your frames breakable across pages, you have to use the show rule known from the official typst docs:</p>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">show</span> figure.<span style="color: #4b69c6">where</span>(kind: <span style="color: #198810">"frame"</span>): <span style="color: #d73948">set</span> <span style="color: #4b69c6">block</span>(breakable: <span style="color: #d73948">true</span>)</code></pre></code></pre>
+          <p>To turn off breakability, you can use the corresponding show rule</p>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">show</span> figure.<span style="color: #4b69c6">where</span>(kind: <span style="color: #198810">"frame"</span>): <span style="color: #d73948">set</span> <span style="color: #4b69c6">block</span>(breakable: <span style="color: #d73948">false</span>)</code></pre></code></pre>
+        </div>
+      </figure>
+    </div>
+<style>
+      #frame-wrapper-52 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-52">
+      <figure>
+        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #e4bce9; ">Per–frame custom figure parameters</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Frame outline</span><span style="padding: 5px 10px; border: 0.13em solid #e4bce9; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature<span style="white-space: pre-wrap"> </span></span></div>
+        <div style="border: 0.13em solid #e4bce9; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
+          <p>All named parameters passed to a frame–function like <code>example[][]</code> are going to be passed to the figure function which places the frame in the document.</p>
+          <p>For example, if you want to give a frame a specific number, you can achieve this with</p>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>(numbering: <span style="color: #d73948">none</span>)[Frame without number][This frame has no number.]</code></pre></code></pre>
+        </div>
       </figure>
     </div>
 <p>For example, you can create an outline which only contains some intentional of your frames like so. The <code>figure</code> function includes a parameter for including a figure in the outline.</p>
-<pre><code class="typst"><pre>// By default, don't include frames in outlines by default<br>#show figure.where(kind: "frame"): set figure(outlined: false)<br>// Create the outline<br>#outline(target: figure.where(kind: "frame"))<br>// Explicitly include a frame in the outline with the `outlined` parameter.<br>#example(outlined: true)[Important frame][For the outline]</pre></code></pre>
-<style>#frame-wrapper-52 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-52">
+<pre><code class="typst"><pre><code data-lang="typst"><span style="color: #74747c">// By default, don't include frames in outlines by default</span><br><span style="color: #d73948">#</span><span style="color: #d73948">show</span> figure.<span style="color: #4b69c6">where</span>(kind: <span style="color: #198810">"frame"</span>): <span style="color: #d73948">set</span> <span style="color: #4b69c6">figure</span>(outlined: <span style="color: #d73948">false</span>)<br><span style="color: #74747c">// Create the outline</span><br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">outline</span>(target: figure.<span style="color: #4b69c6">where</span>(kind: <span style="color: #198810">"frame"</span>))<br><span style="color: #74747c">// Explicitly include a frame in the outline with the `outlined` parameter.</span><br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>(outlined: <span style="color: #d73948">true</span>)[Important frame][For the outline]</code></pre></code></pre>
+<style>
+      #frame-wrapper-53 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-53">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #e5c894; ">Different numbering</span><span style="padding: 5px 10px; border: 0.13em solid #e5c894; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 31</span></div>
         <div style="border: 0.13em solid #e5c894; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
           <p>Numbering in figures is a bit of a mess. Natively, you are limited to one number and a format suffix/prefix. With that, you can do the following.</p>
-          <pre><code class="typst"><pre>#show figure.where(kind: "frame"): set figure(numbering: "a)")</pre></code></pre>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">show</span> figure.<span style="color: #4b69c6">where</span>(kind: <span style="color: #198810">"frame"</span>): <span style="color: #d73948">set</span> <span style="color: #4b69c6">figure</span>(numbering: <span style="color: #198810">"a)"</span>)</code></pre></code></pre>
           <p>If you want to do more advanced and nested numbering, you can look into external packages for that. When trying to make a system apply to the frames, remember that they are just figures with a specific kind.</p>
+          <p>If you don’t want to display the number at all, you can pass <code>numbering: none</code> instead.</p>
           <p>In the background, there are also some show rules doing the styling for the frames. However, these should only get in the way when you are doing some esoteric manipulation of the figure captions.</p>
         </div>
       </figure>
     </div>
-<style>#frame-wrapper-53 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-53">
+<style>
+      #frame-wrapper-54 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-54">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #90dbe1; ">Different kind</span><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">for the underlying figures</span><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 32</span></div>
         <div style="border: 0.13em solid #90dbe1; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
           <p>When you have multiple different groups of frames you need to style independently, you can provide an arbitrary <code>kind</code> to the <code>frames</code> function.</p>
-          <pre><code class="typst"><pre>#let (syntax,) = frames(<br>  syntax: ("Syntax",),<br>)<br>#let (note,) = frames(<br>  kind: "other-kind"<br>  note: ("Note",),<br>)<br>#show: frame-style(styles.boxy)<br>#show: frame-style(kind: "other-kind", styles.hint)</pre></code></pre>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">let</span> (syntax,) <span style="color: #d73948">=</span> <span style="color: #4b69c6">frames</span>(<br>  syntax: (<span style="color: #198810">"Syntax"</span>,),<br>)<br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> (note,) <span style="color: #d73948">=</span> <span style="color: #4b69c6">frames</span>(<br>  kind: <span style="color: #198810">"other-kind"</span><br>  note: (<span style="color: #198810">"Note"</span>,),<br>)<br><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">frame-style</span>(styles.boxy)<br><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">frame-style</span>(kind: <span style="color: #198810">"other-kind"</span>, styles.hint)</code></pre></code></pre>
         </div>
       </figure>
     </div>
-<style>#frame-wrapper-54 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-54">
+<style>
+      #frame-wrapper-55 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-55">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #90dbe1; ">Change the styling</span><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 33</span></div>
         <div style="border: 0.13em solid #90dbe1; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
           <p>To use a different styling function for just one frame, you can provide <code>style: some-style</code> as an extra argument:</p>
-          <pre><code class="typst"><pre>#variant(style: styles.hint)[<br>  This has hint styling<br>]</pre></code></pre>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #4b69c6">#</span><span style="color: #4b69c6">variant</span>(style: styles.hint)[<br>  This has hint styling<br>]</code></pre></code></pre>
         </div>
       </figure>
     </div>
 <p>When you want to change the styling used for a passage of your document, you can just add more <code>show: frame-style()</code> rules:</p>
-<pre><code class="typst"><pre>#show: frame-style(styles.boxy)<br>#example[In boxy style][]<br>#show: frame-style(styles.hint)<br>#example[In hint Style][]</pre></code></pre>
+<pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">frame-style</span>(styles.boxy)<br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>[In boxy style][]<br><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">frame-style</span>(styles.hint)<br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>[In hint Style][]</code></pre></code></pre>
 <p>I usually define the abbreviations for the show rule:</p>
-<pre><code class="typst"><pre>// Define once<br>#let boxy(document) = {show: frame-style(styles.boxy); document}<br>#let hint(document) = {show: frame-style(styles.hint); document}<br><br>// Use it for changing the style used<br>#show: boxy<br>#example[In boxy style]<br>#example[Also in boxy style]<br>#show: hint<br>#example[In hint style]</pre></code></pre>
+<pre><code class="typst"><pre><code data-lang="typst"><span style="color: #74747c">// Define once</span><br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> <span style="color: #4b69c6">boxy</span>(document) <span style="color: #d73948">=</span> {<span style="color: #d73948">show</span>: <span style="color: #4b69c6">frame-style</span>(styles.boxy); document}<br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> <span style="color: #4b69c6">hint</span>(document) <span style="color: #d73948">=</span> {<span style="color: #d73948">show</span>: <span style="color: #4b69c6">frame-style</span>(styles.hint); document}<br><br><span style="color: #74747c">// Use it for changing the style used</span><br><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">boxy</span><br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>[In boxy style]<br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>[Also in boxy style]<br><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">hint</span><br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>[In hint style]</code></pre></code></pre>
 <h2>Custom Styling</h2>
 <p>Internally, there is nothing special about the predefined styles. The only requirement for any styling function is to adhere to the following function signature interface:</p>
-<style>#frame-wrapper-55 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-55">
+<style>
+      #frame-wrapper-56 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-56">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #90dbe1; ">Interface for custom styling function</span><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 34</span></div>
         <div style="border: 0.13em solid #90dbe1; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
-          <pre><code class="typst"><pre>#let custom-styling(title, tags, body, supplement, number, arg)</pre></code></pre>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">let</span> <span style="color: #4b69c6">custom-styling</span>(title, tags, body, supplement, number, arg)</code></pre></code></pre>
         </div>
       </figure>
     </div>
 <p>where <code>arg</code> is going to be the value passed behind the supplement for each frame variant in the <code>frames</code> function. For the predefined styles, this is the color of the frames. When defining your own styling function, it has to have the following signature:</p>
 <p>The content returned will be placed as–is in the document.</p>
-<style>#frame-wrapper-56 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-56">
+<style>
+      #frame-wrapper-57 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-57">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #90dbe1; ">Styling Dividers</span><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 35</span></div>
         <div style="border: 0.13em solid #90dbe1; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
-          <p>If your custom styling function shall support dividers, it must include a show rule in its body:</p>
-          <pre><code class="typst"><pre>#show: styling.dividers-as(object-which-will-be-used-as-divider)</pre></code></pre>
+          <p>If your custom styling function shall support dividers, it must include this show rule in its body:</p>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: styling.<span style="color: #4b69c6">dividers-as</span>(object-which-will-be-used-as-divider)</code></pre></code></pre>
         </div>
       </figure>
     </div>
 <p>For more information on how to define your own styling function, please look into the <code>styling</code> module.</p>
+<p><code>frame-it</code> combines very well with [showybox](<a href="https://typst.app/universe/package/showybox/">https://typst.app/universe/package/showybox/</a>) in order to create beautiful styles easily!</p>
 <h2>Experimentl APIs</h2>
 <p>These APIs are still experimental and subject to change. Use sparingly.</p>
-<style>#frame-wrapper-57 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-57">
+<style>
+      #frame-wrapper-58 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-58">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #90dbe1; ">Retrieving information of a frame</span><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Experimental</span><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 36</span></div>
         <div style="border: 0.13em solid #90dbe1; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
@@ -462,9 +599,11 @@
       </figure>
     </div>
 <p>For example, you can use this to color the entries in a outline according to the color of the frame:</p>
-<pre><code class="typst"><pre>#show outline.entry: it =&gt; {<br>  let color = inspect.lookup-frame-info(it.element).color<br>  text(fill: color.saturate(70%), it)<br>}<br>#outline(target: figure.where(kind: "frame"))</pre></code></pre>
-<style>#frame-wrapper-58 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-58">
+<pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">show</span> outline.<span style="color: #4b69c6">entry</span>: it <span style="color: #d73948">=&gt;</span> {<br>  <span style="color: #d73948">let</span> color <span style="color: #d73948">=</span> inspect.<span style="color: #4b69c6">lookup-frame-info</span>(it.element).color<br>  <span style="color: #4b69c6">text</span>(fill: color.<span style="color: #4b69c6">saturate</span>(<span style="color: #b60157">70%</span>), it)<br>}<br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">outline</span>(target: figure.<span style="color: #4b69c6">where</span>(kind: <span style="color: #198810">"frame"</span>))</code></pre></code></pre>
+<style>
+      #frame-wrapper-59 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-59">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #90dbe1; ">Checking whether a figure is a frame</span><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Experimental</span><span style="padding: 5px 10px; border: 0.13em solid #90dbe1; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 37</span></div>
         <div style="border: 0.13em solid #90dbe1; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">In order to test whether a figure is a frame, use the <code>inspect.is-frame(figure)</code> function.</div>
@@ -472,35 +611,45 @@
     </div>
 <p>Whenever possible, try to discern it using the figures kind instead of this function.</p>
 <p>This can be useful, for example, when you want to format references in your document differently. For example, you can do something like this in order to display just title if the referenced element and link to it:</p>
-<pre><code class="typst"><pre>#show ref: it =&gt; {<br>  if inspect.is-frame(it.element) {<br>    link(it.element.location(), inspect.lookup-frame-info(it.element).title)<br>  } else {<br>    it<br>  }<br>}</pre></code></pre>
+<pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">show</span> <span style="color: #4b69c6">ref</span>: it <span style="color: #d73948">=&gt;</span> {<br>  <span style="color: #d73948">if</span> inspect.<span style="color: #4b69c6">is-frame</span>(it.element) {<br>    <span style="color: #4b69c6">link</span>(it.element.<span style="color: #4b69c6">location</span>(), inspect.<span style="color: #4b69c6">lookup-frame-info</span>(it.element).title)<br>  } <span style="color: #d73948">else</span> {<br>    it<br>  }<br>}</code></pre></code></pre>
 <h2>Edge Cases</h2>
 <p>Here are a few edge cases.</p>
-<style>#frame-wrapper-59 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-59">
+<style>
+      #frame-wrapper-60 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-60">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #bcbcbc; ">Test</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: -2px; border-bottom: none; ">Long tag example without space for the supplement</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">notice the number moves up</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 38</span></div>
         <div style="border: 0.13em solid #bcbcbc; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat.</div>
       </figure>
     </div>
-<style>#frame-wrapper-60 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-60">
+<style>
+      #frame-wrapper-61 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-61">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #bcbcbc; ">Example</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: -2px; border-bottom: none; ">Tags of various sizes</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: -2px; border-bottom: none; "></span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; "><p>Extra vertical space:</p></span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 39</span></div>
         <div style="border: 0.13em solid #bcbcbc; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">(Leads to formatting errors in html export because support is missing)<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat.</div>
       </figure>
     </div>
-<style>#frame-wrapper-61 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-61">
+<style>
+      #frame-wrapper-62 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-62">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #bcbcbc; ">Nested</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 40</span></div>
         <div style="border: 0.13em solid #bcbcbc; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
-          <style>#frame-wrapper-62 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-          <div id="frame-wrapper-62">
+          <style>
+            #frame-wrapper-63 > figure {  margin-left: 0px;  margin-right: 0px;}
+          </style>
+          <div id="frame-wrapper-63">
             <figure>
               <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: 0; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 41</span></div>
               <div style="border: 0.13em solid #bcbcbc; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; border-top-left-radius: 5pt; ">
-                <style>#frame-wrapper-63 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-                <div id="frame-wrapper-63">
+                <style>
+                  #frame-wrapper-64 > figure {  margin-left: 0px;  margin-right: 0px;}
+                </style>
+                <div id="frame-wrapper-64">
                   <figure>
                     <div style="border-left: 3.5pt solid #bcbcbc; padding: 0.8em; ">&nbsp;Example 42&nbsp;<strong></strong><em></em>:&nbsp; When nested, counters increment from outer to inner elements.</div>
                   </figure>
@@ -511,15 +660,19 @@
         </div>
       </figure>
     </div>
-<style>#frame-wrapper-64 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-64">
+<style>
+      #frame-wrapper-65 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-65">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: 0; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 43</span></div>
         <div style="border: 0.13em solid #bcbcbc; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; border-top-left-radius: 5pt; ">Counters continue incrementing sequentially in non-nested elements.</div>
       </figure>
     </div>
-<style>#frame-wrapper-65 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-65">
+<style>
+      #frame-wrapper-66 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-66">
       <figure>
         <div style="border-left: 3pt solid #e4bce9; padding: 1em; ">
           <div style="display: flex; justify-content: space-between; align-items: center; color: #ca4fdb; ">
@@ -530,40 +683,106 @@
         </div>
       </figure>
     </div>
-<style>#frame-wrapper-66 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-66">
-      <style>#frame-wrapper-66 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-66">
+<style>
+      #frame-wrapper-67 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-67">
+      <style>
+        #frame-wrapper-67 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-67">
         <figure>
           <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #bcbcbc; ">Should be boxy</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 44</span></div>
           <div style="border: 0.13em solid #bcbcbc; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">boxy</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-68 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-68">
-      <style>#frame-wrapper-68 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-68">
+<style>
+      #frame-wrapper-69 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-69">
+      <style>
+        #frame-wrapper-69 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-69">
         <figure>
           <div style="border-left: 3.5pt solid #bcbcbc; padding: 0.8em; ">&nbsp;Example 45&nbsp;<strong>&nbsp;&nbsp;Should be hint&nbsp;</strong><em></em>:&nbsp; This used an ad–hoc style argument</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-70 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-70">
-      <style>#frame-wrapper-70 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-70">
+<style>
+      #frame-wrapper-71 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-71">
+      <style>
+        #frame-wrapper-71 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-71">
+        <figure>
+          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #bcbcbc; ">No numbering</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example<span style="white-space: pre-wrap"> </span></span></div>
+          <div style="border: 0.13em solid #bcbcbc; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">Here, <code>numbering = none</code> is being passed.</div>
+        </figure>
+      </div>
+    </div>
+<style>
+      #frame-wrapper-73 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-73">
+      <style>
+        #frame-wrapper-73 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-73">
         <figure>
           <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #ff851b; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #ff851b; ">Individual</span><span style="padding: 5px 10px; border: 0.13em solid #ff851b; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Some Additional Frame 46</span></div>
           <div style="border: 0.13em solid #ff851b; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">Individual</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-72 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-72">
+<style>
+      #frame-wrapper-75 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-75">
       <figure>
         <div style="border-left: 3.5pt solid #ffdc00; padding: 0.8em; ">&nbsp;Some Additional Frame 1&nbsp;<strong>&nbsp;&nbsp;Individual&nbsp;</strong><em></em>:&nbsp;Individual</div>
       </figure>
+    </div>
+<style>
+      #frame-wrapper-76 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-76">
+      <style>
+        #frame-wrapper-76 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-76">
+        <style>
+          #frame-wrapper-76 > figure {  margin-left: 0px;  margin-right: 0px;}
+        </style>
+        <div id="frame-wrapper-76">
+          <figure>
+            <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #bcbcbc; ">Title</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Tag</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 47</span></div>
+            <div style="border: 0.13em solid #bcbcbc; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">Right to left by language</div>
+          </figure>
+        </div>
+      </div>
+    </div>
+<style>
+      #frame-wrapper-79 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-79">
+      <style>
+        #frame-wrapper-79 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-79">
+        <style>
+          #frame-wrapper-79 > figure {  margin-left: 0px;  margin-right: 0px;}
+        </style>
+        <div id="frame-wrapper-79">
+          <figure>
+            <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #bcbcbc; ">Title</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Tag</span><span style="padding: 5px 10px; border: 0.13em solid #bcbcbc; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 48</span></div>
+            <div style="border: 0.13em solid #bcbcbc; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">Right to left by dir</div>
+          </figure>
+        </div>
+      </div>
     </div>
     </div>
 
@@ -572,7 +791,9 @@
         <h2>Introduction</h2>
 <p><a href="https://github.com/marc-thieme/frame-it">Frame-It</a> offers a straightforward way to define and use custom environments in your documents. Its syntax is designed to integrate seamlessly with your source code.</p>
 <p>Two predefined styles are included by default. You can also create custom styling functions that use the same user-facing API while giving you complete control over the Typst elements in your document.</p>
-<style>#frame-wrapper-1 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
+<style>
+      #frame-wrapper-1 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
 <div id="frame-wrapper-1">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #215582; ">Distinct Highlight</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: -2px; border-bottom: none; ">Best for occasional use</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">More noticeable</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 1</span></div>
@@ -580,102 +801,153 @@
       </figure>
     </div>
 <p>In contrast:</p>
-<style>#frame-wrapper-2 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
+<style>
+      #frame-wrapper-2 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
 <div id="frame-wrapper-2">
       <figure>
-        <div style="border-left: 3.5pt solid #215582; padding: 0.8em; ">&nbsp;Feature 2&nbsp;<strong>&nbsp;&nbsp;Unobtrusive Style&nbsp;</strong><em>&nbsp;(Ideal for frequent use, Blends into text flow)&nbsp;</em>:&nbsp; The alternative style <code>styles.hint</code> highlights text with a subtle colored line along the side, preserving the document's flow.</div>
+        <div style="border-left: 3.5pt solid #215582; padding: 0.8em; ">&nbsp;Feature 2&nbsp;<strong>&nbsp;&nbsp;Unobtrusive Style&nbsp;</strong><em>&nbsp;(Ideal for frequent use, Blends into text flow)&nbsp;</em>:&nbsp; The alternative style <code>styles.hint</code> highlights text with a subtle colored line along the side, preserving the document’s flow.</div>
       </figure>
     </div>
-<p>The default styles are merely functions with the correct signature. If they don't appeal to you, you have complete freedom to define custom styling functions yourself.</p>
-<style>#frame-wrapper-3 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
+<style>
+      #frame-wrapper-3 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
 <div id="frame-wrapper-3">
       <figure>
-        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #575555; ">A different frame kind</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 3</span></div>
+        <div style="border-left: 3pt solid #215582; padding: 1em; ">
+          <div style="display: flex; justify-content: space-between; align-items: center; color: #387dc0; ">
+            <div style="flex: 1.7 1 1; text-align: left; "><strong>Elegant</strong></div>
+            <div style="flex: 1 1 1; text-align: center; ">Separates header and content</div>
+            <div style="flex: 1 1 1; text-align: center; ">not too obtrusive</div>
+            <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature 3</strong></div>
+          </div>
+          <p>The third default style <code>styles.hint</code> clearly separates frame header and frame body. This style was taken from [typst-thmbox](<a href="https://github.com/s15n/typst-thmbox">https://github.com/s15n/typst-thmbox</a>).</p>
+        </div>
+      </figure>
+    </div>
+<p>The default styles are merely functions with the correct signature. If they don’t appeal to you, you have complete freedom to define custom styling functions yourself. For reference, this is that signature:</p>
+<pre><code class="typst"><pre><code data-lang="typst">let your-custom-styling-function(title, tags, body, supplement, number, accent-color) = […]</code></pre></code></pre>
+<style>
+      #frame-wrapper-4 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-4">
+      <figure>
+        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #575555; ">A different frame kind</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 4</span></div>
         <div style="border: 0.13em solid #575555; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
-          <p>You can define different classes or types of frames, which alter the substitute and the frame's color. As shown here, this is an example frame. You can create as many different kinds as you want.</p>
-          <p>As long as all kinds use the same identifier with <code>frames</code>, they share a common counter.</p>
+          <p>You can define different classes or types of frames, which alter the substitute and the frame’s color. As shown here, this is an example frame. You can create as many different kinds as you want.</p>
+          <p>As long as all kinds use the same kind, they share a common counter.</p>
         </div>
       </figure>
     </div>
 <h2>Quick Start</h2>
 <p>Import and define your desired frames:</p>
-<pre><code class="typst"><pre>#import "@preview/frame-it:1.2.0": *<br><br>#let (example, feature, variant, syntax) = frames(<br>  feature: ("Feature",),<br>  // For each frame kind, you have to provide its supplement title to be displayed<br>  variant: ("Variant",),<br>  // You can provide a color or leave it out and it will be generated<br>  example: ("Example", gray),<br>  // You can add as many as you want<br>  syntax: ("Syntax",),<br>)<br>// This is necessary. Don't forget this!<br>#show: frame-style(styles.boxy)</pre></code></pre>
+<pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">import</span> <span style="color: #198810">"@preview/frame-it:2.0.0"</span>: <span style="color: #d73948">*</span><br><br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> (example, feature, variant, syntax) <span style="color: #d73948">=</span> <span style="color: #4b69c6">frames</span>(<br>  feature: (<span style="color: #198810">"Feature"</span>,),<br>  <span style="color: #74747c">// For each frame kind, you have to provide its supplement title to be displayed</span><br>  variant: (<span style="color: #198810">"Variant"</span>,),<br>  <span style="color: #74747c">// You can provide a color or leave it out and it will be generated</span><br>  example: (<span style="color: #198810">"Example"</span>, gray),<br>)<br><span style="color: #74747c">// This syntax works as well, but colors are not generated automatically</span><br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> syntax <span style="color: #d73948">=</span> <span style="color: #4b69c6">frame</span>(<span style="color: #198810">"Syntax"</span>, green)<br><span style="color: #74747c">// This is necessary. Don't forget this!</span><br><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">frame-style</span>(styles.boxy)</code></pre></code></pre>
 <p>How to use it is explained below. Here is a quick example:</p>
-<pre><code class="typst"><pre>#example[Title][Optional Tag][<br>  Body, i.e. large content block for the frame.<br>]</pre></code></pre>
+<pre><code class="typst"><pre><code data-lang="typst"><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>[Title][Optional Tag][<br>  Body, i.e. large content block for the frame.<br>]</code></pre></code></pre>
 <p>which yields</p>
-<style>#frame-wrapper-4 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-4">
+<style>
+      #frame-wrapper-5 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-5">
       <figure>
-        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #575555; ">Title</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Optional Tag</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 4</span></div>
+        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #575555; ">Title</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Optional Tag</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 5</span></div>
         <div style="border: 0.13em solid #575555; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">Body, i.e. large content block for the frame.</div>
       </figure>
     </div>
 <h2>Feature List</h2>
 <p>The following features are demonstrated in all predefined styles.</p>
 <h3>Seamlessly hightight parts of your document</h3>
-<style>#frame-wrapper-5 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-5">
-      <style>#frame-wrapper-5 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-5">
+<style>
+      #frame-wrapper-6 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-6">
+      <style>
+        #frame-wrapper-6 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-6">
         <figure>
-          <div style="border-left: 3.5pt solid #215582; padding: 0.8em; ">&nbsp;Feature 5&nbsp;<strong>&nbsp;&nbsp;Element with Title and Content&nbsp;</strong><em></em>:&nbsp; The simplest way to create an element is by providing a title as the first argument and content as the second.</div>
+          <div style="border-left: 3.5pt solid #215582; padding: 0.8em; ">&nbsp;Feature 6&nbsp;<strong>&nbsp;&nbsp;Element with Title and Content&nbsp;</strong><em></em>:&nbsp; The simplest way to create an element is by providing a title as the first argument and content as the second.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-7 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-7">
-      <style>#frame-wrapper-7 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-7">
+<style>
+      #frame-wrapper-8 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-8">
+      <style>
+        #frame-wrapper-8 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-8">
         <figure>
-          <div style="border-left: 3.5pt solid #7c3948; padding: 0.8em; ">&nbsp;Feature Variant 6&nbsp;<strong>&nbsp;&nbsp;Element with Tags&nbsp;</strong><em>&nbsp;(Customizable Tags, Multiple)&nbsp;</em>:&nbsp; Elements can include multiple tags placed between the title and the content.</div>
+          <div style="border-left: 3.5pt solid #7c3948; padding: 0.8em; ">&nbsp;Feature Variant 7&nbsp;<strong>&nbsp;&nbsp;Element with Tags&nbsp;</strong><em>&nbsp;(Customizable Tags, Multiple)&nbsp;</em>:&nbsp; Elements can include multiple tags placed between the title and the content.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-9 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-9">
-      <style>#frame-wrapper-9 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-9">
+<style>
+      #frame-wrapper-10 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-10">
+      <style>
+        #frame-wrapper-10 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-10">
         <figure>
-          <div style="border-left: 3.5pt solid #215582; padding: 0.8em; ">&nbsp;Feature 7&nbsp;<strong></strong><em></em>:&nbsp; If you don’t require a custom title but still want to display the element type, use <code>[]</code> as the title placeholder.</div>
+          <div style="border-left: 3.5pt solid #215582; padding: 0.8em; ">&nbsp;Feature 8&nbsp;<strong></strong><em></em>:&nbsp; If you don’t require a custom title but still want to display the element type, use <code>[]</code> as the title placeholder.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-11 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-11">
-      <style>#frame-wrapper-11 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-11">
+<style>
+      #frame-wrapper-12 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-12">
+      <style>
+        #frame-wrapper-12 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-12">
         <figure>
-          <div style="border-left: 3.5pt solid #7c3948; padding: 0.8em; ">&nbsp;Feature Variant 8&nbsp;<strong></strong><em>&nbsp;(Single Tag, Next tag)&nbsp;</em>:&nbsp; You can include tags even when no title is provided.</div>
+          <div style="border-left: 3.5pt solid #7c3948; padding: 0.8em; ">&nbsp;Feature Variant 9&nbsp;<strong></strong><em>&nbsp;(Single Tag, Next tag)&nbsp;</em>:&nbsp; You can include tags even when no title is provided.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-13 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-13">
-      <style>#frame-wrapper-13 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-13">
+<style>
+      #frame-wrapper-14 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-14">
+      <style>
+        #frame-wrapper-14 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-14">
         <figure>
           <div style="border-left: 3.5pt solid #7c3948; padding: 0.8em; ">To omit the header entirely, leave the title parameter empty.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-15 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-15">
-      <style>#frame-wrapper-15 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-15">
+<style>
+      #frame-wrapper-16 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-16">
+      <style>
+        #frame-wrapper-16 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-16">
         <figure>
-          <div style="border-left: 3.5pt solid #215582; padding: 0.8em; ">&nbsp;Feature 10&nbsp;<strong>&nbsp;&nbsp;Element without Content&nbsp;</strong><em>&nbsp;(Optional Tags Only)&nbsp;</em>&nbsp;</div>
+          <div style="border-left: 3.5pt solid #215582; padding: 0.8em; ">&nbsp;Feature 11&nbsp;<strong>&nbsp;&nbsp;Element without Content&nbsp;</strong><em>&nbsp;(Optional Tags Only)&nbsp;</em>&nbsp;</div>
         </figure>
       </div>
     </div>
 <p>For brief elements, use [] as the body to omit the content.</p>
-<style>#frame-wrapper-17 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-17">
-      <style>#frame-wrapper-17 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-17">
+<style>
+      #frame-wrapper-18 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-18">
+      <style>
+        #frame-wrapper-18 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-18">
         <figure>
           <div style="border-left: 3.5pt solid #215582; padding: 0.8em; ">
-            <p>&nbsp;Feature 11&nbsp;<strong>&nbsp;&nbsp;Element with Divider&nbsp;</strong><em></em>:&nbsp; Insert</p>
-            <pre><code class="typst"><code>#divide()</code></code></pre>
+            <p>&nbsp;Feature 12&nbsp;<strong>&nbsp;&nbsp;Element with Divider&nbsp;</strong><em></em>:&nbsp; Insert</p>
+            <pre><code class="typst"><code data-lang="typst"><span style="color: #4b69c6">#</span><span style="color: #4b69c6">divide</span>()</code></code></pre>
             <p>to add a divider within your content for a visual break:</p>
             <hr style="background: #215582; height: 0.13em; border: 0; margin: 0.8em -0.8em; ">
             <p>And then continue with your text below the divider.</p>
@@ -684,74 +956,102 @@
       </div>
     </div>
 <h3>Highlight parts distinctively</h3>
-<style>#frame-wrapper-19 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-19">
-      <style>#frame-wrapper-19 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-19">
+<style>
+      #frame-wrapper-20 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-20">
+      <style>
+        #frame-wrapper-20 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-20">
         <figure>
-          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #215582; ">Element with Title and Content</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 12</span></div>
+          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #215582; ">Element with Title and Content</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 13</span></div>
           <div style="border: 0.13em solid #215582; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">The simplest way to create an element is by providing a title as the first argument and content as the second.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-21 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-21">
-      <style>#frame-wrapper-21 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-21">
+<style>
+      #frame-wrapper-22 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-22">
+      <style>
+        #frame-wrapper-22 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-22">
         <figure>
-          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #7c3948; ">Element with Tags</span><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: -2px; border-bottom: none; ">Customizable Tags</span><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Multiple</span><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 13</span></div>
+          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #7c3948; ">Element with Tags</span><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: -2px; border-bottom: none; ">Customizable Tags</span><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Multiple</span><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 14</span></div>
           <div style="border: 0.13em solid #7c3948; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">Elements can include multiple tags placed between the title and the content.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-23 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-23">
-      <style>#frame-wrapper-23 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-23">
+<style>
+      #frame-wrapper-24 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-24">
+      <style>
+        #frame-wrapper-24 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-24">
         <figure>
-          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: 0; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 14</span></div>
+          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: 0; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 15</span></div>
           <div style="border: 0.13em solid #215582; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; border-top-left-radius: 5pt; ">If you don’t require a custom title but still want to display the element type, use <code>[]</code> as the title placeholder.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-25 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-25">
-      <style>#frame-wrapper-25 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-25">
+<style>
+      #frame-wrapper-26 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-26">
+      <style>
+        #frame-wrapper-26 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-26">
         <figure>
-          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; ">Single Tag</span><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Next tag</span><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 15</span></div>
+          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; ">Single Tag</span><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Next tag</span><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 16</span></div>
           <div style="border: 0.13em solid #7c3948; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">You can include tags even when no title is provided.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-27 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-27">
-      <style>#frame-wrapper-27 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-27">
+<style>
+      #frame-wrapper-28 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-28">
+      <style>
+        #frame-wrapper-28 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-28">
         <figure>
           <div style="border: 0.13em solid #7c3948; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; border-top-left-radius: 5pt; ">To omit the header entirely, leave the title parameter empty.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-29 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-29">
-      <style>#frame-wrapper-29 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-29">
+<style>
+      #frame-wrapper-30 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-30">
+      <style>
+        #frame-wrapper-30 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-30">
         <figure>
-          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: 0; border-top-left-radius: 5pt; border-bottom-left-radius: 5pt; background-color: #215582; ">Element without Content</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: -2px; border-top-right-radius: 5pt; border-bottom-right-radius: 5pt; ">Optional Tags Only</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: auto; border-color: transparent; mragin-right: 0.8em; ">Feature 17</span></div>
+          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: 0; border-top-left-radius: 5pt; border-bottom-left-radius: 5pt; background-color: #215582; ">Element without Content</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: -2px; border-top-right-radius: 5pt; border-bottom-right-radius: 5pt; ">Optional Tags Only</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: auto; border-color: transparent; mragin-right: 0.8em; ">Feature 18</span></div>
         </figure>
       </div>
     </div>
 <p>For brief elements, use [] as the body to omit the content.</p>
-<style>#frame-wrapper-31 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-31">
-      <style>#frame-wrapper-31 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-31">
+<style>
+      #frame-wrapper-32 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-32">
+      <style>
+        #frame-wrapper-32 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-32">
         <figure>
-          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #215582; ">Element with Divider</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 18</span></div>
+          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #215582; ">Element with Divider</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 19</span></div>
           <div style="border: 0.13em solid #215582; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
             <p>Insert</p>
-            <pre><code class="typst"><code>#divide()</code></code></pre>
+            <pre><code class="typst"><code data-lang="typst"><span style="color: #4b69c6">#</span><span style="color: #4b69c6">divide</span>()</code></code></pre>
             <p>to add a divider within your content for a visual break:</p>
             <hr style="border: 0; height: 0.13em; background: #215582; margin: 0 -0.8em; ">
             <p>And then continue with your text below the divider.</p>
@@ -761,105 +1061,133 @@
     </div>
 <h3>A third Alternative</h3>
 <p>We recently added third style, namely <code>styles.thmbox</code>:</p>
-<style>#frame-wrapper-33 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-33">
-      <style>#frame-wrapper-33 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-33">
+<style>
+      #frame-wrapper-34 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-34">
+      <style>
+        #frame-wrapper-34 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-34">
         <figure>
           <div style="border-left: 3pt solid #215582; padding: 1em; ">
             <div style="display: flex; justify-content: space-between; align-items: center; color: #387dc0; ">
               <div style="flex: 1.7 1 1; text-align: left; "><strong>Element with Title and Content</strong></div>
-              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature 19</strong></div>
+              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature 20</strong></div>
             </div>
             <p>The simplest way to create an element is by providing a title as the first argument and content as the second.</p>
           </div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-35 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-35">
-      <style>#frame-wrapper-35 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-35">
+<style>
+      #frame-wrapper-36 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-36">
+      <style>
+        #frame-wrapper-36 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-36">
         <figure>
           <div style="border-left: 3pt solid #7c3948; padding: 1em; ">
             <div style="display: flex; justify-content: space-between; align-items: center; color: #be3d52; ">
               <div style="flex: 1.7 1 1; text-align: left; "><strong>Element with Tags</strong></div>
               <div style="flex: 1 1 1; text-align: center; ">Customizable Tags</div>
               <div style="flex: 1 1 1; text-align: center; ">Multiple</div>
-              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature Variant 20</strong></div>
+              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature Variant 21</strong></div>
             </div>
             <p>Elements can include multiple tags placed between the title and the content.</p>
           </div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-37 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-37">
-      <style>#frame-wrapper-37 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-37">
+<style>
+      #frame-wrapper-38 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-38">
+      <style>
+        #frame-wrapper-38 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-38">
         <figure>
           <div style="border-left: 3pt solid #215582; padding: 1em; ">
             <div style="color: #387dc0; ">
-              <div style="flex: 1.7 1 1; text-align: left; "><strong>Feature 21</strong></div>
+              <div style="flex: 1.7 1 1; text-align: left; "><strong>Feature 22</strong></div>
             </div>
             <p>If you don’t require a custom title but still want to display the element type, use <code>[]</code> as the title placeholder.</p>
           </div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-39 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-39">
-      <style>#frame-wrapper-39 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-39">
+<style>
+      #frame-wrapper-40 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-40">
+      <style>
+        #frame-wrapper-40 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-40">
         <figure>
           <div style="border-left: 3pt solid #7c3948; padding: 1em; ">
             <div style="display: flex; justify-content: space-between; align-items: center; color: #be3d52; ">
               <div style="flex: 1 1 1; text-align: center; ">Single Tag</div>
               <div style="flex: 1 1 1; text-align: center; ">Next tag</div>
-              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature Variant 22</strong></div>
+              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature Variant 23</strong></div>
             </div>
             <p>You can include tags even when no title is provided.</p>
           </div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-41 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-41">
-      <style>#frame-wrapper-41 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-41">
+<style>
+      #frame-wrapper-42 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-42">
+      <style>
+        #frame-wrapper-42 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-42">
         <figure>
           <div style="border-left: 3pt solid #7c3948; padding: 1em; ">To omit the header entirely, leave the title parameter empty.</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-43 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-43">
-      <style>#frame-wrapper-43 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-43">
+<style>
+      #frame-wrapper-44 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-44">
+      <style>
+        #frame-wrapper-44 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-44">
         <figure>
           <div style="border-left: 3pt solid #215582; padding: 1em; ">
             <div style="display: flex; justify-content: space-between; align-items: center; color: #387dc0; ">
               <div style="flex: 1.7 1 1; text-align: left; "><strong>Element without Content</strong></div>
               <div style="flex: 1 1 1; text-align: center; ">Optional Tags Only</div>
-              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature 24</strong></div>
+              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature 25</strong></div>
             </div>
           </div>
         </figure>
       </div>
     </div>
 <p>For brief elements, use [] as the body to omit the content.</p>
-<style>#frame-wrapper-45 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-45">
-      <style>#frame-wrapper-45 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-45">
+<style>
+      #frame-wrapper-46 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-46">
+      <style>
+        #frame-wrapper-46 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-46">
         <figure>
           <div style="border-left: 3pt solid #215582; padding: 1em; ">
             <div style="display: flex; justify-content: space-between; align-items: center; color: #387dc0; ">
               <div style="flex: 1.7 1 1; text-align: left; "><strong>Element with Divider</strong></div>
-              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature 25</strong></div>
+              <div style="flex: 1.7 1 1; text-align: right; "><strong>Feature 26</strong></div>
             </div>
             <p>Insert</p>
-            <pre><code class="typst"><code>#divide()</code></code></pre>
+            <pre><code class="typst"><code data-lang="typst"><span style="color: #4b69c6">#</span><span style="color: #4b69c6">divide</span>()</code></code></pre>
             <p>to add a divider within your content for a visual break:</p>
             <hr style="background: #215582; height: 0.18em; border: 0; margin: 0 0 0 -1em; ">
             <p>And then continue with your text below the divider.</p>
@@ -869,126 +1197,154 @@
     </div>
 <h3>Miscellaneous</h3>
 <h4>Syntax to create single frames</h4>
-<style>#frame-wrapper-47 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-47">
+<style>
+      #frame-wrapper-48 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-48">
       <figure>
-        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #425b1d; ">Single–Frame–Creation</span><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 26</span></div>
+        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #425b1d; ">Single–Frame–Creation</span><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 27</span></div>
         <div style="border: 0.13em solid #425b1d; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
           <p>When the above method for creating frames is not flexible enough, you can use this alternative method for creating frames one–by–one:</p>
-          <pre>#let theorem = frame("Theorem", red)<br>#let definition = frame(kind: "not-the-default", "Definition", blue)</pre>
+          <pre><code data-lang="typ"><span style="color: #d73948">#</span><span style="color: #d73948">let</span> theorem <span style="color: #d73948">=</span> <span style="color: #4b69c6">frame</span>(<span style="color: #198810">"Theorem"</span>, red)<br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> definition <span style="color: #d73948">=</span> <span style="color: #4b69c6">frame</span>(kind: <span style="color: #198810">"not-the-default"</span>, <span style="color: #198810">"Definition"</span>, blue)</code></pre>
           <p>Contrary to the first method, you have to specify a color.</p>
         </div>
       </figure>
     </div>
 <h4>HTML</h4>
-<p>We were one of the first packages to add support for html!<br>This means you can use our frames for example if you're writing an html wiki or blog in typst or using typst to get a headstart writing your website.</p>
-<style>#frame-wrapper-48 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-48">
+<p>We were one of the first packages to add support for html!<br>This means you can use our frames if you’re writing an html wiki or blog in typst.</p>
+<style>
+      #frame-wrapper-49 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-49">
       <figure>
-        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #215582; ">HTML export</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 27</span></div>
+        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #215582; ">HTML export</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 28</span></div>
         <div style="border: 0.13em solid #215582; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
           <p>Due to the currently experimental nature of the feature, you need to pass two CLI–flags when compiling your document with the frames to html:</p>
-          <pre>typst compile --features html --input html-frames=true --format html FILE.typ</pre>
+          <pre><code>typst compile --features html --format html FILE.typ</code></pre>
         </div>
       </figure>
     </div>
 <h4>General</h4>
-<p>Internally, every frame is just a <code>figure</code> where the <code>kind</code> is set to <code>"frame"</code> (or a different custom value). As such, most things that can be done to a figure can be done with a frame as well. Whenever you would like to do something custom but don't know if it is supported, try achieving it with a normal figure first and then apply the same show rule to your frames. Here is a list of examples:</p>
-<style>#frame-wrapper-49 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-49">
-      <figure>
-        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #7c3948; ">Labels and References</span><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 28</span></div>
-        <div style="border: 0.13em solid #7c3948; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
-          <p>Elements can be referenced as expected by appending <code>&lt;label&gt;</code> and referencing it:</p>
-          <pre><code class="typst"><pre>#syntax[Labels and References] &lt;labels-and-refs&gt;<br>Referencing with @labels-and-refs.</pre></code></pre>
-        </div>
-      </figure>
-    </div>
-<style>#frame-wrapper-50 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
+<p>Internally, every frame is just a <code>figure</code> where the <code>kind</code> is set to <code>"frame"</code> (or a different custom value). As such, most things that can be done to a figure can be done with a frame as well. Whenever you would like to do something custom but don’t know if it is supported, try achieving it with a normal figure first and then apply the same show rule to your frames. Here is a list of examples:</p>
+<style>
+      #frame-wrapper-50 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
 <div id="frame-wrapper-50">
       <figure>
-        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #7c3948; ">Break frames across pages</span><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 29</span></div>
+        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #7c3948; ">Labels and References</span><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 29</span></div>
         <div style="border: 0.13em solid #7c3948; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
-          <p>If you want to make your frames breakable across pages, you have to use the show rule known from the official typst docs:</p>
-          <pre><code class="typst"><pre>#show figure.where(kind: "frame"): set block(breakable: true)</pre></code></pre>
-          <p>To turn off breakability, you can use the corresponding show rule</p>
-          <pre><code class="typst"><pre>#show figure.where(kind: "frame"): set block(breakable: false)</pre></code></pre>
+          <p>Elements can be referenced as expected by appending <code>&lt;label&gt;</code> and referencing it:</p>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #4b69c6">#</span><span style="color: #4b69c6">syntax</span>[Labels and References] <span style="color: #1d6c76">&lt;labels-and-refs&gt;</span><br>Referencing with <span style="color: #1d6c76">@labels-and-refs</span>.</code></pre></code></pre>
         </div>
       </figure>
     </div>
-<style>#frame-wrapper-51 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
+<style>
+      #frame-wrapper-51 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
 <div id="frame-wrapper-51">
       <figure>
-        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #215582; ">Per–frame custom figure parameters</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Frame outline</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature 30</span></div>
-        <div style="border: 0.13em solid #215582; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">All named parameters passed to a frame–function like <code>example[][]</code> are going to be passed to the figure function which places the frame in the document.</div>
+        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #7c3948; ">Break frames across pages</span><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 30</span></div>
+        <div style="border: 0.13em solid #7c3948; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
+          <p>If you want to make your frames breakable across pages, you have to use the show rule known from the official typst docs:</p>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">show</span> figure.<span style="color: #4b69c6">where</span>(kind: <span style="color: #198810">"frame"</span>): <span style="color: #d73948">set</span> <span style="color: #4b69c6">block</span>(breakable: <span style="color: #d73948">true</span>)</code></pre></code></pre>
+          <p>To turn off breakability, you can use the corresponding show rule</p>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">show</span> figure.<span style="color: #4b69c6">where</span>(kind: <span style="color: #198810">"frame"</span>): <span style="color: #d73948">set</span> <span style="color: #4b69c6">block</span>(breakable: <span style="color: #d73948">false</span>)</code></pre></code></pre>
+        </div>
+      </figure>
+    </div>
+<style>
+      #frame-wrapper-52 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-52">
+      <figure>
+        <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #215582; ">Per–frame custom figure parameters</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Frame outline</span><span style="padding: 5px 10px; border: 0.13em solid #215582; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature<span style="white-space: pre-wrap"> </span></span></div>
+        <div style="border: 0.13em solid #215582; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
+          <p>All named parameters passed to a frame–function like <code>example[][]</code> are going to be passed to the figure function which places the frame in the document.</p>
+          <p>For example, if you want to give a frame a specific number, you can achieve this with</p>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>(numbering: <span style="color: #d73948">none</span>)[Frame without number][This frame has no number.]</code></pre></code></pre>
+        </div>
       </figure>
     </div>
 <p>For example, you can create an outline which only contains some intentional of your frames like so. The <code>figure</code> function includes a parameter for including a figure in the outline.</p>
-<pre><code class="typst"><pre>// By default, don't include frames in outlines by default<br>#show figure.where(kind: "frame"): set figure(outlined: false)<br>// Create the outline<br>#outline(target: figure.where(kind: "frame"))<br>// Explicitly include a frame in the outline with the `outlined` parameter.<br>#example(outlined: true)[Important frame][For the outline]</pre></code></pre>
-<style>#frame-wrapper-52 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-52">
+<pre><code class="typst"><pre><code data-lang="typst"><span style="color: #74747c">// By default, don't include frames in outlines by default</span><br><span style="color: #d73948">#</span><span style="color: #d73948">show</span> figure.<span style="color: #4b69c6">where</span>(kind: <span style="color: #198810">"frame"</span>): <span style="color: #d73948">set</span> <span style="color: #4b69c6">figure</span>(outlined: <span style="color: #d73948">false</span>)<br><span style="color: #74747c">// Create the outline</span><br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">outline</span>(target: figure.<span style="color: #4b69c6">where</span>(kind: <span style="color: #198810">"frame"</span>))<br><span style="color: #74747c">// Explicitly include a frame in the outline with the `outlined` parameter.</span><br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>(outlined: <span style="color: #d73948">true</span>)[Important frame][For the outline]</code></pre></code></pre>
+<style>
+      #frame-wrapper-53 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-53">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #7c3948; ">Different numbering</span><span style="padding: 5px 10px; border: 0.13em solid #7c3948; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Feature Variant 31</span></div>
         <div style="border: 0.13em solid #7c3948; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
           <p>Numbering in figures is a bit of a mess. Natively, you are limited to one number and a format suffix/prefix. With that, you can do the following.</p>
-          <pre><code class="typst"><pre>#show figure.where(kind: "frame"): set figure(numbering: "a)")</pre></code></pre>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">show</span> figure.<span style="color: #4b69c6">where</span>(kind: <span style="color: #198810">"frame"</span>): <span style="color: #d73948">set</span> <span style="color: #4b69c6">figure</span>(numbering: <span style="color: #198810">"a)"</span>)</code></pre></code></pre>
           <p>If you want to do more advanced and nested numbering, you can look into external packages for that. When trying to make a system apply to the frames, remember that they are just figures with a specific kind.</p>
+          <p>If you don’t want to display the number at all, you can pass <code>numbering: none</code> instead.</p>
           <p>In the background, there are also some show rules doing the styling for the frames. However, these should only get in the way when you are doing some esoteric manipulation of the figure captions.</p>
         </div>
       </figure>
     </div>
-<style>#frame-wrapper-53 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-53">
+<style>
+      #frame-wrapper-54 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-54">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #425b1d; ">Different kind</span><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">for the underlying figures</span><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 32</span></div>
         <div style="border: 0.13em solid #425b1d; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
           <p>When you have multiple different groups of frames you need to style independently, you can provide an arbitrary <code>kind</code> to the <code>frames</code> function.</p>
-          <pre><code class="typst"><pre>#let (syntax,) = frames(<br>  syntax: ("Syntax",),<br>)<br>#let (note,) = frames(<br>  kind: "other-kind"<br>  note: ("Note",),<br>)<br>#show: frame-style(styles.boxy)<br>#show: frame-style(kind: "other-kind", styles.hint)</pre></code></pre>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">let</span> (syntax,) <span style="color: #d73948">=</span> <span style="color: #4b69c6">frames</span>(<br>  syntax: (<span style="color: #198810">"Syntax"</span>,),<br>)<br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> (note,) <span style="color: #d73948">=</span> <span style="color: #4b69c6">frames</span>(<br>  kind: <span style="color: #198810">"other-kind"</span><br>  note: (<span style="color: #198810">"Note"</span>,),<br>)<br><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">frame-style</span>(styles.boxy)<br><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">frame-style</span>(kind: <span style="color: #198810">"other-kind"</span>, styles.hint)</code></pre></code></pre>
         </div>
       </figure>
     </div>
-<style>#frame-wrapper-54 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-54">
+<style>
+      #frame-wrapper-55 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-55">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #425b1d; ">Change the styling</span><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 33</span></div>
         <div style="border: 0.13em solid #425b1d; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
           <p>To use a different styling function for just one frame, you can provide <code>style: some-style</code> as an extra argument:</p>
-          <pre><code class="typst"><pre>#variant(style: styles.hint)[<br>  This has hint styling<br>]</pre></code></pre>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #4b69c6">#</span><span style="color: #4b69c6">variant</span>(style: styles.hint)[<br>  This has hint styling<br>]</code></pre></code></pre>
         </div>
       </figure>
     </div>
 <p>When you want to change the styling used for a passage of your document, you can just add more <code>show: frame-style()</code> rules:</p>
-<pre><code class="typst"><pre>#show: frame-style(styles.boxy)<br>#example[In boxy style][]<br>#show: frame-style(styles.hint)<br>#example[In hint Style][]</pre></code></pre>
+<pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">frame-style</span>(styles.boxy)<br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>[In boxy style][]<br><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">frame-style</span>(styles.hint)<br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>[In hint Style][]</code></pre></code></pre>
 <p>I usually define the abbreviations for the show rule:</p>
-<pre><code class="typst"><pre>// Define once<br>#let boxy(document) = {show: frame-style(styles.boxy); document}<br>#let hint(document) = {show: frame-style(styles.hint); document}<br><br>// Use it for changing the style used<br>#show: boxy<br>#example[In boxy style]<br>#example[Also in boxy style]<br>#show: hint<br>#example[In hint style]</pre></code></pre>
+<pre><code class="typst"><pre><code data-lang="typst"><span style="color: #74747c">// Define once</span><br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> <span style="color: #4b69c6">boxy</span>(document) <span style="color: #d73948">=</span> {<span style="color: #d73948">show</span>: <span style="color: #4b69c6">frame-style</span>(styles.boxy); document}<br><span style="color: #d73948">#</span><span style="color: #d73948">let</span> <span style="color: #4b69c6">hint</span>(document) <span style="color: #d73948">=</span> {<span style="color: #d73948">show</span>: <span style="color: #4b69c6">frame-style</span>(styles.hint); document}<br><br><span style="color: #74747c">// Use it for changing the style used</span><br><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">boxy</span><br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>[In boxy style]<br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>[Also in boxy style]<br><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: <span style="color: #4b69c6">hint</span><br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">example</span>[In hint style]</code></pre></code></pre>
 <h2>Custom Styling</h2>
 <p>Internally, there is nothing special about the predefined styles. The only requirement for any styling function is to adhere to the following function signature interface:</p>
-<style>#frame-wrapper-55 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-55">
+<style>
+      #frame-wrapper-56 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-56">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #425b1d; ">Interface for custom styling function</span><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 34</span></div>
         <div style="border: 0.13em solid #425b1d; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
-          <pre><code class="typst"><pre>#let custom-styling(title, tags, body, supplement, number, arg)</pre></code></pre>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">let</span> <span style="color: #4b69c6">custom-styling</span>(title, tags, body, supplement, number, arg)</code></pre></code></pre>
         </div>
       </figure>
     </div>
 <p>where <code>arg</code> is going to be the value passed behind the supplement for each frame variant in the <code>frames</code> function. For the predefined styles, this is the color of the frames. When defining your own styling function, it has to have the following signature:</p>
 <p>The content returned will be placed as–is in the document.</p>
-<style>#frame-wrapper-56 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-56">
+<style>
+      #frame-wrapper-57 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-57">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #425b1d; ">Styling Dividers</span><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 35</span></div>
         <div style="border: 0.13em solid #425b1d; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
-          <p>If your custom styling function shall support dividers, it must include a show rule in its body:</p>
-          <pre><code class="typst"><pre>#show: styling.dividers-as(object-which-will-be-used-as-divider)</pre></code></pre>
+          <p>If your custom styling function shall support dividers, it must include this show rule in its body:</p>
+          <pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">show</span>: styling.<span style="color: #4b69c6">dividers-as</span>(object-which-will-be-used-as-divider)</code></pre></code></pre>
         </div>
       </figure>
     </div>
 <p>For more information on how to define your own styling function, please look into the <code>styling</code> module.</p>
+<p><code>frame-it</code> combines very well with [showybox](<a href="https://typst.app/universe/package/showybox/">https://typst.app/universe/package/showybox/</a>) in order to create beautiful styles easily!</p>
 <h2>Experimentl APIs</h2>
 <p>These APIs are still experimental and subject to change. Use sparingly.</p>
-<style>#frame-wrapper-57 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-57">
+<style>
+      #frame-wrapper-58 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-58">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #425b1d; ">Retrieving information of a frame</span><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Experimental</span><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 36</span></div>
         <div style="border: 0.13em solid #425b1d; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
@@ -999,9 +1355,11 @@
       </figure>
     </div>
 <p>For example, you can use this to color the entries in a outline according to the color of the frame:</p>
-<pre><code class="typst"><pre>#show outline.entry: it =&gt; {<br>  let color = inspect.lookup-frame-info(it.element).color<br>  text(fill: color.saturate(70%), it)<br>}<br>#outline(target: figure.where(kind: "frame"))</pre></code></pre>
-<style>#frame-wrapper-58 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-58">
+<pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">show</span> outline.<span style="color: #4b69c6">entry</span>: it <span style="color: #d73948">=&gt;</span> {<br>  <span style="color: #d73948">let</span> color <span style="color: #d73948">=</span> inspect.<span style="color: #4b69c6">lookup-frame-info</span>(it.element).color<br>  <span style="color: #4b69c6">text</span>(fill: color.<span style="color: #4b69c6">saturate</span>(<span style="color: #b60157">70%</span>), it)<br>}<br><span style="color: #4b69c6">#</span><span style="color: #4b69c6">outline</span>(target: figure.<span style="color: #4b69c6">where</span>(kind: <span style="color: #198810">"frame"</span>))</code></pre></code></pre>
+<style>
+      #frame-wrapper-59 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-59">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #425b1d; ">Checking whether a figure is a frame</span><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Experimental</span><span style="padding: 5px 10px; border: 0.13em solid #425b1d; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Syntax 37</span></div>
         <div style="border: 0.13em solid #425b1d; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">In order to test whether a figure is a frame, use the <code>inspect.is-frame(figure)</code> function.</div>
@@ -1009,35 +1367,45 @@
     </div>
 <p>Whenever possible, try to discern it using the figures kind instead of this function.</p>
 <p>This can be useful, for example, when you want to format references in your document differently. For example, you can do something like this in order to display just title if the referenced element and link to it:</p>
-<pre><code class="typst"><pre>#show ref: it =&gt; {<br>  if inspect.is-frame(it.element) {<br>    link(it.element.location(), inspect.lookup-frame-info(it.element).title)<br>  } else {<br>    it<br>  }<br>}</pre></code></pre>
+<pre><code class="typst"><pre><code data-lang="typst"><span style="color: #d73948">#</span><span style="color: #d73948">show</span> <span style="color: #4b69c6">ref</span>: it <span style="color: #d73948">=&gt;</span> {<br>  <span style="color: #d73948">if</span> inspect.<span style="color: #4b69c6">is-frame</span>(it.element) {<br>    <span style="color: #4b69c6">link</span>(it.element.<span style="color: #4b69c6">location</span>(), inspect.<span style="color: #4b69c6">lookup-frame-info</span>(it.element).title)<br>  } <span style="color: #d73948">else</span> {<br>    it<br>  }<br>}</code></pre></code></pre>
 <h2>Edge Cases</h2>
 <p>Here are a few edge cases.</p>
-<style>#frame-wrapper-59 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-59">
+<style>
+      #frame-wrapper-60 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-60">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #575555; ">Test</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: -2px; border-bottom: none; ">Long tag example without space for the supplement</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">notice the number moves up</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 38</span></div>
         <div style="border: 0.13em solid #575555; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat.</div>
       </figure>
     </div>
-<style>#frame-wrapper-60 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-60">
+<style>
+      #frame-wrapper-61 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-61">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #575555; ">Example</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: -2px; border-bottom: none; ">Tags of various sizes</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: -2px; border-bottom: none; "></span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; "><p>Extra vertical space:</p></span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 39</span></div>
         <div style="border: 0.13em solid #575555; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">(Leads to formatting errors in html export because support is missing)<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat.</div>
       </figure>
     </div>
-<style>#frame-wrapper-61 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-61">
+<style>
+      #frame-wrapper-62 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-62">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #575555; ">Nested</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 40</span></div>
         <div style="border: 0.13em solid #575555; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">
-          <style>#frame-wrapper-62 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-          <div id="frame-wrapper-62">
+          <style>
+            #frame-wrapper-63 > figure {  margin-left: 0px;  margin-right: 0px;}
+          </style>
+          <div id="frame-wrapper-63">
             <figure>
               <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: 0; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 41</span></div>
               <div style="border: 0.13em solid #575555; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; border-top-left-radius: 5pt; ">
-                <style>#frame-wrapper-63 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-                <div id="frame-wrapper-63">
+                <style>
+                  #frame-wrapper-64 > figure {  margin-left: 0px;  margin-right: 0px;}
+                </style>
+                <div id="frame-wrapper-64">
                   <figure>
                     <div style="border-left: 3.5pt solid #575555; padding: 0.8em; ">&nbsp;Example 42&nbsp;<strong></strong><em></em>:&nbsp; When nested, counters increment from outer to inner elements.</div>
                   </figure>
@@ -1048,15 +1416,19 @@
         </div>
       </figure>
     </div>
-<style>#frame-wrapper-64 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-64">
+<style>
+      #frame-wrapper-65 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-65">
       <figure>
         <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: 0; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 43</span></div>
         <div style="border: 0.13em solid #575555; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; border-top-left-radius: 5pt; ">Counters continue incrementing sequentially in non-nested elements.</div>
       </figure>
     </div>
-<style>#frame-wrapper-65 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-65">
+<style>
+      #frame-wrapper-66 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-66">
       <figure>
         <div style="border-left: 3pt solid #e4bce9; padding: 1em; ">
           <div style="display: flex; justify-content: space-between; align-items: center; color: #da58f4; ">
@@ -1067,40 +1439,106 @@
         </div>
       </figure>
     </div>
-<style>#frame-wrapper-66 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-66">
-      <style>#frame-wrapper-66 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-66">
+<style>
+      #frame-wrapper-67 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-67">
+      <style>
+        #frame-wrapper-67 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-67">
         <figure>
           <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #575555; ">Should be boxy</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 44</span></div>
           <div style="border: 0.13em solid #575555; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">boxy</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-68 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-68">
-      <style>#frame-wrapper-68 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-68">
+<style>
+      #frame-wrapper-69 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-69">
+      <style>
+        #frame-wrapper-69 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-69">
         <figure>
           <div style="border-left: 3.5pt solid #575555; padding: 0.8em; ">&nbsp;Example 45&nbsp;<strong>&nbsp;&nbsp;Should be hint&nbsp;</strong><em></em>:&nbsp; This used an ad–hoc style argument</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-70 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-70">
-      <style>#frame-wrapper-70 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-      <div id="frame-wrapper-70">
+<style>
+      #frame-wrapper-71 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-71">
+      <style>
+        #frame-wrapper-71 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-71">
+        <figure>
+          <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #575555; ">No numbering</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example<span style="white-space: pre-wrap"> </span></span></div>
+          <div style="border: 0.13em solid #575555; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">Here, <code>numbering = none</code> is being passed.</div>
+        </figure>
+      </div>
+    </div>
+<style>
+      #frame-wrapper-73 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-73">
+      <style>
+        #frame-wrapper-73 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-73">
         <figure>
           <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #ff851b; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; border-top-right-radius: 5pt; background-color: #ff851b; ">Individual</span><span style="padding: 5px 10px; border: 0.13em solid #ff851b; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Some Additional Frame 46</span></div>
           <div style="border: 0.13em solid #ff851b; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">Individual</div>
         </figure>
       </div>
     </div>
-<style>#frame-wrapper-72 > figure {  margin-left: 0px;  margin-right: 0px;}</style>
-<div id="frame-wrapper-72">
+<style>
+      #frame-wrapper-75 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-75">
       <figure>
         <div style="border-left: 3.5pt solid #ffdc00; padding: 0.8em; ">&nbsp;Some Additional Frame 1&nbsp;<strong>&nbsp;&nbsp;Individual&nbsp;</strong><em></em>:&nbsp;Individual</div>
       </figure>
+    </div>
+<style>
+      #frame-wrapper-76 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-76">
+      <style>
+        #frame-wrapper-76 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-76">
+        <style>
+          #frame-wrapper-76 > figure {  margin-left: 0px;  margin-right: 0px;}
+        </style>
+        <div id="frame-wrapper-76">
+          <figure>
+            <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #575555; ">Title</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Tag</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 47</span></div>
+            <div style="border: 0.13em solid #575555; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">Right to left by language</div>
+          </figure>
+        </div>
+      </div>
+    </div>
+<style>
+      #frame-wrapper-79 > figure {  margin-left: 0px;  margin-right: 0px;}
+    </style>
+<div id="frame-wrapper-79">
+      <style>
+        #frame-wrapper-79 > figure {  margin-left: 0px;  margin-right: 0px;}
+      </style>
+      <div id="frame-wrapper-79">
+        <style>
+          #frame-wrapper-79 > figure {  margin-left: 0px;  margin-right: 0px;}
+        </style>
+        <div id="frame-wrapper-79">
+          <figure>
+            <div style="display: flex; align-items: center; "><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: 0; border-bottom: none; border-top-left-radius: 5pt; background-color: #575555; ">Title</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: -2px; border-bottom: none; border-top-right-radius: 5pt; ">Tag</span><span style="padding: 5px 10px; border: 0.13em solid #575555; margin-left: auto; border-bottom: none; border-color: transparent; mragin-right: 0.8em; ">Example 48</span></div>
+            <div style="border: 0.13em solid #575555; border-radius: 0 5pt 5pt 5pt; padding: 0.8em; ">Right to left by dir</div>
+          </figure>
+        </div>
+      </div>
     </div>
     </div>
 
