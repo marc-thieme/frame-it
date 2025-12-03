@@ -34,7 +34,7 @@ cp-to-packages new-version packages-repo-root:
     cd $folder
     rm .github/ assets/ .git/ -rf
     rm CHANGELOG.md justfile .gitignore .typos.toml .envrc -f
-    sed -i '' 's|^#import "src/lib.typ"|#import "@preview/frame-it:{{new-version}}"|g' README.typ
+    sed -i 's|^#import "src/lib.typ"|#import "@preview/frame-it:{{new-version}}"|g' README.typ
     find . -type f -name "*.pdf" | xargs rm
     
 
