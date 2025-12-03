@@ -1,3 +1,12 @@
+## 2.0.0
+### API
+- BREAKING: remove deprecated `make-frames` function
+- remove the need for `--input=html-frames` argument for html export
+
+### Fixes
+- fix(styles): support RTL layout [#14](https://github.com/marc-thieme/frame-it/issues/14)
+- fix(api): handle `none` as figure numbering [#15](https://github.com/marc-thieme/frame-it/pull/15)
+
 ## 1.2.0
 ### Features
 - feat(layout): add frame function to create a single frame
