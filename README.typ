@@ -20,7 +20,7 @@
 )
 
 #set text(text-color)
-#set text(17pt)
+#set text(15pt)
 
 #let wants-svg-frames = sys.inputs.at("svg-frames", default: "false") != "false"
 #show figure.where(kind: "frame"): it => context if (
@@ -69,14 +69,25 @@ In contrast:
   The alternative style `styles.hint` highlights text with a subtle colored line along the side, preserving the document's flow.
 ]
 
+#feature(
+  style: styles.thmbox,
+)[Elegant][Separates header and content][not too obtrusive][
+  The third default style `styles.hint` clearly separates frame header and frame body.
+  This style was taken from [typst-thmbox](https://github.com/s15n/typst-thmbox).
+]
+
 The default styles are merely functions with the correct signature.
 If they don't appeal to you, you have complete freedom to define custom styling functions yourself.
+For reference, this is that signature:
+```typst
+let your-custom-styling-function(title, tags, body, supplement, number, accent-color) = […]
+```
 
 #example[A different frame kind][
   You can define different classes or types of frames, which alter the substitute and the frame's color. As shown here, this is an example frame.
   You can create as many different kinds as you want.
 
-  As long as all kinds use the same identifier with `frames`, they share a common counter.
+  As long as all kinds use the same kind, they share a common counter.
 ]
 
 = Quick Start
@@ -91,9 +102,9 @@ Import and define your desired frames:
   variant: ("Variant",),
   // You can provide a color or leave it out and it will be generated
   example: ("Example", gray),
-  // You can add as many as you want
-  syntax: ("Syntax",),
 )
+// This syntax works as well, but colors are not generated automatically
+#let syntax = frame("Syntax", green)
 // This is necessary. Don't forget this!
 #show: frame-style(styles.boxy)
 ```
@@ -212,9 +223,14 @@ Here is a list of examples:
   ```
 ]
 
-#feature[Per–frame custom figure parameters][Frame outline][
+#feature(numbering: none)[Per–frame custom figure parameters][Frame outline][
   All named parameters passed to a frame–function like `example[][]` are going to be passed
   to the figure function which places the frame in the document.
+
+  For example, if you want to give a frame a specific number, you can achieve this with
+  ```typst
+  #example(numbering: none)[Frame without number][This frame has no number.]
+  ```
 ]
 
 For example, you can create an outline which only contains some intentional of your frames like so.
@@ -237,6 +253,8 @@ The `figure` function includes a parameter for including a figure in the outline
   ```
   If you want to do more advanced and nested numbering, you can look into external packages for that.
   When trying to make a system apply to the frames, remember that they are just figures with a specific kind.
+
+  If you don't want to display the number at all, you can pass `numbering: none` instead.
 
   In the background, there are also some show rules doing the styling for the frames.
   However, these should only get in the way when you are doing some esoteric manipulation of the figure captions.
