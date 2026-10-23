@@ -1,4 +1,4 @@
-#import "../utils/html.typ": css, div, hr, span, target-choose
+#import "../utils/html.typ": css, target-choose
 #import "../utils/text-queries.typ": real-text-direction, text-is-left-to-right
 
 #let body-inset = 0.8em
@@ -40,12 +40,12 @@
       (border-bottom-right-radius: corner-radius)
     }
   }
-  let html-suppl = span(
-    css(
+  let html-suppl = html.span(
+    style: css(
       ..header-styles,
       border-color: "transparent",
       margin-left: if has-headers { auto } else { 0 },
-      mragin-right: body-inset,
+      margin-right: body-inset,
     ),
     supplement + " " + number,
   )
@@ -63,12 +63,12 @@
       header-css.first() += (background-color: accent-color)
     }
     for (content, css-dict) in header-contents.zip(header-css) {
-      span(css(..css-dict), content)
+      html.span(style: css(..css-dict), content)
     }
   }
   if not body-only {
-    div(
-      css(display: "flex", align-items: center),
+    html.div(
+      style: css(display: "flex", align-items: center),
       {
         if has-headers {
           headers-html()
@@ -85,7 +85,7 @@
         background: accent-color,
         margin: (0, -body-inset),
       )
-      hr(css(css-dict))
+      html.hr(style: css(css-dict))
     }
     let css-dict = (
       border: (stroke-width, "solid", accent-color),
@@ -95,8 +95,8 @@
     if not has-headers {
       css-dict.border-top-left-radius = corner-radius
     }
-    div(
-      css(css-dict),
+    html.div(
+      style: css(css-dict),
       body,
     )
   }

@@ -59,17 +59,23 @@
       actual-style(title, tags, body, supplement, number, custom-arg)
     }
   }
-  import "utils/html.typ": elem-ident, elem-ignore
+  import "utils/html.typ": wants-html
   show figure
     .where(kind: kind)
     .or(figure.where(kind: kind + "-wrapper")): it => {
     // Necessary because html-figure unfortunately inserts padding we don't want.
     // The style sits inside the div so the div is the first element and gets the label's id.
-    // If not html, this will just equate to { it }
-    elem-ident("div", class: "frame-it-wrapper", {
-      elem-ignore("style", ".frame-it-wrapper > figure { margin-left: 0; margin-right: 0 }")
+    // If not html, this is just `it`
+    if wants-html() {
+      html.div(class: "frame-it-wrapper", {
+        html.style(
+          ".frame-it-wrapper > figure { margin-left: 0; margin-right: 0 }",
+        )
+        it
+      })
+    } else {
       it
-    })
+    }
   }
   document
 }

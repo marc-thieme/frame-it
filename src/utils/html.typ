@@ -14,43 +14,7 @@
   }
 }
 
-#let elem(tag, body, ..attrs) = {
-  assert(attrs.pos() == (), message: "You can only provide named arguments.")
-  assert(
-    wants-html(),
-    message: "You can only use the `elem` function in an HTML context.",
-  )
-  let body-arg = if type(body) == function { body() } else { body }
-  html.elem(tag, attrs: attrs.named(), body-arg)
-}
-
-#let elem-ignore(tag, body, ..attrs) = {
-  assert(attrs.pos() == (), message: "You can only provide named arguments.")
-  if wants-html() {
-    let body-arg = if type(body) == function { body() } else { body }
-    html.elem(tag, attrs: attrs.named(), body-arg)
-  }
-}
-
-#let elem-ident(tag, body, ..attrs) = {
-  assert(attrs.pos() == (), message: "You can only provide named arguments.")
-  if wants-html() {
-    let body-arg = if type(body) == function { body() } else { body }
-    html.elem(tag, attrs: attrs.named(), body-arg)
-  } else {
-    body
-  }
-}
-
-#let span(style, body, ..attrs) = elem(
-  "span",
-  body,
-  style: style,
-  ..attrs,
-)
-#let div(style, body, ..attrs) = elem("div", body, style: style, ..attrs)
-#let hr(style, ..attrs) = elem("hr", style: style, ..attrs, none)
-
+// Builds a CSS declaration list for the `style` attribute of typed `html` elements.
 #let css(..args) = {
   assert(
     args.pos().map(type) in ((), (dictionary,)),

@@ -1,4 +1,4 @@
-#import "../utils/html.typ": css, span, div, hr, target-choose, wants-html
+#import "../utils/html.typ": css, target-choose, wants-html
 #import "../utils/text-queries.typ": text-is-left-to-right
 
 #let line-width = 3pt
@@ -17,12 +17,12 @@
   let border-side = if is-ltr { "left" } else { "right" }
   let frame-css = (padding: body-inset)
   frame-css.insert("border-" + border-side, (line-width, "solid", accent-color))
-  div(
-    css(frame-css),
+  html.div(
+    style: css(frame-css),
     {
       if not body-only {
-        context div(
-          css(
+        context html.div(
+          style: css(
             ..(
               if has-headers {
                 (
@@ -37,15 +37,18 @@
           ),
           {
             if has-title {
-              div(css(flex: "1.7 1 1", text-align: left), strong(title))
+              html.div(
+                style: css(flex: "1.7 1 1", text-align: left),
+                strong(title),
+              )
             }
             let is-first = true
             for tag in tags {
-              div(css(flex: "1 1 1", text-align: center), tag)
+              html.div(style: css(flex: "1 1 1", text-align: center), tag)
               is-first = false
             }
-            div(
-              css(
+            html.div(
+              style: css(
                 flex: "1.7 1 1",
                 text-align: if has-headers { right } else { left },
               ),
@@ -54,8 +57,8 @@
           },
         )
       }
-      show divider: _ => hr(
-        css(
+      show divider: _ => html.hr(
+        style: css(
           background: accent-color,
           height: 0.18em,
           border: 0,

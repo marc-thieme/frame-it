@@ -34,14 +34,7 @@
 } else { it }
 
 #show raw.where(lang: "typst"): code => context if wants-html() {
-  html.elem(
-    "pre",
-    html.elem(
-      "code",
-      attrs: (class: "typst"),
-      code,
-    ),
-  )
+  html.pre(html.code(class: "typst", code))
 } else { code }
 
 #show: it => context if not wants-html() {

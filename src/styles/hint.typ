@@ -1,4 +1,4 @@
-#import "../utils/html.typ": css, span, div, hr, target-choose, wants-html
+#import "../utils/html.typ": css, target-choose, wants-html
 #import "../utils/text-queries.typ": text-is-left-to-right
 
 #let body-inset = 0.8em
@@ -41,8 +41,8 @@
   let has-title = title not in ([], "", none)
   let has-headers = int(has-title) + tags.len() > 0
   let body-only = title == none
-  show divider: _ => hr(
-    css(
+  show divider: _ => html.hr(
+    style: css(
       background: accent-color,
       height: stroke-width,
       border: 0,
@@ -55,8 +55,8 @@
       "border-" + if text-is-left-to-right() { "left" } else { "right" },
       (line-width, "solid", accent-color),
     )
-    div(
-      css(css-dict),
+    html.div(
+      style: css(css-dict),
       {
         header-suppl(title, tags, body, supplement, number)
         body
