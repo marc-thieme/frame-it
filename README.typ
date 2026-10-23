@@ -73,7 +73,7 @@ In contrast:
   style: styles.thmbox,
 )[Elegant][Separates header and content][not too obtrusive][
   The third default style `styles.hint` clearly separates frame header and frame body.
-  This style was taken from [typst-thmbox](https://github.com/s15n/typst-thmbox).
+  This style was taken from #link("https://github.com/s15n/typst-thmbox")[typst-thmbox (github.com/s15n/typst-thmbox)].
 ]
 
 The default styles are merely functions with the correct signature.
