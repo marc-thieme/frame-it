@@ -1,4 +1,4 @@
-#import "styling.typ" as styling: divide
+#import "styling/export.typ" as styling: divide
 #import "inspect.typ" as inspect
 
 #let styles = {
@@ -15,7 +15,7 @@
   base-color: purple.lighten(60%).desaturate(40%),
   ..frames,
 ) = {
-  import "parse.typ": fill-missing-colors
+  import "utils/parse.typ": fill-missing-colors
   import "layout.typ": frame-factory
 
   for (id, supplement, color) in fill-missing-colors(base-color, frames) {
@@ -42,4 +42,6 @@
 Definition of styling:
 
 let factory(title: content, tags: (content), body: content, supplement: string or content, number, args)
+
+Use `styling.frame-structure` and `styling.direction-info` inside a styling function.
 */

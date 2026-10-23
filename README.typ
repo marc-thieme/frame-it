@@ -1,5 +1,5 @@
 #import "src/lib.typ": *
-#import "src/utils/html.typ": *
+#import "src/styling/html.typ": *
 
 #let base-color-arg = (:)
 #let text-color = black
@@ -306,17 +306,38 @@ Internally, there is nothing special about the predefined styles.
 The only requirement for any styling function is to adhere to the following
 function signature interface:
 
-
 #syntax[Interface for custom styling function][
   ```typst
   #let custom-styling(title, tags, body, supplement, number, arg)
   ```
 ]
-where `arg` is going to be the value passed behind the supplement for each frame variant in the `frames` function.
+where `arg` is the value passed behind the supplement for each frame variant in the `frames` function.
 For the predefined styles, this is the color of the frames.
-When defining your own styling function, it has to have the following signature:
-
 The content returned will be placed as–is in the document.
+
+#syntax[Helpers for styling functions][
+  The `styling` module offers a few helpers for writing your own style:
+
+  - *`frame-structure(title, tags, body)`* is the one you will most likely need.
+    It tells you which parts of a frame are filled in, e.g. whether to draw a header (`shows-header`),
+    whether there is a title, tags or a body (`has-title-text`, `has-tags`, `has-body`)
+    and whether header and body are both shown and thus share an edge (`header-joins-body`).
+    It also returns the `header-items` in display order.
+  - *HTML support:* `target-choose(html: …, paged: …)` calls `html` when exporting to HTML and `paged` otherwise.
+    `wants-html()` tells you which export is running, and `css(..)` builds the `style` attribute for HTML elements.
+  - *Smaller utilities* like `direction-info()` and `assert-arg-type(arg, type, supplement)` help with
+    supporting right-to-left text and reporting a wrong frame argument.
+    Their documentation is in #link("https://github.com/marc-thieme/frame-it/tree/main/src/styling")[`src/styling`].
+
+  If your style should look different in HTML, split it up like this:
+  ```typst
+  #let custom-styling(title, tags, body, supplement, number, arg) = styling.target-choose(
+    html: () => …,
+    paged: () => …,
+  )
+  ```
+  Otherwise, write your content directly into `custom-styling`.
+]
 
 #syntax[Styling Dividers][
   We encourage custom styling functions to support Typst's #link("https://typst.app/docs/reference/model/divider/")[`divider()`] element. Add this show rule to their body:
@@ -326,8 +347,6 @@ The content returned will be placed as–is in the document.
 ]
 
 The older `styling.divide()` and `styling.dividers-as()` are deprecated. Use `divider()` and `show divider: ...` instead.
-
-For more information on how to define your own styling function, please look into the `styling` module.
 
 `frame-it` combines very well with [showybox](https://typst.app/universe/package/showybox/) in order to create beautiful styles easily!
 

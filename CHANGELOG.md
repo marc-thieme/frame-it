@@ -3,14 +3,20 @@
 - use Typst's native `divider()` element for dividers [#22](https://github.com/marc-thieme/frame-it/issues/22)
 - deprecate `styling.divide`, use `divider()` instead; `divide()` still works as an alias
 - deprecate `styling.dividers-as`, use `show divider: ...` in styling functions instead; still works
+- add `styling.direction-info` for the text direction and output target of a frame
+- add `styling.frame-structure` with the parts derived from a frame's title, tags and body
+- add `styling.assert-arg-type` to check the frame argument of a styling function
 
 ### Fixes
 - fix(layout): html `id` of referenced frames is set on the frame wrapper, so links to frames work [#23](https://github.com/marc-thieme/frame-it/issues/23)
 - fix(styles): `hint` and `thmbox` styles support RTL layout [#14](https://github.com/marc-thieme/frame-it/issues/14)
 - fix(styles): `boxy` html output used the invalid CSS property `mragin-right` for the supplement
+- fix(styles): an empty title (`""`) no longer counts as a title in `boxy`, so its body corners stay rounded like with `[]`
+- fix(styles): a body containing only whitespace is treated as empty
 
 ### Implementation
 - refactor(html): use Typst's typed `html` functions (e.g. `html.div`) instead of the custom `elem`/`span`/`div`/`hr` wrappers
+- refactor(styles): `boxy`, `hint` and `thmbox` share the derived values via `styling.direction-info` and `styling.frame-structure`
 
 ## 2.0.0
 ### API

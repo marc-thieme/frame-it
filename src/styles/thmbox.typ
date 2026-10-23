@@ -1,7 +1,8 @@
-#import "../utils/html.typ": css, target-choose, wants-html
-#import "../utils/text-queries.typ": text-is-left-to-right
+#import "../styling/export.typ": (
+  assert-arg-type, css, direction-info, frame-structure, target-choose,
+)
 
-#let line-width = 3pt
+#let bar-width = 3pt
 #let body-inset = 1em
 #let text-color(accent-color) = (
   accent-color.mix((text.fill.lighten(80%), 100%)).saturate(60%)
@@ -16,65 +17,53 @@
   number,
   accent-color,
 ) = context {
-  let has-body = body != []
-  let has-title = title not in ([], "", none)
-  let has-headers = int(has-title) + tags.len() > 0
-  let body-only = title == none
-  let is-ltr = text-is-left-to-right()
-  let border-side = if is-ltr { "left" } else { "right" }
-  let frame-css = (padding: body-inset)
-  frame-css.insert("border-" + border-side, (line-width, "solid", accent-color))
-  html.div(
-    style: css(frame-css),
-    {
-      if not body-only {
-        context html.div(
-          style: css(
-            ..(
-              if has-headers {
-                (
-                  display: "flex",
-                  justify-content: "space-between",
-                  align-items: center,
-                  flex-direction: if is-ltr { "row" } else { "row-reverse" },
-                )
-              } else { (:) }
-            ),
-            color: text-color(accent-color),
-          ),
-          {
-            if has-title {
-              html.div(
-                style: css(flex: "1.7 1 1", text-align: left),
-                strong(title),
-              )
-            }
-            let is-first = true
-            for tag in tags {
-              html.div(style: css(flex: "1 1 1", text-align: center), tag)
-              is-first = false
-            }
-            html.div(
-              style: css(
-                flex: "1.7 1 1",
-                text-align: if has-headers { right } else { left },
-              ),
-              strong(supplement + " " + number),
-            )
-          },
-        )
-      }
-      show divider: _ => html.hr(
-        style: css(
-          background: accent-color,
-          height: 0.18em,
-          border: 0,
-          margin: (0, 0, 0, -body-inset),
-        ),
-      )
-      body
-    },
+  let (is-ltr, start-side, ..) = direction-info()
+  let (shows-header, has-title-text, has-header-items, ..) = frame-structure(
+    title,
+    tags,
+    body,
   )
+
+  let frame-css = (padding: body-inset)
+  frame-css.insert("border-" + start-side, (bar-width, "solid", accent-color))
+
+  let header-layout = if has-header-items {
+    (
+      display: "flex",
+      justify-content: "space-between",
+      align-items: center,
+      flex-direction: if is-ltr { "row" } else { "row-reverse" },
+    )
+  } else {
+    (:)
+  }
+
+  html.div(style: css(frame-css), {
+    if shows-header {
+      html.div(style: css(..header-layout, color: text-color(accent-color)), {
+        if has-title-text {
+          html.div(style: css(flex: "1.7 1 1", text-align: left), strong(title))
+        }
+        for tag in tags {
+          html.div(style: css(flex: "1 1 1", text-align: center), tag)
+        }
+        html.div(
+          style: css(
+            flex: "1.7 1 1",
+            text-align: if has-header-items { right } else { left },
+          ),
+          strong(supplement + " " + number),
+        )
+      })
+    }
+    show divider: _ => html.hr(style: css(
+      background: accent-color,
+      height: 0.18em,
+      border: 0,
+      margin: (0, 0, 0, -body-inset),
+    ))
+    body
+  })
 }
 
 // Credits to https://github.com/s15n/typst-thmbox
@@ -86,33 +75,33 @@
   number,
   accent-color,
 ) = context {
-  let has-body = body != []
-  let has-title = title not in ([], "", none)
-  let has-tags = tags.len() > 0
-  let has-headers = has-title or has-tags
-  let body-only = title == none
-  let is-ltr = text-is-left-to-right()
-  let side = if is-ltr { "left" } else { "right" }
-
-  let bar = stroke(paint: accent-color, thickness: line-width)
+  let (is-ltr, start-side, end-side, dir, ..) = direction-info()
+  let (
+    shows-header,
+    has-title-text,
+    has-tags,
+    has-header-items,
+    has-body,
+    ..,
+  ) = frame-structure(title, tags, body)
+  let bar = stroke(paint: accent-color, thickness: bar-width)
 
   show divider: _ => {
     let rule = line(
       length: 100% + 1em,
       start: (-1em, 0pt),
-      stroke: accent-color + line-width * 0.8,
+      stroke: accent-color + bar-width * 0.8,
     )
     // RTL lines are anchored at their end, so shift them to overshoot the border side like LTR
     if is-ltr { rule } else { move(dx: 1em, rule) }
     v(-0.2em)
   }
 
-  // Typst does not reorder Latin runs inside RTL text, so the title bar is
-  // built as an explicit row that runs right to left
+  // Typst does not reorder Latin runs inside RTL text, so the title bar is built as an explicit row
   let title-bar() = {
     let items = ()
-    if has-title { items.push(title) }
-    if has-headers { items.push(h(3fr)) }
+    if has-title-text { items.push(title) }
+    if has-header-items { items.push(h(3fr)) }
     if has-tags {
       for tag in tags {
         items.push(text(tag, weight: "regular"))
@@ -121,58 +110,45 @@
       items.push(h(2fr))
     }
     items.push(supplement + " " + number)
-    if is-ltr {
-      items.join()
-    } else {
-      stack(dir: rtl, ..items)
-    }
+    if is-ltr { items.join() } else { stack(dir: dir, ..items) }
   }
 
   block(
-    stroke: (
-      (side): bar,
-    ),
-    inset: (
-      (side): 1em,
-      top: 0.6em,
-      bottom: 0.6em,
-    ),
+    stroke: ((start-side): bar),
+    inset: ((start-side): 1em, top: 0.6em, bottom: 0.6em),
     spacing: 1.2em,
   )[
     #set align(start)
-    // Title bar
-    #if not body-only {
-      block(
-        above: 0em,
-        below: 1.2em,
-        context {
-          set text(text-color(accent-color), weight: "bold")
-          title-bar()
-        },
-      )
+    #if shows-header {
+      block(above: 0em, below: 1.2em, {
+        set text(text-color(accent-color), weight: "bold")
+        title-bar()
+      })
     }
-    // Body
     #if has-body {
-      block(
-        inset: (
-          (if is-ltr { "right" } else { "left" }): 1em,
-        ),
-        spacing: 0em,
-        width: 100%,
-        body,
-      )
+      block(inset: ((end-side): 1em), spacing: 0em, width: 100%, body)
     }
   ]
 }
 
-#let thmbox(
-  title,
-  tags,
-  body,
-  supplement,
-  number,
-  accent-color,
-) = target-choose(
-  html: () => thmbox-html(title, tags, body, supplement, number, accent-color),
-  paged: () => thmbox-paged(title, tags, body, supplement, number, accent-color),
-)
+#let thmbox(title, tags, body, supplement, number, accent-color) = {
+  assert-arg-type(accent-color, color, supplement)
+  target-choose(
+    html: () => thmbox-html(
+      title,
+      tags,
+      body,
+      supplement,
+      number,
+      accent-color,
+    ),
+    paged: () => thmbox-paged(
+      title,
+      tags,
+      body,
+      supplement,
+      number,
+      accent-color,
+    ),
+  )
+}

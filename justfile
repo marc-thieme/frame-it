@@ -32,7 +32,7 @@ cp-to-packages new-version packages-repo-root:
     rm $folder -rf
     cp . $folder -r
     cd $folder
-    rm .github/ assets/ .git/ -rf
+    rm .github/ assets/ .git/ tests/ -rf
     rm CHANGELOG.md justfile .gitignore .typos.toml .envrc -f
     sed -i 's|^#import "src/lib.typ"|#import "@preview/frame-it:{{new-version}}"|g' README.typ
     find . -type f -name "*.pdf" | xargs rm
@@ -104,6 +104,7 @@ update-assets: (update-html ".") && (update-readme ".")
     
 test-compile: (update-html tmpdir) (update-readme tmpdir)
     typst compile README.typ {{tmpdir / "README.pdf"}}
+    typst compile --root . tests/styling.typ {{tmpdir / "styling-tests.pdf"}}
 
 [confirm("Do you want to commit and push all changes on the assets branch?")]
 [working-directory("assets")]
