@@ -174,6 +174,5 @@
   accent-color,
 ) = target-choose(
   html: () => thmbox-html(title, tags, body, supplement, number, accent-color),
-  paged: thmbox-paged(title, tags, body, supplement, number, accent-color),
+  paged: () => thmbox-paged(title, tags, body, supplement, number, accent-color),
 )
-

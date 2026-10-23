@@ -2,16 +2,12 @@
   "target" in dictionary(std) and target() == "html"
 }
 
-#let target-choose(html: auto, paged: auto) = context {
+#let target-choose(html: none, paged: none) = context {
   assert(
-    html != auto and paged != auto,
+    html != none and paged != none,
     message: "Please provide options for both `html` and `paged`.",
   )
-  if wants-html() {
-    if type(html) == function { html() } else { html }
-  } else {
-    if type(paged) == function { paged() } else { paged }
-  }
+  if wants-html() { html() } else { paged() }
 }
 
 // Builds a CSS declaration list for the `style` attribute of typed `html` elements.

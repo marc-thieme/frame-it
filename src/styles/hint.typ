@@ -112,5 +112,5 @@
 
 #let hint(title, tags, body, supplement, number, accent-color) = target-choose(
   html: () => hint-html(title, tags, body, supplement, number, accent-color),
-  paged: hint-paged(title, tags, body, supplement, number, accent-color),
+  paged: () => hint-paged(title, tags, body, supplement, number, accent-color),
 )

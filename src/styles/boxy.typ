@@ -209,5 +209,5 @@
 
 #let boxy(title, tags, body, supplement, number, accent-color) = target-choose(
   html: () => boxy-html(title, tags, body, supplement, number, accent-color),
-  paged: boxy-paged(title, tags, body, supplement, number, accent-color),
+  paged: () => boxy-paged(title, tags, body, supplement, number, accent-color),
 )
