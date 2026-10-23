@@ -1,4 +1,3 @@
-#import "styling.typ"
 #import "utils/encode.typ": (
   encode-title-and-info,
   retrieve-info-from-code,
@@ -60,10 +59,6 @@
       actual-style(title, tags, body, supplement, number, custom-arg)
     }
   }
-  show: styling.dividers-as[
-    `Error: Dividers not supported by this styling function.`
-  ]
-
   import "utils/html.typ": elem-ident, elem-ignore
   show figure
     .where(kind: kind)

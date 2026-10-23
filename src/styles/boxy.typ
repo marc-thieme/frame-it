@@ -1,4 +1,3 @@
-#import "../styling.typ" as styling
 #import "../utils/html.typ": css, div, hr, span, target-choose
 #import "../utils/text-queries.typ": real-text-direction, text-is-left-to-right
 
@@ -79,7 +78,7 @@
     )
   }
   if has-body {
-    show: styling.dividers-as({
+    show divider: _ => {
       let css-dict = (
         border: 0,
         height: stroke-width,
@@ -87,7 +86,7 @@
         margin: (0, -body-inset),
       )
       hr(css(css-dict))
-    })
+    }
     let css-dict = (
       border: (stroke-width, "solid", accent-color),
       border-radius: (0, corner-radius, corner-radius, corner-radius),
@@ -178,7 +177,7 @@
         outset: (y: 0em),
         {
           // Divide constructs a line where we need to inject the stroke style because we only have access to the color here
-          show: styling.dividers-as({
+          show divider: _ => {
             v(-0.5em + stroke-width)
             line(
               start: (-body-inset, 0em),
@@ -186,7 +185,7 @@
               stroke: stroke,
             )
             v(-0.5em + stroke-width)
-          })
+          }
           body
         },
       ),

@@ -147,8 +147,8 @@ which yields
   For brief elements, use [] as the body to omit the content.
 
   #feature[Element with Divider][
-    Insert ```typst #divide()``` to add a divider within your content for a visual break:
-    #divide()
+    Use Typst's #link("https://typst.app/docs/reference/model/divider/")[`divider()`] element to add a visual break within your content:
+    #divider()
     And then continue with your text below the divider.
   ]
 ]
@@ -326,11 +326,13 @@ When defining your own styling function, it has to have the following signature:
 The content returned will be placed as–is in the document.
 
 #syntax[Styling Dividers][
-  If your custom styling function shall support dividers, it must include this show rule in its body:
+  We encourage custom styling functions to support Typst's #link("https://typst.app/docs/reference/model/divider/")[`divider()`] element. Add this show rule to their body:
   ```typst
-  #show: styling.dividers-as(object-which-will-be-used-as-divider)
+  #show divider: object-which-will-be-used-as-divider
   ```
 ]
+
+The older `styling.divide()` and `styling.dividers-as()` are deprecated. Use `divider()` and `show divider: ...` instead.
 
 For more information on how to define your own styling function, please look into the `styling` module.
 
@@ -430,6 +432,16 @@ A reference to the frame above: @edge-case-label.
 #show: frame-style(kind: "not-the-default", styles.hint)
 #individual-frame1[Individual][Individual]
 #individual-frame2[Individual][Individual]
+
+#let no-divider-style(title, tags, body, supplement, number, accent-color) = block(
+  stroke: accent-color,
+  inset: 0.5em,
+  body,
+)
+#example(style: no-divider-style)[Style without divider][
+  This style does not add the divider show-rule, so the divider below falls back to Typst's default divider:
+  #divider()
+]
 
 #show: frame-style(styles.boxy)
 #[

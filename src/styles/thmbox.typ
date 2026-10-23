@@ -1,4 +1,3 @@
-#import "../styling.typ" as styling
 #import "../utils/html.typ": css, span, div, hr, target-choose
 
 #let line-width = 3pt
@@ -52,14 +51,12 @@
           },
         )
       }
-      show: styling.dividers-as(
-        hr(
-          css(
-            background: accent-color,
-            height: 0.18em,
-            border: 0,
-            margin: (0, 0, 0, -body-inset),
-          ),
+      show divider: _ => hr(
+        css(
+          background: accent-color,
+          height: 0.18em,
+          border: 0,
+          margin: (0, 0, 0, -body-inset),
         ),
       )
       body
@@ -77,14 +74,14 @@
 
   let bar = stroke(paint: accent-color, thickness: line-width)
 
-  show: styling.dividers-as({
+  show divider: _ => {
     line(
       length: 100% + 1em,
       start: (-1em, 0pt),
       stroke: accent-color + line-width * 0.8,
     )
     v(-0.2em)
-  })
+  }
 
   block(
     stroke: (

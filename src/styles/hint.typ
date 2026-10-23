@@ -1,4 +1,3 @@
-#import "../styling.typ" as styling
 #import "../utils/html.typ": css, span, div, hr, target-choose
 
 #let body-inset = 0.8em
@@ -32,14 +31,12 @@
   let has-title = title not in ([], "", none)
   let has-headers = int(has-title) + tags.len() > 0
   let body-only = title == none
-  show: styling.dividers-as(
-    hr(
-      css(
-        background: accent-color,
-        height: stroke-width,
-        border: 0,
-        margin: (body-inset, -body-inset),
-      ),
+  show divider: _ => hr(
+    css(
+      background: accent-color,
+      height: stroke-width,
+      border: 0,
+      margin: (body-inset, -body-inset),
     ),
   )
   div(
@@ -64,7 +61,7 @@
   let header = header-suppl(title, tags, body, supplement, number)
   layout(((width,)) => {
     let text = {
-      show: styling.dividers-as({
+      show divider: _ => {
         v(body-inset - 1em)
         line(
           length: 100% + body-inset,
@@ -72,7 +69,7 @@
           stroke: accent-color + stroke-width,
         )
         v(body-inset - 1em)
-      })
+      }
 
       block(
         width: width,
