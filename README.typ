@@ -452,6 +452,10 @@ A reference to the frame above: @edge-case-label.
   #set text(dir: rtl)
   #example[Title][Tag][Right to left by dir]
 ]
+#[
+  #set text(lang: "he")
+  #example(style: styles.hint)[Title][Tag][Right to left hint, with a divider #divider() and more text]
+]
 
 // Tests
 #context {

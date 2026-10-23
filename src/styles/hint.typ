@@ -1,28 +1,38 @@
-#import "../utils/html.typ": css, span, div, hr, target-choose
+#import "../utils/html.typ": css, span, div, hr, target-choose, wants-html
+#import "../utils/text-queries.typ": text-is-left-to-right
 
 #let body-inset = 0.8em
 #let stroke-width = 0.13em
 #let line-width = 3.5pt
 
-#let header-suppl(title, tags, body, supplement, number) = {
+#let header-suppl(title, tags, body, supplement, number) = context {
   if title == none {
     none
   } else {
-    if title != [] {
-      title = [~~#title~]
-    }
+    let title-str = if title != [] { [~~#title~] } else { [] }
 
     let tag-str = if tags != () {
       [~(#tags.join(", "))~]
     } else {
       []
     }
-    let supplement-str = context {
+    let supplement-str = {
       let header-color = text.fill.mix((text.fill.negate(), 20%))
       text(header-color)[#supplement #number]
     }
     let head-body-separator = if body == [] [] else [:]
-    [~#supplement-str~*#(title)*_#(tag-str)_#head-body-separator~]
+    if text-is-left-to-right() or wants-html() {
+      [~#supplement-str~*#(title-str)*_#(tag-str)_#head-body-separator~]
+    } else {
+      // Typst does not reorder Latin runs inside RTL text, so lay out the
+      // pieces explicitly: title first, then tags, then the supplement.
+      // HTML export drops `box`/`stack`, so it keeps the logical order (the browser handles bidi)
+      let pieces = ()
+      if title != [] { pieces.push(strong(title-str)) }
+      if tags != () { pieces.push(emph(tag-str)) }
+      pieces.push(supplement-str)
+      [~#box(stack(dir: rtl, spacing: 0.5em, ..pieces))~#head-body-separator~]
+    }
   }
 }
 
@@ -39,16 +49,20 @@
       margin: (body-inset, -body-inset),
     ),
   )
-  div(
-    css(
-      border-left: (line-width, "solid", accent-color),
-      padding: body-inset,
-    ),
-    {
-      header-suppl(title, tags, body, supplement, number)
-      body
-    },
-  )
+  context {
+    let css-dict = (padding: body-inset)
+    css-dict.insert(
+      "border-" + if text-is-left-to-right() { "left" } else { "right" },
+      (line-width, "solid", accent-color),
+    )
+    div(
+      css(css-dict),
+      {
+        header-suppl(title, tags, body, supplement, number)
+        body
+      },
+    )
+  }
 }
 
 #let hint-paged(title, tags, body, supplement, number, accent-color) = {
@@ -59,23 +73,27 @@
   )
 
   let header = header-suppl(title, tags, body, supplement, number)
-  layout(((width,)) => {
+  context layout(((width,)) => {
+    let is-ltr = text-is-left-to-right()
+    let side = if is-ltr { "left" } else { "right" }
     let text = {
       show divider: _ => {
         v(body-inset - 1em)
-        line(
+        let rule = line(
           length: 100% + body-inset,
           start: (-body-inset, 0pt),
           stroke: accent-color + stroke-width,
         )
+        // RTL lines are anchored at their end, so shift them to overshoot the border side like LTR
+        if is-ltr { rule } else { move(dx: body-inset, rule) }
         v(body-inset - 1em)
       }
 
       block(
         width: width,
-        stroke: (left: stroke),
-        inset: (left: 0.7em, y: 0.7em),
-        align(left, header + body),
+        stroke: ((side): stroke),
+        inset: ((side): 0.7em, y: 0.7em),
+        align(start, header + body),
       )
     }
 
