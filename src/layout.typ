@@ -1,7 +1,5 @@
 #import "utils/encode.typ": (
-  encode-title-and-info,
-  retrieve-info-from-code,
-  code-has-info-attached,
+  code-has-info-attached, encode-title-and-info, retrieve-info-from-code,
 )
 
 #let spawn-frame(
@@ -39,7 +37,10 @@
   // inspecting the metadata. This way, the user can manipulate the kind if desired.
   show figure.caption: caption => {
     let code = caption.body
-    if not code-has-info-attached(code) or retrieve-info-from-code(code).kind != kind {
+    if (
+      not code-has-info-attached(code)
+        or retrieve-info-from-code(code).kind != kind
+    ) {
       caption
     } else {
       let number = if caption.numbering != none {

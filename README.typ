@@ -426,7 +426,14 @@ A reference to the frame above: @edge-case-label.
 #individual-frame1[Individual][Individual]
 #individual-frame2[Individual][Individual]
 
-#let no-divider-style(title, tags, body, supplement, number, accent-color) = block(
+#let no-divider-style(
+  title,
+  tags,
+  body,
+  supplement,
+  number,
+  accent-color,
+) = block(
   stroke: accent-color,
   inset: 0.5em,
   body,
@@ -447,11 +454,15 @@ A reference to the frame above: @edge-case-label.
 ]
 #[
   #set text(lang: "he")
-  #example(style: styles.hint)[Title][Tag][Right to left hint, with a divider #divider() and more text]
+  #example(
+    style: styles.hint,
+  )[Title][Tag][Right to left hint, with a divider #divider() and more text]
 ]
 #[
   #set text(lang: "he")
-  #example(style: styles.thmbox)[Title][Tag][Right to left hint, with a divider #divider() and more text]
+  #example(
+    style: styles.thmbox,
+  )[Title][Tag][Right to left hint, with a divider #divider() and more text]
 ]
 
 // Tests

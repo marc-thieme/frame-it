@@ -8,7 +8,14 @@
 )
 
 
-#let thmbox-html(title, tags, body, supplement, number, accent-color) = context {
+#let thmbox-html(
+  title,
+  tags,
+  body,
+  supplement,
+  number,
+  accent-color,
+) = context {
   let has-body = body != []
   let has-title = title not in ([], "", none)
   let has-headers = int(has-title) + tags.len() > 0
@@ -71,7 +78,14 @@
 }
 
 // Credits to https://github.com/s15n/typst-thmbox
-#let thmbox-paged(title, tags, body, supplement, number, accent-color) = context {
+#let thmbox-paged(
+  title,
+  tags,
+  body,
+  supplement,
+  number,
+  accent-color,
+) = context {
   let has-body = body != []
   let has-title = title not in ([], "", none)
   let has-tags = tags.len() > 0
