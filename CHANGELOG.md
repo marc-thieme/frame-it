@@ -6,7 +6,7 @@
 
 ### Fixes
 - fix(layout): html `id` of referenced frames is set on the frame wrapper, so links to frames work [#23](https://github.com/marc-thieme/frame-it/issues/23)
-- fix(styles): `hint` style supports RTL layout [#14](https://github.com/marc-thieme/frame-it/issues/14)
+- fix(styles): `hint` and `thmbox` styles support RTL layout [#14](https://github.com/marc-thieme/frame-it/issues/14)
 
 ## 2.0.0
 ### API

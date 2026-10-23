@@ -456,6 +456,10 @@ A reference to the frame above: @edge-case-label.
   #set text(lang: "he")
   #example(style: styles.hint)[Title][Tag][Right to left hint, with a divider #divider() and more text]
 ]
+#[
+  #set text(lang: "he")
+  #example(style: styles.thmbox)[Title][Tag][Right to left hint, with a divider #divider() and more text]
+]
 
 // Tests
 #context {

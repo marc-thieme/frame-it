@@ -1,4 +1,5 @@
-#import "../utils/html.typ": css, span, div, hr, target-choose
+#import "../utils/html.typ": css, span, div, hr, target-choose, wants-html
+#import "../utils/text-queries.typ": text-is-left-to-right
 
 #let line-width = 3pt
 #let body-inset = 1em
@@ -7,16 +8,17 @@
 )
 
 
-#let thmbox-html(title, tags, body, supplement, number, accent-color) = {
+#let thmbox-html(title, tags, body, supplement, number, accent-color) = context {
   let has-body = body != []
   let has-title = title not in ([], "", none)
   let has-headers = int(has-title) + tags.len() > 0
   let body-only = title == none
+  let is-ltr = text-is-left-to-right()
+  let border-side = if is-ltr { "left" } else { "right" }
+  let frame-css = (padding: body-inset)
+  frame-css.insert("border-" + border-side, (line-width, "solid", accent-color))
   div(
-    css(
-      border-left: (line-width, "solid", accent-color),
-      padding: body-inset,
-    ),
+    css(frame-css),
     {
       if not body-only {
         context div(
@@ -27,6 +29,7 @@
                   display: "flex",
                   justify-content: "space-between",
                   align-items: center,
+                  flex-direction: if is-ltr { "row" } else { "row-reverse" },
                 )
               } else { (:) }
             ),
@@ -65,36 +68,61 @@
 }
 
 // Credits to https://github.com/s15n/typst-thmbox
-#let thmbox-paged(title, tags, body, supplement, number, accent-color) = {
+#let thmbox-paged(title, tags, body, supplement, number, accent-color) = context {
   let has-body = body != []
   let has-title = title not in ([], "", none)
   let has-tags = tags.len() > 0
   let has-headers = has-title or has-tags
   let body-only = title == none
+  let is-ltr = text-is-left-to-right()
+  let side = if is-ltr { "left" } else { "right" }
 
   let bar = stroke(paint: accent-color, thickness: line-width)
 
   show divider: _ => {
-    line(
+    let rule = line(
       length: 100% + 1em,
       start: (-1em, 0pt),
       stroke: accent-color + line-width * 0.8,
     )
+    // RTL lines are anchored at their end, so shift them to overshoot the border side like LTR
+    if is-ltr { rule } else { move(dx: 1em, rule) }
     v(-0.2em)
+  }
+
+  // Typst does not reorder Latin runs inside RTL text, so the title bar is
+  // built as an explicit row that runs right to left
+  let title-bar() = {
+    let items = ()
+    if has-title { items.push(title) }
+    if has-headers { items.push(h(3fr)) }
+    if has-tags {
+      for tag in tags {
+        items.push(text(tag, weight: "regular"))
+        items.push(h(1fr))
+      }
+      items.push(h(2fr))
+    }
+    items.push(supplement + " " + number)
+    if is-ltr {
+      items.join()
+    } else {
+      stack(dir: rtl, ..items)
+    }
   }
 
   block(
     stroke: (
-      left: bar,
+      (side): bar,
     ),
     inset: (
-      left: 1em,
+      (side): 1em,
       top: 0.6em,
       bottom: 0.6em,
     ),
     spacing: 1.2em,
   )[
-    #set align(left)
+    #set align(start)
     // Title bar
     #if not body-only {
       block(
@@ -102,22 +130,7 @@
         below: 1.2em,
         context {
           set text(text-color(accent-color), weight: "bold")
-          if has-title {
-            title
-          }
-          if has-headers {
-            h(3fr)
-          }
-          if has-tags {
-            for tag in tags {
-              text(tag, weight: "regular")
-              h(1fr)
-            }
-            h(2fr)
-          }
-          supplement
-          " "
-          number
+          title-bar()
         },
       )
     }
@@ -125,7 +138,7 @@
     #if has-body {
       block(
         inset: (
-          right: 1em,
+          (if is-ltr { "right" } else { "left" }): 1em,
         ),
         spacing: 0em,
         width: 100%,
