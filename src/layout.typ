@@ -32,8 +32,6 @@
   )
 }
 
-#let __frame-id-counter-state = state("__frame-it_frame-id-state", 1)
-
 #let frame-style(
   kind,
   style,
@@ -70,19 +68,13 @@
   show figure
     .where(kind: kind)
     .or(figure.where(kind: kind + "-wrapper")): it => {
-    // Necessary because html-figure unfortunately inserts padding we don't want
-    let id = __frame-id-counter-state.get()
-    __frame-id-counter-state.update(it => it + 1)
-    let figure-id = "frame-wrapper-" + str(id)
-    let style-code = {
-      "#" + figure-id + " > figure {"
-      "  margin-left: 0px;"
-      "  margin-right: 0px;"
-      "}"
-    }
+    // Necessary because html-figure unfortunately inserts padding we don't want.
+    // The style sits inside the div so the div is the first element and gets the label's id.
     // If not html, this will just equate to { it }
-    elem-ignore("style", style-code)
-    elem-ident("div", id: figure-id, it)
+    elem-ident("div", class: "frame-it-wrapper", {
+      elem-ignore("style", ".frame-it-wrapper > figure { margin-left: 0; margin-right: 0 }")
+      it
+    })
   }
   document
 }

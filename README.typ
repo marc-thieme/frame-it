@@ -418,6 +418,9 @@ Here are a few edge cases.
   Here, `numbering = none` is being passed.
 ]
 
+#example[Labeled][Referenced below] <edge-case-label>
+A reference to the frame above: @edge-case-label.
+
 #let individual-frame1 = frame("Some Additional Frame", orange)
 #let individual-frame2 = frame(
   kind: "not-the-default",

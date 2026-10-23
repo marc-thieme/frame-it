@@ -73,7 +73,7 @@ update-readme dir:
     '
         | cat - {{tmpdir / "README-v1.md"}} | save -f {{tmpdir / "README-v2.md"}}
 
-    mut readme = open {{tmpdir / "README-v2.md"}}
+    mut readme = open --raw {{tmpdir / "README-v2.md"}}
 
     def "str erase" [...patterns: string] {
         let text = $in
