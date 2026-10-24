@@ -1,2 +1,5 @@
 [default]
 extend-ignore-words-re = ['typ']
+
+[files]
+extend-exclude = ["assets/", "*.html"]
