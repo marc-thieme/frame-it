@@ -17,22 +17,22 @@
   number,
   accent-color,
 ) = context {
-  let (is-ltr, start-side, ..) = direction-info()
+  let (dir, start-side, ..) = direction-info()
   let (shows-header, has-title-text, has-header-items, ..) = frame-structure(
     title,
     tags,
     body,
   )
 
-  let frame-css = (padding: body-inset)
+  let frame-css = (padding: body-inset, direction: dir)
   frame-css.insert("border-" + start-side, (bar-width, "solid", accent-color))
 
+  // The flex row follows `direction`, so the title starts on the start side
   let header-layout = if has-header-items {
     (
       display: "flex",
       justify-content: "space-between",
       align-items: center,
-      flex-direction: if is-ltr { "row" } else { "row-reverse" },
     )
   } else {
     (:)
@@ -42,7 +42,10 @@
     if shows-header {
       html.div(style: css(..header-layout, color: text-color(accent-color)), {
         if has-title-text {
-          html.div(style: css(flex: "1.7 1 1", text-align: left), strong(title))
+          html.div(
+            style: css(flex: "1.7 1 1", text-align: start),
+            strong(title),
+          )
         }
         for tag in tags {
           html.div(style: css(flex: "1 1 1", text-align: center), tag)
@@ -50,7 +53,7 @@
         html.div(
           style: css(
             flex: "1.7 1 1",
-            text-align: if has-header-items { right } else { left },
+            text-align: if has-header-items { end } else { start },
           ),
           strong(supplement + " " + number),
         )
@@ -60,7 +63,8 @@
       background: accent-color,
       height: 0.18em,
       border: 0,
-      margin: (0, 0, 0, -body-inset),
+      margin-block: 0,
+      margin-inline-start: -body-inset,
     ))
     body
   })

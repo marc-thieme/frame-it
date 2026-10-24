@@ -29,9 +29,9 @@
       // Typst does not reorder Latin runs inside RTL text, so lay out the pieces explicitly.
       // HTML export drops `box`/`stack`, so it keeps the logical order (the browser handles bidi).
       let pieces = (
+        supplement-str,
         if has-title-text { strong(title-str) },
         if has-tags { emph(tag-str) },
-        supplement-str,
       ).filter(piece => piece != none)
       [~#box(stack(dir: rtl, spacing: 0.5em, ..pieces))~#separator~]
     }
@@ -39,14 +39,14 @@
 }
 
 #let hint-html(title, tags, body, supplement, number, accent-color) = context {
-  let (start-side, ..) = direction-info()
+  let (dir, start-side, ..) = direction-info()
   show divider: _ => html.hr(style: css(
     background: accent-color,
     height: stroke-width,
     border: 0,
     margin: (body-inset, -body-inset),
   ))
-  let css-dict = (padding: body-inset)
+  let css-dict = (padding: body-inset, direction: dir)
   css-dict.insert("border-" + start-side, (bar-width, "solid", accent-color))
   html.div(style: css(css-dict), {
     header-line(title, tags, body, supplement, number)

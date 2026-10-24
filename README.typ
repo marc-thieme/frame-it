@@ -399,7 +399,6 @@ Here are a few edge cases.
 ]
 
 #example[Example][Tags of various sizes][$sum_sum^sum$][Extra vertical space: #v(1cm)][
-  (Leads to formatting errors in html export because support is missing)\
   #lorem(20)
 ]
 

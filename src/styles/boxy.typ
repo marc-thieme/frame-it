@@ -16,40 +16,43 @@
     header-items,
     ..,
   ) = frame-structure(title, tags, body)
-
-  let header-styles = (
+  let (dir, ..) = direction-info()
+  let r = corner-radius
+  // Logical properties keep the tabs on the start side in right-to-left text
+  let tab = (
     padding: "5px 10px",
     border: (stroke-width, "solid", accent-color),
-    margin-left: "-2px",
+    margin-inline-start: "-2px",
+    display: "flex",
+    align-items: "center",
   )
-  let first-overlay = (margin-left: 0, border-top-left-radius: corner-radius)
-  let last-overlay = (border-top-right-radius: corner-radius)
-  if header-joins-body {
-    header-styles.border-bottom = none
-  } else {
-    first-overlay.border-bottom-left-radius = corner-radius
-    last-overlay.border-bottom-right-radius = corner-radius
-  }
+  if header-joins-body { tab.border-bottom = none }
+
+  let last = header-items.len() - 1
+  let tabs = header-items
+    .enumerate()
+    .map(((i, content)) => {
+      let css-dict = tab
+      if i == 0 {
+        css-dict += (margin-inline-start: 0, border-start-start-radius: r)
+        if not header-joins-body { css-dict.border-end-start-radius = r }
+        if has-title-text { css-dict.background-color = accent-color }
+      }
+      if i == last {
+        css-dict.border-start-end-radius = r
+        if not header-joins-body { css-dict.border-end-end-radius = r }
+      }
+      html.span(style: css(..css-dict), content)
+    })
 
   if shows-header {
-    html.div(style: css(display: "flex", align-items: center), {
-      if has-header-items {
-        let header-css = (header-styles,) * header-items.len()
-        header-css.first() += first-overlay
-        header-css.last() += last-overlay
-        if has-title-text {
-          header-css.first() += (background-color: accent-color)
-        }
-        for (content, css-dict) in header-items.zip(header-css) {
-          html.span(style: css(..css-dict), content)
-        }
-      }
+    html.div(style: css(display: "flex", direction: dir), {
+      tabs.join()
       html.span(
         style: css(
-          ..header-styles,
+          ..tab,
           border-color: "transparent",
-          margin-left: if has-header-items { auto } else { 0 },
-          margin-right: body-inset,
+          margin-inline-start: if has-header-items { auto } else { 0 },
         ),
         supplement + " " + number,
       )
@@ -63,18 +66,23 @@
       background: accent-color,
       margin: (0, -body-inset),
     ))
-    let css-dict = (
-      border: (stroke-width, "solid", accent-color),
-      border-radius: (0, corner-radius, corner-radius, corner-radius),
-      padding: body-inset,
+    html.div(
+      style: css(
+        border: (stroke-width, "solid", accent-color),
+        border-start-start-radius: if has-header-items { 0pt } else { r },
+        border-start-end-radius: r,
+        border-end-end-radius: r,
+        border-end-start-radius: r,
+        padding: body-inset,
+        direction: dir,
+      ),
+      body,
     )
-    if not has-header-items { css-dict.border-top-left-radius = corner-radius }
-    html.div(style: css(css-dict), body)
   }
 }
 
 #let boxy-paged(title, tags, body, supplement, number, accent-color) = context {
-  let (dir, start-side, ..) = direction-info()
+  let (start-side, ..) = direction-info()
   let (
     shows-header,
     has-title-text,
@@ -82,11 +90,7 @@
     has-header-items,
     header-joins-body,
     ..,
-  ) = frame-structure(
-    title,
-    tags,
-    body,
-  )
+  ) = frame-structure(title, tags, body)
   let stroke = accent-color + stroke-width
 
   let header() = align(start, {
@@ -95,36 +99,48 @@
     if has-title-text {
       tag-elements.insert(0, grid.cell(fill: accent-color, title))
     }
-
     let rounded-corners = (top: corner-radius)
     if not header-joins-body { rounded-corners.bottom = corner-radius }
 
-    let rendered-tags = if tag-elements == () [] else {
-      let grid-cells = tag-elements.intersperse(grid.vline(stroke: stroke))
+    let rendered-tags = if tag-elements == () { none } else {
+      let cells = tag-elements.intersperse(grid.vline(stroke: stroke))
       box(
         clip: true,
         stroke: stroke,
         radius: rounded-corners,
-        grid(columns: tag-elements.len(), align: horizon, inset: inset, ..grid-cells),
+        grid(columns: tag-elements.len(), align: horizon, inset: inset, ..cells),
       )
-      h(1fr)
     }
-
+    // `dir: ltr` keeps "Example 50" in reading order in right-to-left text
     let supplement-str = box(inset: inset, stack(
-      dir: dir,
+      dir: ltr,
       supplement,
       [~],
       number,
     ))
 
+    // Tags and supplement share one row, so both are centered vertically
     layout(((width: available-width)) => {
-      if measure(rendered-tags + supplement-str).width < available-width {
-        rendered-tags
+      let fits = (
+        rendered-tags == none
+          or {
+            (
+              measure(rendered-tags).width + measure(supplement-str).width
+                < available-width
+            )
+          }
+      )
+      if not fits {
+        [#supplement #number \ #rendered-tags]
+      } else if rendered-tags == none {
         supplement-str
-      } else [
-        #supplement #number \
-        #rendered-tags
-      ]
+      } else {
+        grid(
+          columns: (auto, 1fr),
+          align: (start + horizon, end + horizon),
+          rendered-tags, supplement-str,
+        )
+      }
     })
   })
 
@@ -139,7 +155,7 @@
       spacing: 0em,
       outset: (y: 0em),
       {
-        // Divide constructs a line where we need to inject the stroke style because we only have access to the color here
+        // Divider needs the stroke, which only this function knows
         show divider: _ => {
           v(-0.5em + stroke-width)
           line(
@@ -154,11 +170,10 @@
     ))
   }
 
-  stack(..(if shows-header { header() }, if has-body { board() }).filter(
-    part => (
-      part != none
-    ),
-  ))
+  stack(
+    if shows-header { header() },
+    if has-body { board() },
+  )
 }
 
 #let boxy(title, tags, body, supplement, number, accent-color) = {
