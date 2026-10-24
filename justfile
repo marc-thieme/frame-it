@@ -2,6 +2,7 @@ set unstable
 
 readme-typ-file := 'README.typ'
 assets-dir := 'assets'
+_package-version := `sed -n 's/^version = "\(.*\)"/\1/p' typst.toml`
 tmpdir := env('XDG_RUNTIME_DIR', '/tmp') / 'frame-it'
 compile-html := 'typst compile --features html -f "html"'
 
@@ -74,7 +75,7 @@ update-readme dir:
 
     echo '> This is the version of the readme adapted for Markdown renderers.
     > This adaption is less than ideal.
-      If you want to copy text and have a faithful render, go to [this link](https://html-preview.github.io/?url=https://github.com/marc-thieme/frame-it/blob/main/{{assets-dir}}/README.html).
+      If you want to copy text and have a faithful render, go to [this link](https://html-preview.github.io/?url=https://github.com/marc-thieme/frame-it/blob/{{_package-version}}/{{assets-dir}}/README.html).
     '
         | cat - {{tmpdir / "README-v1.md"}} | save -f {{tmpdir / "README-v2.md"}}
 

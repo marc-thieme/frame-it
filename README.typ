@@ -89,7 +89,7 @@ Import and define your desired frames:
 ```typst
 #import "@preview/frame-it:2.1.0": *
 
-#let (example, feature, variant, syntax) = frames(
+#let (example, feature, variant) = frames(
   feature: ("Feature",),
   // For each frame kind, you have to provide its supplement title to be displayed
   variant: ("Variant",),
@@ -148,7 +148,7 @@ which yields
 
 The following features are demonstrated in all predefined styles.
 
-== Seamlessly hightight parts of your document
+== Seamlessly highlight parts of your document
 #[
   #show: frame-style(styles.hint)
   #layout-features()
@@ -350,7 +350,7 @@ The older `styling.divide()` and `styling.dividers-as()` are deprecated. Use `di
 
 `frame-it` combines very well with [showybox](https://typst.app/universe/package/showybox/) in order to create beautiful styles easily!
 
-= Experimentl APIs
+= Experimental APIs
 These APIs are still experimental and subject to change. Use sparingly.
 
 #syntax[Retrieving information of a frame][Experimental][

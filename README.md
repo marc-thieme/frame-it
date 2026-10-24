@@ -1,6 +1,6 @@
 > This is the version of the readme adapted for Markdown renderers.
 > This adaption is less than ideal.
-  If you want to copy text and have a faithful render, go to [this link](https://html-preview.github.io/?url=https://github.com/marc-thieme/frame-it/blob/main/assets/README.html).
+  If you want to copy text and have a faithful render, go to [this link](https://html-preview.github.io/?url=https://github.com/marc-thieme/frame-it/blob/2.1.0/assets/README.html).
 ## Introduction
 
 [Frame-It](https://github.com/marc-thieme/frame-it) offers a
@@ -37,7 +37,7 @@ Import and define your desired frames:
 ``` typst
 #import "@preview/frame-it:2.1.0": *
 
-#let (example, feature, variant, syntax) = frames(
+#let (example, feature, variant) = frames(
   feature: ("Feature",),
   // For each frame kind, you have to provide its supplement title to be displayed
   variant: ("Variant",),
@@ -66,7 +66,7 @@ which yields
 
 The following features are demonstrated in all predefined styles.
 
-### Seamlessly hightight parts of your document
+### Seamlessly highlight parts of your document
 
  <picture> <source media="(prefers-color-scheme: dark)" srcset="assets/README-svg-dark-5.svg"> <img alt="Frame example" src="assets/README-svg-light-5.svg"> </picture> 
 
@@ -219,7 +219,7 @@ Use `divider()` and `show divider: ...` instead.
 \[showybox\](<https://typst.app/universe/package/showybox/>) in order to
 create beautiful styles easily!
 
-## Experimentl APIs
+## Experimental APIs
 
 These APIs are still experimental and subject to change. Use sparingly.
 
