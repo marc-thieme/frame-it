@@ -8,4 +8,4 @@ license = "MIT"
 keywords = ["theorems", "frames", "custom", "style", "styling", "math", "papers", "notes", "lectures", "scientific writing", "html"]
 categories = ["components", "layout", "report"]
 exclude = ["/assets/"]
-description = "Beautiful, flexible, and integrated. Display custom frames for theorems, environments, and more. Attractive visuals with syntax that blends seamlessly into the source."
+description = "Define theorems with seamless syntax and easy custom styling."
