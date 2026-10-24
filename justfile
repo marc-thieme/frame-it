@@ -53,9 +53,9 @@ update-readme dir:
     ^cat {{tmpdir / "light.html"}} | pandoc -f html -t gfm -o {{tmpdir / "README-v1.md"}}
 
     let svgs_light = htmlq -f {{tmpdir / "light.html"}} "svg" | split row "<svg"
-        | filter {($in | str length) > 0} | each {"<svg" + $in}
+        | where {($in | str length) > 0} | each {"<svg" + $in}
     let svgs_dark = htmlq -f {{tmpdir / "dark.html"}} "svg" | split row "<svg"
-        | filter {($in | str length) > 0} | each {"<svg" + $in}
+        | where {($in | str length) > 0} | each {"<svg" + $in}
 
     for row in ($svgs_light | enumerate | rename index svg) {
         $row.svg | save -f $"{{dir}}/assets/README-svg-light-($row.index).svg"
@@ -80,7 +80,7 @@ update-readme dir:
 
     for i in 0..($svgs_light | length) {
         let idx = $i | into string
-         $readme = $readme | str replace -rm '<img\s+src=".+?"\s+class="typst-doc"\s+/>' ('
+         $readme = $readme | str replace -rm '!\[\]\(data:image/svg\+xml;base64,[A-Za-z0-9+/=]+\)' ('
             <picture>
               <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-dark-' + $idx + '.svg">
               <img src="https://raw.githubusercontent.com/marc-thieme/frame-it/refs/heads/assets/README-svg-light-' + $idx + '.svg">
@@ -88,7 +88,7 @@ update-readme dir:
         ' | str replace -ra '\s+' ' ')
     }
 
-    $readme | str erase '\n*^</?div.*>$' '^\s*</?figure>\s*$' | save -f {{dir / "README.md"}}
+    $readme | str erase '\n*</?div[^>]*>' '^\s*</?figure>\s*$' | save -f {{dir / "README.md"}}
 
 check-style staging-only="false":
     typos --exclude '*.html'
