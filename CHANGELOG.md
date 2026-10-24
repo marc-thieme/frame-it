@@ -1,4 +1,4 @@
-## CURRENT
+## 2.1.0
 ### API
 - use Typst's native `divider()` element for dividers [#22](https://github.com/marc-thieme/frame-it/issues/22)
 - deprecate `styling.divide`, use `divider()` instead; `divide()` still works as an alias

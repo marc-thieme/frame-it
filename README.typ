@@ -87,7 +87,7 @@ let your-custom-styling-function(title, tags, body, supplement, number, accent-c
 Import and define your desired frames:
 
 ```typst
-#import "@preview/frame-it:1.2.0": *
+#import "@preview/frame-it:2.1.0": *
 
 #let (example, feature, variant, syntax) = frames(
   feature: ("Feature",),
