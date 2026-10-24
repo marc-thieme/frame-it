@@ -493,3 +493,5 @@ A reference to the frame above: @edge-case-label.
     assert(type(inspect.lookup-frame-info(frame).color) == color)
   }
 }
+
+#include "tests/styling.typ"

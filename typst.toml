@@ -4,6 +4,7 @@ version = "1.2.0"
 entrypoint = "src/lib.typ"
 authors = ["Marc Thieme"]
 repository = "https://github.com/marc-thieme/frame-it"
+homepage = "https://html-preview.github.io/?url=https://github.com/marc-thieme/frame-it/blob/assets/README.html"
 license = "MIT"
 keywords = ["theorems", "frames", "custom", "style", "styling", "math", "papers", "notes", "lectures", "scientific writing", "html"]
 categories = ["components", "layout", "report"]

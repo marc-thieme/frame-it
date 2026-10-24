@@ -2,7 +2,6 @@ set unstable
 
 readme-typ-file := 'README.typ'
 tmpdir := env('XDG_RUNTIME_DIR', '/tmp') / 'frame-it'
-_dummy := shell('mkdir -p ' + tmpdir)
 compile-html := 'typst compile --features html -f "html"'
 
 unexport TYPST_FEATURES
@@ -12,7 +11,7 @@ default:
 
 # –––––– [ Release ] ––––––
 _version-regex := '[0-9]+\.[0-9]+\.[0-9]+'
-release new-version packages-repo-root: && (update-and-push-assets "Release version {{new-version}}") (cp-to-packages new-version packages-repo-root)
+release new-version packages-repo-root: && (update-and-push-assets) (cp-to-packages new-version packages-repo-root)
     @echo Testing if index and staging area are empty
     test -z "$(git status --porcelain)"
     sed -Ei 's|#import "@preview/frame-it:{{_version-regex}}"|#import "@preview/frame-it:{{new-version}}"|g' {{readme-typ-file}}
@@ -21,22 +20,20 @@ release new-version packages-repo-root: && (update-and-push-assets "Release vers
     git add {{readme-typ-file}} typst.toml CHANGELOG.md
     git commit -m "Bump version to {{new-version}}."
     test -z "$(git status --porcelain)" # Just to make sure we didn't screw up
-    git tag -a {{new-version}}
+    git tag -a {{new-version}} -m "Release {{new-version}}"
     @echo Don\'t forget to open a pull request for the new version!
 
 _packages-suffix := "packages/preview/frame-it/"
 [script]
 cp-to-packages new-version packages-repo-root:
     folder={{packages-repo-root / _packages-suffix / new-version}}
-    echo $folder
-    rm $folder -rf
-    cp . $folder -r
+    rm -rf $folder
+    cp -r . $folder
     cd $folder
-    rm .github/ assets/ .git/ tests/ -rf
-    rm CHANGELOG.md justfile .gitignore .typos.toml .envrc -f
-    sed -i 's|^#import "src/lib.typ"|#import "@preview/frame-it:{{new-version}}"|g' README.typ
-    find . -type f -name "*.pdf" | xargs rm
-    
+    rm -rf .github assets .git .jj tests
+    rm -f CHANGELOG.md justfile .gitignore .typos.toml .envrc README.typ
+    find . \( -name '*.pdf' -o -name '*.html' -o -name '*.svg' \) -delete
+
 
 [script('nu')]
 update-html dir:
@@ -50,6 +47,7 @@ update-html dir:
 
 [script('nu')]
 update-readme dir:
+    ^mkdir -p {{tmpdir}}
     {{compile-html}} --input svg-frames=true {{readme-typ-file}} {{tmpdir / "light.html"}}
     {{compile-html}} --input svg-frames=true --input theme=dark {{readme-typ-file}} {{tmpdir / "dark.html"}}
     ^cat {{tmpdir / "light.html"}} | pandoc -f html -t gfm -o {{tmpdir / "README-v1.md"}}
@@ -94,17 +92,13 @@ update-readme dir:
 
 check-style staging-only="false":
     typos --exclude '*.html'
-    typstyle --check \
-        $({{if staging-only == "false" {"find"} else {"git diff-index --cached --name-only HEAD"} }}\
-         | grep '\.typ') README.typ \
-        > /dev/null
+    files=$(if [ "{{staging-only}}" = true ]; then git diff --cached --name-only --diff-filter=d -- '*.typ'; else git ls-files '*.typ'; fi); [ -z "$files" ] || typstyle --check $files
 
 update-assets: (update-html ".") && (update-readme ".")
     git add README.md # Make sure not to override changes in README
-    
+
 test-compile: (update-html tmpdir) (update-readme tmpdir)
     typst compile README.typ {{tmpdir / "README.pdf"}}
-    typst compile --root . tests/styling.typ {{tmpdir / "styling-tests.pdf"}}
 
 [confirm("Do you want to commit and push all changes on the assets branch?")]
 [working-directory("assets")]
@@ -119,13 +113,11 @@ setup: setup-pre-commit-hooks && _add-assets-to-git-exclude
 
 [confirm("Add pre-commit hook to .git/hooks/pre-commit?")]
 setup-pre-commit-hooks:
-    touch .git/hooks/pre-commit
-    chmod +x .git/hooks/pre-commit
     echo "just pre-commit" >> .git/hooks/pre-commit
+    chmod +x .git/hooks/pre-commit
 
 [confirm("Add new worktree 'assets' to '.git/info/exclude'?")]
 _add-assets-to-git-exclude:
     echo assets >> .git/info/exclude
 
 pre-commit: (check-style "true") test-compile
-
